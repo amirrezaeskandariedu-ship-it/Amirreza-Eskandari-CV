@@ -1,0 +1,228 @@
+ERMHDR	24.12	2026-09-20	Project	ADMIN	amirreza	dbxDatabaseNoName	Project Management	USD
+%T	CURRTYPE
+%F	curr_id	decimal_digit_cnt	curr_symbol	decimal_symbol	digit_group_symbol	pos_curr_fmt_type	neg_curr_fmt_type	curr_type	curr_short_name	group_digit_cnt	base_exch_rate
+%R	1	2	$	.	,	#1.1	(#1.1)	US Dollar	USD	3	1
+%R	13	2	£	.	,	#1.1	(#1.1)	Pound Sterling	GBP	3	0.618603
+%R	14	2	¥	.	,	#1.1	(#1.1)	Japanese Yen	JPY	3	91.2708
+%R	15	2	€	.	,	#1.1	(#1.1)	Euro	EUR	3	0.689711
+%R	16	2	¥	.	,	#1.1	(#1.1)	Chinese Yuan Renminbi	CNY	3	6.82502
+%R	17	2	$	.	,	#1.1	(#1.1)	Canadian Dollar	CAD	3	1.03757
+%R	18	2	RUB	.	,	#1.1	(#1.1)	Russian Ruble	RUB	3	0.033948
+%R	19	2	$	.	,	#1.1	(#1.1)	Argentine Peso	ARS	3	3.79109
+%R	20	2	$b	.	,	#1.1	(#1.1)	Bolivian Boliviano	BOB	3	7.5708
+%R	21	2	R$	.	,	#1.1	(#1.1)	Brazilian Real	BRL	3	1.7665
+%R	22	2	$	.	,	#1.1	(#1.1)	Chilean Peso	CLP	3	507.58
+%R	23	2	$	.	,	#1.1	(#1.1)	Columbian Peso	COP	3	1957.74
+%R	24	2	$	.	,	#1.1	(#1.1)	Guyanese Dollar	GYD	3	202.95
+%R	25	2	Gs	.	,	#1.1	(#1.1)	Paraguayan Guarani	PYG	3	4640
+%R	26	2	S/.	.	,	#1.1	(#1.1)	Peruvian Nuevo Sol	PEN	3	2.7244
+%R	27	2	$	.	,	#1.1	(#1.1)	Surinamese Dollar	SRD	3	2.8
+%R	28	2	Bs	.	,	#1.1	(#1.1)	Venezuelan Bolivar Fuerto	VEF	3	2.1446
+%R	29	2	$U	.	,	#1.1	(#1.1)	Uruguayan Peso	UYU	3	21.247
+%R	30	2	TO	.	,	#1.1	(#1.1)	Toman	TOM	3	9E-006
+%T	FINTMPL
+%F	fintmpl_id	fintmpl_name	default_flag
+%R	1	Calendar	Y
+%T	OBS
+%F	obs_id	parent_obs_id	guid	seq_num	obs_name	obs_descr
+%R	540			0	Enterprise	<html>  <head>      </head>  <body bgcolor=""#ffffff"">    Enterprise  </body></html>
+%R	1761	540	wM+oatUTfE27PhoN7VeJOg	1	Design Manager	
+%R	1766	540	xDO95KPYkEqE2AAef6t0Uw	2	Construction Manager	
+%R	1772	540	OFLDzjhqqUmd6yUa+8Gkbg	4	Smart-Systems / IT Integration Manager	
+%R	1776	540	JC+eEowOsEGt8t/WMIdZcg	6	Procurement Manager	
+%R	1780	540	0TVeFWSP80e7WK0pwe27hQ	8	QA/QC Manager	
+%R	1783	540	twHEH2Be/kSbOPj/VcDriQ	10	HSE Manager (Health, Safety, Environment)	
+%R	1786	540	r7qHkpPS8EWIKUOgQwmQOQ	12	Commissioning & Accreditation Manager	
+%R	1789	540	3eqbQPLIOEu6AwrXBQRTDw	14	Financial Controller	
+%T	PROJECT
+%F	proj_id	fy_start_month_num	rsrc_self_add_flag	allow_complete_flag	rsrc_multi_assign_flag	checkout_flag	project_flag	step_complete_flag	cost_qty_recalc_flag	batch_sum_flag	name_sep_char	def_complete_pct_type	proj_short_name	acct_id	orig_proj_id	source_proj_id	base_type_id	clndr_id	sum_base_proj_id	task_code_base	task_code_step	priority_num	wbs_max_sum_level	strgy_priority_num	last_checksum	critical_drtn_hr_cnt	def_cost_per_qty	last_recalc_date	plan_start_date	plan_end_date	scd_end_date	add_date	last_tasksum_date	fcst_start_date	def_duration_type	task_code_prefix	guid	def_qty_type	add_by_name	web_local_root_path	proj_url	def_rate_type	add_act_remain_flag	act_this_per_link_flag	def_task_type	act_pct_link_flag	critical_path_type	task_code_prefix_flag	def_rollup_dates_flag	use_project_baseline_flag	rem_target_link_flag	reset_planned_flag	allow_neg_act_flag	sum_assign_level	last_fin_dates_id	fintmpl_id	last_baseline_update_date	cr_external_key	apply_actuals_date	location_id	last_schedule_date	loaded_scope_level	export_flag	new_fin_dates_id	baselines_to_export	baseline_names_to_export	next_data_date	close_period_flag	sum_refresh_date	trsrcsum_loaded	sumtask_loaded
+%R	4635	1	Y	Y	Y	N	Y	N	N	Y	.	CP_Phys	HCB					5829		1000	10	10	2	500		0	0.0000	2025-01-01 00:00	2025-01-01 00:00		2026-09-25 17:00	2026-09-19 00:00			DT_FixedDUR2	A	C1/vQJ0hUEq5hG4K3vRqRA	QT_Hour	ADMIN			COST_PER_QTY	N	Y	TT_Task	Y	CT_TotFloat	Y	Y	Y	Y	N	N	SL_Taskrsrc		1					2026-09-20 17:19	7	Y						1899-12-30 00:00		
+%T	CALENDAR
+%F	clndr_id	default_flag	clndr_name	proj_id	base_clndr_id	last_chng_date	clndr_type	day_hr_cnt	week_hr_cnt	month_hr_cnt	year_hr_cnt	rsrc_private	clndr_data
+%R	5829	Y	Trades -  5 Day Workweek			2026-09-20 00:00	CA_Base	8	40	172	2000	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||3()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||4()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||5()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||6()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||7()())))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()(    (0||0(d|40179)())    (0||1(d|40329)())    (0||2(d|40364)())    (0||3(d|40427)())    (0||4(d|40507)())    (0||5(d|40536)())    (0||6(d|40543)())    (0||7(d|40693)())    (0||8(d|40728)())    (0||9(d|40791)())    (0||10(d|40871)())    (0||11(d|40903)())    (0||12(d|40910)())    (0||13(d|41057)())    (0||14(d|41094)())    (0||15(d|41155)())    (0||16(d|41235)())    (0||17(d|41268)())    (0||18(d|41275)())    (0||19(d|41421)())    (0||20(d|41459)())    (0||21(d|41519)())    (0||22(d|41606)())    (0||23(d|41633)())    (0||24(d|45658)())    (0||25(d|45677)())    (0||26(d|45705)())    (0||27(d|45803)())    (0||28(d|45827)())    (0||29(d|45842)())    (0||30(d|45901)())    (0||31(d|45943)())    (0||32(d|45972)())    (0||33(d|45988)())    (0||34(d|46016)())    (0||35(d|46023)())    (0||36(d|46041)())    (0||37(d|46069)())    (0||38(d|46167)())    (0||39(d|46192)())    (0||40(d|46206)())    (0||41(d|46272)())    (0||42(d|46307)())    (0||43(d|46337)())    (0||44(d|46352)())    (0||45(d|46381)())))))
+%T	SCHEDOPTIONS
+%F	schedoptions_id	proj_id	sched_outer_depend_type	sched_open_critical_flag	sched_lag_early_start_flag	sched_retained_logic	sched_setplantoforecast	sched_float_type	sched_calendar_on_relationship_lag	sched_use_expect_end_flag	sched_progress_override	level_float_thrs_cnt	level_outer_assign_flag	level_outer_assign_priority	level_over_alloc_pct	level_within_float_flag	level_keep_sched_date_flag	level_all_rsrc_flag	sched_use_project_end_date_for_float	enable_multiple_longest_path_calc	limit_multiple_longest_path_calc	max_multiple_longest_path	use_total_float_multiple_longest_paths	key_activity_for_multiple_longest_paths	LevelPriorityList
+%R	1	4635	SD_Both	N	Y	Y	N	FT_FF	rcal_Predecessor	Y	N	0	N	5	25	N	Y	Y	Y	N	Y	10	Y		priority_type,ASC_BY_FIELD/ASC
+%T	PROJWBS
+%F	wbs_id	proj_id	obs_id	seq_num	est_wt	proj_node_flag	sum_data_flag	status_code	wbs_short_name	wbs_name	phase_id	parent_wbs_id	ev_user_pct	ev_etc_user_value	orig_cost	indep_remain_total_cost	ann_dscnt_rate_pct	dscnt_period_type	indep_remain_work_qty	anticip_start_date	anticip_end_date	ev_compute_type	ev_etc_compute_type	guid	tmpl_guid	plan_open_state
+%R	26696	4635	540	11	1	Y	N	WS_Open	HCB	Hospital construction building		26272	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	CIvFwUrLO0adVeyLz+wZHA		
+%R	26697	4635	540	1	1	N	N	WS_Open	1	Project Management		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	jsFZSLW4Vkuzavo4X+JTcQ		
+%R	26700	4635	540	1	1	N	N	WS_Open	1	Planning & Scheduling		26697	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	o8Q05HnvhU65Jsz/bmhGkA		
+%R	26701	4635	1789	2	1	N	N	WS_Open	2	Cost Control & Reporting		26697	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	GRBUT9XIgUu+C9tI7CPKcw		
+%R	26702	4635	540	3	1	N	N	WS_Open	3	Risk Management		26697	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	69zloS/Hm0Oci8MIMwfw5A		
+%R	26703	4635	1776	4	1	N	N	WS_Open	4	Contract Administration		26697	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	O0iuDzj8gUekaTdC+I8kOw		
+%R	26704	4635	1761	2	1	N	N	WS_Open	2	Design		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	d/vp4fhfl0u8Z//PNpzk3g		
+%R	26705	4635	1761	1	1	N	N	WS_Open	1	Architectural Design		26704	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	63ShTva3jEm6Kois/V83rw		
+%R	26708	4635	1761	1	1	N	N	WS_Open	1	Conceptual Design		26705	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	1KDY0nAQrU2bsQ7zM+EVBQ		
+%R	26709	4635	1761	2	1	N	N	WS_Open	2	Schematic Design		26705	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	TKGxGOAYkkqD2LfRA3bQcw		
+%R	26710	4635	1761	3	1	N	N	WS_Open	3	Detailed Design		26705	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	lx6+XZ5dBkKkSv8FSApojA		
+%R	26711	4635	1761	2	1	N	N	WS_Open	2	Structural Design		26704	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	1NLeTP1nlEy23YGfal8fdw		
+%R	26712	4635	1761	3	1	N	N	WS_Open	3	MEP Design		26704	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	6Kfd334amUmOrm6gZFIdbQ		
+%R	26713	4635	1761	4	1	N	N	WS_Open	4	Medical Equipment Planning		26704	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	ksgVdSxldkeuY92dkUXdZw		
+%R	26714	4635	1786	3	1	N	N	WS_Open	3	Permits & Regulatory Approval		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	grH9GCFjV0eW4p1J28IVMg		
+%R	26715	4635	1786	1	1	N	N	WS_Open	1	Certificate of Need		26714	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	N0BeCNluDUima1EYpUjPkg		
+%R	26716	4635	1786	2	1	N	N	WS_Open	2	Building Permits		26714	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	EkntORLcu0KCrwmIowDHFg		
+%R	26717	4635	1786	3	1	N	N	WS_Open	3	Healthcare Facility Licensing		26714	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	689PDKNdME6t4vg2ic3kpw		
+%R	26718	4635	1766	4	1	N	N	WS_Open	4	Site Preparation & Civil Works		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	0HXwFrReLEet07EsoI3yYw		
+%R	26719	4635	1766	1	1	N	N	WS_Open	1	Site Clearing & Grading		26718	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	n62BogBRf0WEugajpodgkg		
+%R	26720	4635	1766	2	1	N	N	WS_Open	2	Foundation Work		26718	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	aeb9cnF+lUels6e1c7WbZw		
+%R	26721	4635	1766	3	1	N	N	WS_Open	3	Utilities Infrastructure (water, power, sewage)		26718	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	g7/VmmGFXEyK8JWwpRdW0A		
+%R	26722	4635	1766	5	1	N	N	WS_Open	5	Structural Construction		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	QzNCHI0ifkyosIcOcSxtGQ		
+%R	26723	4635	1766	1	1	N	N	WS_Open	1	Superstructure (per wing: ED, ICU, Surgical, Inpatient floors)		26722	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	p+5QL+zspkOl/mVkFCejSg		
+%R	26724	4635	1766	2	1	N	N	WS_Open	2	Building Envelope (facade, roofing)		26722	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	RPV0e+6UqkuZ81qfQiRmAg		
+%R	26725	4635	1766	6	1	N	N	WS_Open	6	MEP Installation		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	XEi5OhLMIUSFunPuj2E0TQ		
+%R	26726	4635	1766	1	1	N	N	WS_Open	1	HVAC Systems		26725	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	zQ9bn1loe0WE5UlUl0uVIw		
+%R	26727	4635	1766	2	1	N	N	WS_Open	2	Electrical Systems		26725	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	mzwZj4/4k0S8oOrGdWRpQw		
+%R	26728	4635	1766	3	1	N	N	WS_Open	3	Plumbing & Medical Gas Systems		26725	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	pJQTuwPGZUGLSuyzMCQwRA		
+%R	26730	4635	1766	4	1	N	N	WS_Open	4	Fire Protection Systems		26725	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	zFd9zv4UQ0+VAQCpfRP+UQ		
+%R	26731	4635	1772	7	1	N	N	WS_Open	7	Smart-Systems Integration		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	+eqLwi4gGkGx4Nnpg3AllQ		
+%R	26732	4635	1772	1	1	N	N	WS_Open	1	IoT Patient Monitoring Infrastructure		26731	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	g45G1ds9ZUWu1XoA5O1pcw		
+%R	26733	4635	1772	2	1	N	N	WS_Open	2	Building Management System (BMS)		26731	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	oOzBwdBHGEioiijACk6Xeg		
+%R	26734	4635	1772	3	1	N	N	WS_Open	3	EMR System Integration		26731	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	nf7KsfGfe0+E0qUcseJwcw		
+%R	26735	4635	1772	4	1	N	N	WS_Open	4	Network & Cybersecurity Infrastructure		26731	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	q5EDNnhLe0iWI4OKGbXq4Q		
+%R	26736	4635	1766	8	1	N	N	WS_Open	8	Interior Finishing & Medical Fit-out		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	CpLwdjSFIEuXoPw2lD0+qg		
+%R	26737	4635	1766	1	1	N	N	WS_Open	1	Interior Finishes (flooring, walls, ceilings)		26736	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	0NT7Z2YOeEmt38vblRVWRg		
+%R	26738	4635	1766	2	1	N	N	WS_Open	2	Medical Equipment Installation		26736	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	CUc4dBzJ4Em85vkZTwv3Pg		
+%R	26739	4635	1776	3	1	N	N	WS_Open	3	Furniture & Fixtures		26736	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	E3zh7/2ugEa9dQis6OHPEg		
+%R	26740	4635	1786	9	1	N	N	WS_Open	9	Commissioning & Testing		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	Zv0ghbDPFESao0BIUdF9oQ		
+%R	26741	4635	1780	1	1	N	N	WS_Open	1	MEP Systems Testing		26740	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	5QydD4rlvEG68pMK0RPXxA		
+%R	26742	4635	1772	2	1	N	N	WS_Open	2	Smart-Systems Testing & Integration Validation		26740	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	05ctRt6wnkC7/d5VMV+aTA		
+%R	26743	4635	1783	3	1	N	N	WS_Open	3	Fire & Life Safety Testing		26740	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	NUzBnjfbhkKtji8Soz6K9A		
+%R	26744	4635	1786	10	1	N	N	WS_Open	10	Accreditation & Handover		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	WSYDj5kqjkm5f+meDieQQA		
+%R	26745	4635	1780	1	1	N	N	WS_Open	1	Regulatory Inspection		26744	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	XXWvEsAj9UKtNf90CxmmXQ		
+%R	26746	4635	1786	2	1	N	N	WS_Open	2	Staff Training		26744	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	pCY1MBUQ6Ey8yhlrivBlqw		
+%R	26747	4635	540	3	1	N	N	WS_Open	3	Facility Handover & Closeout		26744	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	nISbGgamkkCQle5lk072ag		
+%T	TASK
+%F	task_id	proj_id	wbs_id	clndr_id	phys_complete_pct	rev_fdbk_flag	est_wt	lock_plan_flag	auto_compute_act_flag	complete_pct_type	task_type	duration_type	status_code	task_code	task_name	rsrc_id	total_float_hr_cnt	free_float_hr_cnt	remain_drtn_hr_cnt	act_work_qty	remain_work_qty	target_work_qty	target_drtn_hr_cnt	target_equip_qty	act_equip_qty	remain_equip_qty	cstr_date	act_start_date	act_end_date	late_start_date	late_end_date	expect_end_date	early_start_date	early_end_date	restart_date	reend_date	target_start_date	target_end_date	rem_late_start_date	rem_late_end_date	cstr_type	priority_type	suspend_date	resume_date	float_path	float_path_order	guid	tmpl_guid	cstr_date2	cstr_type2	driving_path_flag	act_this_per_work_qty	act_this_per_equip_qty	external_early_start_date	external_late_end_date	create_date	update_date	create_user	update_user	location_id	crt_path_num
+%R	103341	4635	26700	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1000	Develop schedule baseline		0	0	40	0	0	0	40	0	0	0				2025-01-02 08:00	2025-01-08 17:00		2025-01-02 08:00	2025-01-08 17:00	2025-01-02 08:00	2025-01-08 17:00	2025-01-02 08:00	2025-01-08 17:00	2025-01-02 08:00	2025-01-08 17:00		PT_Normal					VEfFboqzRke3ilh4QKOqkA				Y	0	0			2026-09-20 12:59	2026-09-20 12:59	NotPrmUser	NotPrmUser		
+%R	103342	4635	26700	5829	0	N	1	N	N	CP_Phys	TT_LOE	DT_FixedDUR2	TK_NotStart	A1010	Ongoing schedule updates		0	0	3480	0	0	0	3480	0	0	0				2025-01-02 08:00	2026-09-25 17:00		2025-01-02 08:00	2026-09-25 17:00	2025-01-02 08:00	2026-09-25 17:00	2025-01-02 08:00	2026-09-25 17:00	2025-01-02 08:00	2026-09-25 17:00		PT_Normal					ry4rdeWQoUy5HyUV3dCAtQ				Y	0	0			2026-09-20 12:59	2026-09-20 14:12	NotPrmUser	NotPrmUser		
+%R	103343	4635	26701	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1020	Develop cost baseline		3440	3440	40	0	0	0	40	0	0	0				2026-09-21 08:00	2026-09-25 17:00		2025-01-02 08:00	2025-01-08 17:00	2025-01-02 08:00	2025-01-08 17:00	2025-01-02 08:00	2025-01-08 17:00	2026-09-21 08:00	2026-09-25 17:00		PT_Normal					7D7HAGA2ykO6BsQ9vHPBcw				Y	0	0			2026-09-20 12:59	2026-09-20 12:59	NotPrmUser	NotPrmUser		
+%R	103344	4635	26701	5829	0	N	1	N	N	CP_Phys	TT_LOE	DT_FixedDUR2	TK_NotStart	A1030	Ongoing cost control & reporting		0	0	3440	0	0	0	3440	0	0	0				2026-09-25 17:00	2026-09-25 17:00		2025-01-09 08:00	2026-09-25 17:00	2025-01-09 08:00	2026-09-25 17:00	2025-01-09 08:00	2026-09-25 17:00	2026-09-25 17:00	2026-09-25 17:00		PT_Normal					x9yPgKifBUucpSXNuANPVw				Y	0	0			2026-09-20 13:00	2026-09-20 13:00	NotPrmUser	NotPrmUser		
+%R	103345	4635	26702	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1040	Develop risk register		3456	3456	24	0	0	0	24	0	0	0				2026-09-23 08:00	2026-09-25 17:00		2025-01-02 08:00	2025-01-06 17:00	2025-01-02 08:00	2025-01-06 17:00	2025-01-02 08:00	2025-01-06 17:00	2026-09-23 08:00	2026-09-25 17:00		PT_Normal					g4EiBvN5Z0yBpPxNQvViCg				Y	0	0			2026-09-20 13:00	2026-09-20 13:00	NotPrmUser	NotPrmUser		
+%R	103346	4635	26702	5829	0	N	1	N	N	CP_Phys	TT_LOE	DT_FixedDUR2	TK_NotStart	A1050	Ongoing risk monitoring		0	0	3456	0	0	0	3456	0	0	0				2026-09-25 17:00	2026-09-25 17:00		2025-01-07 08:00	2026-09-25 17:00	2025-01-07 08:00	2026-09-25 17:00	2025-01-07 08:00	2026-09-25 17:00	2026-09-25 17:00	2026-09-25 17:00		PT_Normal					1NsmFAVCQ0essQsn6iLdJQ				Y	0	0			2026-09-20 13:00	2026-09-20 13:01	NotPrmUser	NotPrmUser		
+%R	103347	4635	26703	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1060	Draft contract templates		840	0	40	0	0	0	40	0	0	0				2025-06-03 08:00	2025-06-09 17:00		2025-01-02 08:00	2025-01-08 17:00	2025-01-02 08:00	2025-01-08 17:00	2025-01-02 08:00	2025-01-08 17:00	2025-06-03 08:00	2025-06-09 17:00		PT_Normal					hwpUW+8UWkmLz4xg58kpyA				N	0	0			2026-09-20 13:01	2026-09-20 13:01	NotPrmUser	NotPrmUser		
+%R	103348	4635	26703	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1070	Contract negotiation & award		840	840	80	0	0	0	80	0	0	0				2025-06-10 08:00	2025-06-24 17:00		2025-01-09 08:00	2025-01-23 17:00	2025-01-09 08:00	2025-01-23 17:00	2025-01-09 08:00	2025-01-23 17:00	2025-06-10 08:00	2025-06-24 17:00		PT_Normal					cWi/LV3iM0+dF7hYojIs4g				N	0	0			2026-09-20 13:01	2026-09-20 13:01	NotPrmUser	NotPrmUser		
+%R	103349	4635	26708	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1080	Conceptual design		0	0	160	0	0	0	160	0	0	0				2025-01-09 08:00	2025-02-06 17:00		2025-01-09 08:00	2025-02-06 17:00	2025-01-09 08:00	2025-02-06 17:00	2025-01-09 08:00	2025-02-06 17:00	2025-01-09 08:00	2025-02-06 17:00		PT_Normal					KHdUDh/2U0qt1HoEwlgbTg				Y	0	0			2026-09-20 13:01	2026-09-20 13:02	NotPrmUser	NotPrmUser		
+%R	103350	4635	26709	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1090	Schematic design		0	0	200	0	0	0	200	0	0	0				2025-02-07 08:00	2025-03-14 17:00		2025-02-07 08:00	2025-03-14 17:00	2025-02-07 08:00	2025-03-14 17:00	2025-02-07 08:00	2025-03-14 17:00	2025-02-07 08:00	2025-03-14 17:00		PT_Normal					a1tD6hRMYEO9TnT/OWibjw				Y	0	0			2026-09-20 13:01	2026-09-20 13:02	NotPrmUser	NotPrmUser		
+%R	103351	4635	26710	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1100	Detailed design		0	0	240	0	0	0	240	0	0	0				2025-03-17 08:00	2025-04-25 17:00		2025-03-17 08:00	2025-04-25 17:00	2025-03-17 08:00	2025-04-25 17:00	2025-03-17 08:00	2025-04-25 17:00	2025-03-17 08:00	2025-04-25 17:00		PT_Normal					HYvJ44FBn0OZI0/Of0NYBw				Y	0	0			2026-09-20 13:01	2026-09-20 13:02	NotPrmUser	NotPrmUser		
+%R	103352	4635	26711	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1110	Structural design		680	680	200	0	0	0	200	0	0	0				2025-07-17 08:00	2025-08-20 17:00		2025-03-17 08:00	2025-04-18 17:00	2025-03-17 08:00	2025-04-18 17:00	2025-03-17 08:00	2025-04-18 17:00	2025-07-17 08:00	2025-08-20 17:00		PT_Normal					v/JD9rNq/06RoFUnvoik+Q				N	0	0			2026-09-20 13:02	2026-09-20 13:02	NotPrmUser	NotPrmUser		
+%R	103353	4635	26712	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1120	MEP design		1400	1400	200	0	0	0	200	0	0	0				2025-11-25 08:00	2025-12-31 17:00		2025-03-17 08:00	2025-04-18 17:00	2025-03-17 08:00	2025-04-18 17:00	2025-03-17 08:00	2025-04-18 17:00	2025-11-25 08:00	2025-12-31 17:00		PT_Normal					2AgjHGVuEUWDN5wq571VcA				N	0	0			2026-09-20 13:02	2026-09-20 13:03	NotPrmUser	NotPrmUser		
+%R	103354	4635	26713	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1130	Medical equipment planning		2160	2000	120	0	0	0	120	0	0	0				2026-05-27 08:00	2026-06-16 17:00		2025-04-28 08:00	2025-05-16 17:00	2025-04-28 08:00	2025-05-16 17:00	2025-04-28 08:00	2025-05-16 17:00	2026-05-27 08:00	2026-06-16 17:00		PT_Normal					7+P/5/+FEUObC2MI9hxX9g				N	0	0			2026-09-20 13:02	2026-09-20 13:06	NotPrmUser	NotPrmUser		
+%R	103355	4635	26715	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1140	Prepare Certificate of Need application		2680	0	80	0	0	0	80	0	0	0				2026-06-10 08:00	2026-06-24 17:00		2025-02-07 08:00	2025-02-21 17:00	2025-02-07 08:00	2025-02-21 17:00	2025-02-07 08:00	2025-02-21 17:00	2026-06-10 08:00	2026-06-24 17:00		PT_Normal					ciov/AYfrEGUXjxDpJfeOw				N	0	0			2026-09-20 13:06	2026-09-20 13:07	NotPrmUser	NotPrmUser		
+%R	103356	4635	26715	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1150	Certificate of Need approval (wait)		2680	0	240	0	0	0	240	0	0	0				2026-06-25 08:00	2026-08-06 17:00		2025-02-24 08:00	2025-04-04 17:00	2025-02-24 08:00	2025-04-04 17:00	2025-02-24 08:00	2025-04-04 17:00	2026-06-25 08:00	2026-08-06 17:00		PT_Normal					hAQrPTf4ukixSKCXw0uXiw				N	0	0			2026-09-20 13:06	2026-09-20 13:07	NotPrmUser	NotPrmUser		
+%R	103357	4635	26716	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1160	Submit building permit application		0	0	80	0	0	0	80	0	0	0				2025-04-28 08:00	2025-05-09 17:00		2025-04-28 08:00	2025-05-09 17:00	2025-04-28 08:00	2025-05-09 17:00	2025-04-28 08:00	2025-05-09 17:00	2025-04-28 08:00	2025-05-09 17:00		PT_Normal					8g94VWqHi0G/SQd8LU1SXA				Y	0	0			2026-09-20 13:07	2026-09-20 13:07	NotPrmUser	NotPrmUser		
+%R	103358	4635	26716	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1170	Building permit approval (wait)		0	0	240	0	0	0	240	0	0	0				2025-05-12 08:00	2025-06-24 17:00		2025-05-12 08:00	2025-06-24 17:00	2025-05-12 08:00	2025-06-24 17:00	2025-05-12 08:00	2025-06-24 17:00	2025-05-12 08:00	2025-06-24 17:00		PT_Normal					a9aflDtuSUeUcTKbZYE9PQ				Y	0	0			2026-09-20 13:07	2026-09-20 13:07	NotPrmUser	NotPrmUser		
+%R	103359	4635	26717	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1180	Healthcare facility licensing application		2680	2600	120	0	0	0	120	0	0	0				2026-08-07 08:00	2026-08-27 17:00		2025-04-07 08:00	2025-04-25 17:00	2025-04-07 08:00	2025-04-25 17:00	2025-04-07 08:00	2025-04-25 17:00	2026-08-07 08:00	2026-08-27 17:00		PT_Normal					CsQGGhuxqkukErEl7leicw				N	0	0			2026-09-20 13:07	2026-09-20 13:08	NotPrmUser	NotPrmUser		
+%R	103360	4635	26719	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1190	Site clearing & grading		0	0	120	0	0	0	120	0	0	0				2025-06-25 08:00	2025-07-16 17:00		2025-06-25 08:00	2025-07-16 17:00	2025-06-25 08:00	2025-07-16 17:00	2025-06-25 08:00	2025-07-16 17:00	2025-06-25 08:00	2025-07-16 17:00		PT_Normal					QYRE5ijjFE+e+xuoU8DDhQ				Y	0	0			2026-09-20 13:08	2026-09-20 13:08	NotPrmUser	NotPrmUser		
+%R	103361	4635	26720	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1200	Foundation excavation		0	0	80	0	0	0	80	0	0	0				2025-07-17 08:00	2025-07-30 17:00		2025-07-17 08:00	2025-07-30 17:00	2025-07-17 08:00	2025-07-30 17:00	2025-07-17 08:00	2025-07-30 17:00	2025-07-17 08:00	2025-07-30 17:00		PT_Normal					w5LYdKGPE0eLLmOxYP/VtQ				Y	0	0			2026-09-20 13:08	2026-09-20 13:08	NotPrmUser	NotPrmUser		
+%R	103362	4635	26720	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1210	Foundation concrete pour		0	0	120	0	0	0	120	0	0	0				2025-07-31 08:00	2025-08-20 17:00		2025-07-31 08:00	2025-08-20 17:00	2025-07-31 08:00	2025-08-20 17:00	2025-07-31 08:00	2025-08-20 17:00	2025-07-31 08:00	2025-08-20 17:00		PT_Normal					9+b8KDdpDU+YWRRElKfUTA				Y	0	0			2026-09-20 13:08	2026-09-20 13:08	NotPrmUser	NotPrmUser		
+%R	103363	4635	26721	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1220	Utilities infrastructure installation		720	720	160	0	0	0	160	0	0	0				2025-12-03 08:00	2025-12-31 17:00		2025-07-24 08:00	2025-08-20 17:00	2025-07-24 08:00	2025-08-20 17:00	2025-07-24 08:00	2025-08-20 17:00	2025-12-03 08:00	2025-12-31 17:00		PT_Normal					Vn0gm54FzEGh191kKogKtg				N	0	0			2026-09-20 13:08	2026-09-20 13:10	NotPrmUser	NotPrmUser		
+%R	103364	4635	26723	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1230	Superstructure – ED wing		160	160	320	0	0	0	320	0	0	0				2025-09-19 08:00	2025-11-17 17:00		2025-08-21 08:00	2025-10-17 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-09-19 08:00	2025-11-17 17:00		PT_Normal					6W4okQQ720KTCfL0Aem+cw				N	0	0			2026-09-20 13:10	2026-09-20 13:11	NotPrmUser	NotPrmUser		
+%R	103365	4635	26723	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1240	Superstructure – ICU wing		160	160	320	0	0	0	320	0	0	0				2025-09-19 08:00	2025-11-17 17:00		2025-08-21 08:00	2025-10-17 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-09-19 08:00	2025-11-17 17:00		PT_Normal					JwWyaZvmR0GtxQoA41hINA				N	0	0			2026-09-20 13:10	2026-09-20 13:11	NotPrmUser	NotPrmUser		
+%R	103366	4635	26723	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1250	Superstructure – Surgical wing		160	160	320	0	0	0	320	0	0	0				2025-09-19 08:00	2025-11-17 17:00		2025-08-21 08:00	2025-10-17 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-09-19 08:00	2025-11-17 17:00		PT_Normal					NuRzsZJ8VUSd0e8ejXVmKQ				N	0	0			2026-09-20 13:10	2026-09-20 13:11	NotPrmUser	NotPrmUser		
+%R	103367	4635	26723	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1260	Superstructure – Inpatient floors		0	0	480	0	0	0	480	0	0	0				2025-08-21 08:00	2025-11-17 17:00		2025-08-21 08:00	2025-11-17 17:00	2025-08-21 08:00	2025-11-17 17:00	2025-08-21 08:00	2025-11-17 17:00	2025-08-21 08:00	2025-11-17 17:00		PT_Normal					8RpOWcxp4UqG3QKvaK7XCA				Y	0	0			2026-09-20 13:10	2026-09-20 13:11	NotPrmUser	NotPrmUser		
+%R	103368	4635	26724	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1270	Building envelope – facade		0	0	240	0	0	0	240	0	0	0				2025-11-18 08:00	2025-12-31 17:00		2025-11-18 08:00	2025-12-31 17:00	2025-11-18 08:00	2025-12-31 17:00	2025-11-18 08:00	2025-12-31 17:00	2025-11-18 08:00	2025-12-31 17:00		PT_Normal					8xLlIv3a+kKM8zDNiKONaA				Y	0	0			2026-09-20 13:11	2026-09-20 13:12	NotPrmUser	NotPrmUser		
+%R	103369	4635	26724	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1280	Building envelope – roofing		600	440	160	0	0	0	160	0	0	0				2026-03-10 08:00	2026-04-06 17:00		2025-11-18 08:00	2025-12-16 17:00	2025-11-18 08:00	2025-12-16 17:00	2025-11-18 08:00	2025-12-16 17:00	2026-03-10 08:00	2026-04-06 17:00		PT_Normal					5m6KQj9m2kqiOBu67QKEqA				N	0	0			2026-09-20 13:11	2026-09-20 13:12	NotPrmUser	NotPrmUser		
+%R	103370	4635	26726	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1290	HVAC installation		160	0	360	0	0	0	360	0	0	0				2026-02-02 08:00	2026-04-06 17:00		2026-01-02 08:00	2026-03-09 17:00	2026-01-02 08:00	2026-03-09 17:00	2026-01-02 08:00	2026-03-09 17:00	2026-02-02 08:00	2026-04-06 17:00		PT_Normal					iukcFUQnU0m3REZ2jgkO9A				N	0	0			2026-09-20 13:12	2026-09-20 13:13	NotPrmUser	NotPrmUser		
+%R	103371	4635	26727	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1300	Electrical installation		0	0	360	0	0	0	360	0	0	0				2026-01-02 08:00	2026-03-09 17:00		2026-01-02 08:00	2026-03-09 17:00	2026-01-02 08:00	2026-03-09 17:00	2026-01-02 08:00	2026-03-09 17:00	2026-01-02 08:00	2026-03-09 17:00		PT_Normal					GwNq2WXqbUi0BPs7tcwoVw				Y	0	0			2026-09-20 13:12	2026-09-20 13:13	NotPrmUser	NotPrmUser		
+%R	103372	4635	26728	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1310	Plumbing & medical gas systems		200	40	320	0	0	0	320	0	0	0				2026-02-09 08:00	2026-04-06 17:00		2026-01-02 08:00	2026-03-02 17:00	2026-01-02 08:00	2026-03-02 17:00	2026-01-02 08:00	2026-03-02 17:00	2026-02-09 08:00	2026-04-06 17:00		PT_Normal					aGf/tKH/50GQXIsOOcSpbA				N	0	0			2026-09-20 13:12	2026-09-20 13:13	NotPrmUser	NotPrmUser		
+%R	103373	4635	26730	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1320	Fire protection systems		280	120	240	0	0	0	240	0	0	0				2026-02-24 08:00	2026-04-06 17:00		2026-01-02 08:00	2026-02-13 17:00	2026-01-02 08:00	2026-02-13 17:00	2026-01-02 08:00	2026-02-13 17:00	2026-02-24 08:00	2026-04-06 17:00		PT_Normal					Dzcpn1iz/EWcQPNXW6ioRw				N	0	0			2026-09-20 13:12	2026-09-20 13:13	NotPrmUser	NotPrmUser		
+%R	103374	4635	26732	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1330	IoT patient monitoring installation		0	0	240	0	0	0	240	0	0	0				2026-04-14 08:00	2026-05-26 17:00		2026-04-14 08:00	2026-05-26 17:00	2026-04-14 08:00	2026-05-26 17:00	2026-04-14 08:00	2026-05-26 17:00	2026-04-14 08:00	2026-05-26 17:00		PT_Normal					6KBTmXPg6EKJx99m8/bVSw				Y	0	0			2026-09-20 13:13	2026-09-20 13:13	NotPrmUser	NotPrmUser		
+%R	103375	4635	26733	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1340	BMS installation		320	320	240	0	0	0	240	0	0	0				2026-06-10 08:00	2026-07-23 17:00		2026-04-14 08:00	2026-05-26 17:00	2026-04-14 08:00	2026-05-26 17:00	2026-04-14 08:00	2026-05-26 17:00	2026-06-10 08:00	2026-07-23 17:00		PT_Normal					f8zQ2Lo1nUmVIbTENKgMsQ				N	0	0			2026-09-20 13:13	2026-09-20 13:14	NotPrmUser	NotPrmUser		
+%R	103376	4635	26734	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1350	EMR system integration		0	0	320	0	0	0	320	0	0	0				2026-05-27 08:00	2026-07-23 17:00		2026-05-27 08:00	2026-07-23 17:00	2026-05-27 08:00	2026-07-23 17:00	2026-05-27 08:00	2026-07-23 17:00	2026-05-27 08:00	2026-07-23 17:00		PT_Normal					TGEfT2FB50yjhe8+xhzdFw				Y	0	0			2026-09-20 13:13	2026-09-20 13:14	NotPrmUser	NotPrmUser		
+%R	103377	4635	26735	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1360	Network & cybersecurity infrastructure		0	0	200	0	0	0	200	0	0	0				2026-03-10 08:00	2026-04-13 17:00		2026-03-10 08:00	2026-04-13 17:00	2026-03-10 08:00	2026-04-13 17:00	2026-03-10 08:00	2026-04-13 17:00	2026-03-10 08:00	2026-04-13 17:00		PT_Normal					ZFz7GjpFwEG42cRr8eHtBA				Y	0	0			2026-09-20 13:13	2026-09-20 13:14	NotPrmUser	NotPrmUser		
+%R	103378	4635	26737	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1370	Interior finishes		160	0	400	0	0	0	400	0	0	0				2026-04-07 08:00	2026-06-16 17:00		2026-03-10 08:00	2026-05-18 17:00	2026-03-10 08:00	2026-05-18 17:00	2026-03-10 08:00	2026-05-18 17:00	2026-04-07 08:00	2026-06-16 17:00		PT_Normal					kI0nPA5d90KF9q6u/i81+g				N	0	0			2026-09-20 13:14	2026-09-20 13:14	NotPrmUser	NotPrmUser		
+%R	103379	4635	26738	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1380	Medical equipment installation		160	0	240	0	0	0	240	0	0	0				2026-06-17 08:00	2026-07-30 17:00		2026-05-19 08:00	2026-07-01 17:00	2026-05-19 08:00	2026-07-01 17:00	2026-05-19 08:00	2026-07-01 17:00	2026-06-17 08:00	2026-07-30 17:00		PT_Normal					kVOsoRY53ECtMjthgJ1GjA				N	0	0			2026-09-20 13:14	2026-09-20 13:15	NotPrmUser	NotPrmUser		
+%R	103380	4635	26739	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1390	Furniture & fixtures procurement/install		160	80	160	0	0	0	160	0	0	0				2026-07-31 08:00	2026-08-27 17:00		2026-07-02 08:00	2026-07-30 17:00	2026-07-02 08:00	2026-07-30 17:00	2026-07-02 08:00	2026-07-30 17:00	2026-07-31 08:00	2026-08-27 17:00		PT_Normal					QGYOkDoVpUOm/T+CzoJo5Q				N	0	0			2026-09-20 13:14	2026-09-20 13:15	NotPrmUser	NotPrmUser		
+%R	103381	4635	26741	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1400	MEP systems testing		760	0	120	0	0	0	120	0	0	0				2026-07-24 08:00	2026-08-13 17:00		2026-03-10 08:00	2026-03-30 17:00	2026-03-10 08:00	2026-03-30 17:00	2026-03-10 08:00	2026-03-30 17:00	2026-07-24 08:00	2026-08-13 17:00		PT_Normal					iPYKg4QGakapA8ma2Op/zg				N	0	0			2026-09-20 13:15	2026-09-20 13:15	NotPrmUser	NotPrmUser		
+%R	103382	4635	26742	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1410	Smart-systems testing & validation		0	0	120	0	0	0	120	0	0	0				2026-07-24 08:00	2026-08-13 17:00		2026-07-24 08:00	2026-08-13 17:00	2026-07-24 08:00	2026-08-13 17:00	2026-07-24 08:00	2026-08-13 17:00	2026-07-24 08:00	2026-08-13 17:00		PT_Normal					+9J8wxl7wE26vRnA+3ZLFw				Y	0	0			2026-09-20 13:15	2026-09-20 13:15	NotPrmUser	NotPrmUser		
+%R	103383	4635	26743	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1420	Fire & life safety testing		760	680	80	0	0	0	80	0	0	0				2026-08-14 08:00	2026-08-27 17:00		2026-03-31 08:00	2026-04-13 17:00	2026-03-31 08:00	2026-04-13 17:00	2026-03-31 08:00	2026-04-13 17:00	2026-08-14 08:00	2026-08-27 17:00		PT_Normal					YODRAY+WcEa9Pezt7owLIg				N	0	0			2026-09-20 13:15	2026-09-20 13:15	NotPrmUser	NotPrmUser		
+%R	103384	4635	26745	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1430	Regulatory inspection		80	80	80	0	0	0	80	0	0	0				2026-08-28 08:00	2026-09-11 17:00		2026-08-14 08:00	2026-08-27 17:00	2026-08-14 08:00	2026-08-27 17:00	2026-08-14 08:00	2026-08-27 17:00	2026-08-28 08:00	2026-09-11 17:00		PT_Normal					lIpRCewFvUmx/xuvse2pMQ				N	0	0			2026-09-20 13:15	2026-09-20 13:16	NotPrmUser	NotPrmUser		
+%R	103385	4635	26746	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1440	Staff training		0	0	160	0	0	0	160	0	0	0				2026-08-14 08:00	2026-09-11 17:00		2026-08-14 08:00	2026-09-11 17:00	2026-08-14 08:00	2026-09-11 17:00	2026-08-14 08:00	2026-09-11 17:00	2026-08-14 08:00	2026-09-11 17:00		PT_Normal					Z/mf1hYb8ESnoPkSP9Q39g				Y	0	0			2026-09-20 13:16	2026-09-20 13:16	NotPrmUser	NotPrmUser		
+%R	103386	4635	26747	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1450	Facility handover & closeout		0	0	80	0	0	0	80	0	0	0				2026-09-14 08:00	2026-09-25 17:00		2026-09-14 08:00	2026-09-25 17:00	2026-09-14 08:00	2026-09-25 17:00	2026-09-14 08:00	2026-09-25 17:00	2026-09-14 08:00	2026-09-25 17:00		PT_Normal					KDdfbdL1VkyJ52xQXFPlpw				Y	0	0			2026-09-20 13:16	2026-09-20 14:11	NotPrmUser	NotPrmUser		
+%T	TASKPRED
+%F	task_pred_id	task_id	pred_task_id	proj_id	pred_proj_id	pred_type	lag_hr_cnt	comments	float_path	aref	arls
+%R	42510	103342	103341	4635	4635	PR_SS	0			2025-01-02 08:00	2024-12-25 08:00
+%R	42511	103343	103341	4635	4635	PR_SS	0			2025-01-02 08:00	2026-09-14 08:00
+%R	42513	103345	103341	4635	4635	PR_SS	0			2025-01-02 08:00	2026-09-16 08:00
+%R	42515	103347	103341	4635	4635	PR_SS	0			2025-01-02 08:00	2025-05-27 08:00
+%R	42516	103348	103347	4635	4635	PR_FS	0			2025-01-08 17:00	2025-06-10 08:00
+%R	42517	103349	103341	4635	4635	PR_FS	0			2025-01-08 17:00	2025-01-09 08:00
+%R	42518	103350	103349	4635	4635	PR_FS	0			2025-02-06 17:00	2025-02-07 08:00
+%R	42519	103351	103350	4635	4635	PR_FS	0			2025-03-14 17:00	2025-03-17 08:00
+%R	42520	103352	103350	4635	4635	PR_FS	0			2025-03-14 17:00	2025-07-17 08:00
+%R	42521	103353	103350	4635	4635	PR_FS	0			2025-03-14 17:00	2025-11-25 08:00
+%R	42522	103354	103351	4635	4635	PR_FS	0			2025-04-25 17:00	2026-05-27 08:00
+%R	42523	103355	103349	4635	4635	PR_FS	0			2025-02-06 17:00	2026-06-10 08:00
+%R	42524	103356	103355	4635	4635	PR_FS	0			2025-02-21 17:00	2026-06-25 08:00
+%R	42525	103357	103351	4635	4635	PR_FS	0			2025-04-25 17:00	2025-04-28 08:00
+%R	42526	103358	103357	4635	4635	PR_FS	0			2025-05-09 17:00	2025-05-12 08:00
+%R	42527	103359	103356	4635	4635	PR_FS	0			2025-04-04 17:00	2026-08-07 08:00
+%R	42528	103360	103358	4635	4635	PR_FS	0			2025-06-24 17:00	2025-06-25 08:00
+%R	42529	103361	103360	4635	4635	PR_FS	0			2025-07-16 17:00	2025-07-17 08:00
+%R	42530	103362	103361	4635	4635	PR_FS	0			2025-07-30 17:00	2025-07-31 08:00
+%R	42531	103363	103361	4635	4635	PR_SS	40			2025-07-23 17:00	2025-11-10 08:00
+%R	42532	103364	103362	4635	4635	PR_FS	0			2025-08-20 17:00	2025-09-19 08:00
+%R	42533	103365	103362	4635	4635	PR_FS	0			2025-08-20 17:00	2025-09-19 08:00
+%R	42534	103366	103362	4635	4635	PR_FS	0			2025-08-20 17:00	2025-09-19 08:00
+%R	42535	103367	103362	4635	4635	PR_FS	0			2025-08-20 17:00	2025-08-21 08:00
+%R	42536	103368	103367	4635	4635	PR_FS	0			2025-11-17 17:00	2025-11-18 08:00
+%R	42537	103369	103367	4635	4635	PR_FS	0			2025-11-17 17:00	2026-03-10 08:00
+%R	42538	103370	103368	4635	4635	PR_FS	0			2025-12-31 17:00	2026-02-02 08:00
+%R	42539	103371	103368	4635	4635	PR_FS	0			2025-12-31 17:00	2026-01-02 08:00
+%R	42540	103372	103368	4635	4635	PR_FS	0			2025-12-31 17:00	2026-02-09 08:00
+%R	42541	103373	103368	4635	4635	PR_FS	0			2025-12-31 17:00	2026-02-24 08:00
+%R	42542	103374	103377	4635	4635	PR_FS	0			2026-04-13 17:00	2026-04-14 08:00
+%R	42543	103375	103377	4635	4635	PR_FS	0			2026-04-13 17:00	2026-06-10 08:00
+%R	42544	103376	103374	4635	4635	PR_FS	0			2026-05-26 17:00	2026-05-27 08:00
+%R	42545	103376	103377	4635	4635	PR_FS	0			2026-04-13 17:00	2026-05-27 08:00
+%R	42546	103377	103371	4635	4635	PR_FS	0			2026-03-09 17:00	2026-03-10 08:00
+%R	42547	103378	103370	4635	4635	PR_FS	0			2026-03-09 17:00	2026-04-07 08:00
+%R	42548	103378	103371	4635	4635	PR_FS	0			2026-03-09 17:00	2026-04-07 08:00
+%R	42549	103378	103372	4635	4635	PR_FS	0			2026-03-02 17:00	2026-04-07 08:00
+%R	42550	103378	103373	4635	4635	PR_FS	0			2026-02-13 17:00	2026-04-07 08:00
+%R	42551	103379	103378	4635	4635	PR_FS	0			2026-05-18 17:00	2026-06-17 08:00
+%R	42552	103380	103379	4635	4635	PR_FS	0			2026-07-01 17:00	2026-07-31 08:00
+%R	42554	103381	103370	4635	4635	PR_FS	0			2026-03-09 17:00	2026-07-24 08:00
+%R	42555	103381	103371	4635	4635	PR_FS	0			2026-03-09 17:00	2026-07-24 08:00
+%R	42556	103381	103372	4635	4635	PR_FS	0			2026-03-02 17:00	2026-07-24 08:00
+%R	42557	103381	103373	4635	4635	PR_FS	0			2026-02-13 17:00	2026-07-24 08:00
+%R	42558	103382	103374	4635	4635	PR_FS	0			2026-05-26 17:00	2026-07-24 08:00
+%R	42559	103382	103375	4635	4635	PR_FS	0			2026-05-26 17:00	2026-07-24 08:00
+%R	42560	103382	103376	4635	4635	PR_FS	0			2026-07-23 17:00	2026-07-24 08:00
+%R	42561	103382	103377	4635	4635	PR_FS	0			2026-04-13 17:00	2026-07-24 08:00
+%R	42562	103383	103373	4635	4635	PR_FS	0			2026-02-13 17:00	2026-08-14 08:00
+%R	42563	103383	103381	4635	4635	PR_FS	0			2026-03-30 17:00	2026-08-14 08:00
+%R	42564	103384	103380	4635	4635	PR_FS	0			2026-07-30 17:00	2026-08-28 08:00
+%R	42565	103384	103381	4635	4635	PR_FS	0			2026-03-30 17:00	2026-08-28 08:00
+%R	42566	103384	103382	4635	4635	PR_FS	0			2026-08-13 17:00	2026-08-28 08:00
+%R	42567	103384	103383	4635	4635	PR_FS	0			2026-04-13 17:00	2026-08-28 08:00
+%R	42568	103385	103382	4635	4635	PR_FS	0			2026-08-13 17:00	2026-08-14 08:00
+%R	42569	103386	103384	4635	4635	PR_FS	0			2026-08-27 17:00	2026-09-14 08:00
+%R	42570	103386	103385	4635	4635	PR_FS	0			2026-09-11 17:00	2026-09-14 08:00
+%R	42571	103386	103342	4635	4635	PR_FF	0			2026-09-14 08:00	2026-09-25 17:00
+%R	42572	103386	103344	4635	4635	PR_FF	0			2026-09-14 08:00	2026-09-25 17:00
+%R	42573	103386	103346	4635	4635	PR_FF	0			2026-09-14 08:00	2026-09-25 17:00
+%R	42574	103378	103369	4635	4635	PR_FS	0			2025-12-16 17:00	2026-04-07 08:00
+%R	42575	103368	103364	4635	4635	PR_FS	0			2025-10-17 17:00	2025-11-18 08:00
+%R	42576	103369	103364	4635	4635	PR_FS	0			2025-10-17 17:00	2026-03-10 08:00
+%R	42577	103368	103365	4635	4635	PR_FS	0			2025-10-17 17:00	2025-11-18 08:00
+%R	42578	103369	103365	4635	4635	PR_FS	0			2025-10-17 17:00	2026-03-10 08:00
+%R	42579	103368	103366	4635	4635	PR_FS	0			2025-10-17 17:00	2025-11-18 08:00
+%R	42580	103369	103366	4635	4635	PR_FS	0			2025-10-17 17:00	2026-03-10 08:00
+%R	42581	103364	103352	4635	4635	PR_FS	0			2025-04-18 17:00	2025-09-19 08:00
+%R	42582	103365	103352	4635	4635	PR_FS	0			2025-04-18 17:00	2025-09-19 08:00
+%R	42583	103366	103352	4635	4635	PR_FS	0			2025-04-18 17:00	2025-09-19 08:00
+%R	42584	103367	103352	4635	4635	PR_FS	0			2025-04-18 17:00	2025-08-21 08:00
+%R	42585	103370	103353	4635	4635	PR_FS	0			2025-04-18 17:00	2026-02-02 08:00
+%R	42586	103371	103353	4635	4635	PR_FS	0			2025-04-18 17:00	2026-01-02 08:00
+%R	42587	103372	103353	4635	4635	PR_FS	0			2025-04-18 17:00	2026-02-09 08:00
+%R	42588	103373	103353	4635	4635	PR_FS	0			2025-04-18 17:00	2026-02-24 08:00
+%R	42589	103379	103354	4635	4635	PR_FS	0			2025-05-16 17:00	2026-06-17 08:00
+%R	42590	103384	103359	4635	4635	PR_FS	0			2025-04-25 17:00	2026-08-28 08:00
+%R	42591	103370	103363	4635	4635	PR_FS	0			2025-08-20 17:00	2026-02-02 08:00
+%R	42592	103371	103363	4635	4635	PR_FS	0			2025-08-20 17:00	2026-01-02 08:00
+%R	42593	103360	103348	4635	4635	PR_FS	0			2025-01-23 17:00	2025-06-25 08:00
+%R	42594	103344	103343	4635	4635	PR_FS	0			2025-01-08 17:00	2026-09-25 17:00
+%R	42595	103346	103345	4635	4635	PR_FS	0			2025-01-06 17:00	2026-09-25 17:00
+%E

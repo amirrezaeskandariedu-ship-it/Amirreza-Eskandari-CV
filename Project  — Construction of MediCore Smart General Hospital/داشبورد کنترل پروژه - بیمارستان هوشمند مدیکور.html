@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>داشبورد کنترل پروژه — MediCore Smart General Hospital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --p:#2563eb; --p2:#1d4ed8; --s:#0891b2; --amber:#d97706; --red:#dc2626; --green:#16a34a;
+  --bg:#f4f6fb; --bg2:#ffffff; --card:#ffffff; --ink:#0f172a; --ink2:#475569; --ink3:#94a3b8;
+  --border:#e2e8f0; --sidebar:#0b1220; --sidebar2:#131c2e; --sidebar-ink:#c9d3e6;
+  font-family:'Vazirmatn',system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b1220; --bg2:#111a2c; --card:#131c2e; --ink:#e7edf7; --ink2:#a9b6cc; --ink3:#6b7994;
+    --border:#233047; --sidebar:#070c17; --sidebar2:#0e1526; --sidebar-ink:#c9d3e6;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b1220; --bg2:#111a2c; --card:#131c2e; --ink:#e7edf7; --ink2:#a9b6cc; --ink3:#6b7994;
+  --border:#233047; --sidebar:#070c17; --sidebar2:#0e1526; --sidebar-ink:#c9d3e6;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);height:100%;}
+body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);}
+.layout{display:flex;min-height:100vh;}
+.sidebar{
+  width:260px;flex:0 0 260px;background:linear-gradient(180deg,var(--sidebar),var(--sidebar2));
+  color:var(--sidebar-ink);padding:18px 12px;position:sticky;top:0;height:100vh;overflow-y:auto;
+  padding-top:calc(18px + env(safe-area-inset-top,0px));
+}
+.brand{padding:8px 10px 18px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:12px;}
+.brand .t1{font-size:13px;color:#8fa2c7;font-weight:600;}
+.brand .t2{font-size:16px;font-weight:800;color:#fff;margin-top:4px;line-height:1.4;}
+.navitem{
+  display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;cursor:pointer;
+  font-size:13.5px;font-weight:600;color:#aab8d4;margin-bottom:3px;transition:.15s;
+}
+.navitem .num{
+  width:24px;height:24px;border-radius:7px;background:rgba(255,255,255,.06);display:flex;
+  align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#7d8db3;flex:0 0 24px;
+}
+.navitem:hover{background:rgba(255,255,255,.06);color:#fff;}
+.navitem.active{background:linear-gradient(90deg,var(--p),var(--p2));color:#fff;}
+.navitem.active .num{background:rgba(255,255,255,.2);color:#fff;}
+.main{flex:1;min-width:0;padding:22px 26px 60px;max-width:100%;}
+.topbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
+.topbar h1{font-size:20px;margin:0;font-weight:800;}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:700;}
+.badge.blue{background:#dbeafe;color:#1e40af;}
+.badge.amber{background:#fef3c7;color:#92400e;}
+.badge.red{background:#fee2e2;color:#991b1b;}
+.badge.green{background:#dcfce7;color:#166534;}
+:root[data-theme="dark"] .badge.blue,:root:not([data-theme="light"]) .badge.blue{background:#1e3a5f;color:#93c5fd;}
+:root[data-theme="dark"] .badge.amber,:root:not([data-theme="light"]) .badge.amber{background:#4a3607;color:#fcd34d;}
+:root[data-theme="dark"] .badge.red,:root:not([data-theme="light"]) .badge.red{background:#4c1d1d;color:#fca5a5;}
+:root[data-theme="dark"] .badge.green,:root:not([data-theme="light"]) .badge.green{background:#12331f;color:#86efac;}
+.section{display:none;}
+.section.active{display:block;animation:fade .25s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+.grid{display:grid;gap:14px;}
+.cols-4{grid-template-columns:repeat(4,1fr);}
+.cols-3{grid-template-columns:repeat(3,1fr);}
+.cols-2{grid-template-columns:repeat(2,1fr);}
+@media(max-width:1000px){.cols-4{grid-template-columns:repeat(2,1fr);}.cols-3{grid-template-columns:repeat(2,1fr);}.cols-2{grid-template-columns:1fr;}}
+@media(max-width:640px){.cols-4,.cols-3{grid-template-columns:1fr;}.layout{flex-direction:column;}.sidebar{width:100%;flex:none;height:auto;position:relative;}.main{padding:16px;}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;}
+.kpi .label{font-size:12px;color:var(--ink2);font-weight:600;margin-bottom:6px;}
+.kpi .value{font-size:26px;font-weight:800;}
+.kpi .sub{font-size:11.5px;color:var(--ink3);margin-top:4px;}
+.section h2{font-size:17px;font-weight:800;margin:26px 0 12px;padding-right:10px;border-right:4px solid var(--p);}
+.section h2:first-child{margin-top:0;}
+table{width:100%;border-collapse:collapse;font-size:12.5px;}
+th,td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--border);}
+th{background:var(--bg);color:var(--ink2);font-weight:700;font-size:11.5px;position:sticky;top:0;}
+tr:hover td{background:rgba(37,99,235,.04);}
+.twrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;}
+.chart-wrap{position:relative;height:260px;}
+.pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-left:6px;}
+.progress{background:var(--border);border-radius:999px;height:8px;overflow:hidden;}
+.progress > div{height:100%;border-radius:999px;}
+.flex{display:flex;align-items:center;gap:8px;}
+.muted{color:var(--ink2);font-size:12.5px;}
+.small{font-size:11.5px;}
+.risk-cell{width:36px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:11px;}
+ul.plain{margin:8px 0;padding-right:18px;}
+ul.plain li{margin-bottom:6px;font-size:13px;line-height:1.7;}
+.two-col{display:grid;grid-template-columns:2fr 1fr;gap:14px;}
+@media(max-width:900px){.two-col{grid-template-columns:1fr;}}
+.footer-note{margin-top:30px;padding-top:14px;border-top:1px solid var(--border);color:var(--ink3);font-size:11.5px;}
+</style>
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="sidebar"></nav>
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <h1>داشبورد مدیریت و کنترل پروژه</h1>
+        <div class="muted" style="margin-top:4px">MediCore Smart General Hospital — ساخت بیمارستان عمومی هوشمند ۲۰۰ تخته</div>
+      </div>
+      <div class="flex">
+        <span class="badge blue" id="dataDateBadge">Data Date: —</span>
+        <span class="badge" id="statusBadge">وضعیت</span>
+      </div>
+    </div>
+    <div id="sections"></div>
+    <div class="footer-note">تهیه‌شده توسط امیررضا اسکندری — داده‌ها مستقیماً از فایل Primavera P6 (.xer) استخراج شده‌اند.</div>
+  </main>
+</div>
+<script>const DATA = {"meta": {"plan_start": "2025-01-01", "data_date": "2025-10-31", "finish_forecast": "2026-10-09", "baseline_finish": "2026-09-25"}, "activities": [{"id": "103387", "code": "A0999", "name": "Project Kickoff / Charter Approved", "type": "TT_Mile", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-01-02", "target_end": "2025-01-02", "act_start": "2025-01-02", "act_end": "2025-01-02", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 0.0, "remain_dur_d": 0.0, "budget": 0.0, "actual": 0.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Project Management", "Planning & Scheduling"], "wbs1": "Project Management", "resources": []}, {"id": "103341", "code": "A1000", "name": "Develop schedule baseline", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-01-02", "target_end": "2025-01-08", "act_start": "2025-01-02", "act_end": "2025-01-08", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 5.0, "remain_dur_d": 0.0, "budget": 6000.0, "actual": 6000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Project Management", "Planning & Scheduling"], "wbs1": "Project Management", "resources": ["L-PM"]}, {"id": "103342", "code": "A1010", "name": "Ongoing schedule updates", "type": "TT_LOE", "status": "TK_Active", "phys": 48.0, "tf_days": 0.0, "target_start": "2025-01-02", "target_end": "2026-09-25", "act_start": "2025-01-02", "act_end": null, "early_start": "2025-10-31", "early_end": "2026-10-09", "target_dur_d": 435.0, "remain_dur_d": 236.0, "budget": 522000.0, "actual": 238800.0, "remain": 283200.0, "wbs_path": ["Hospital construction building", "Project Management", "Planning & Scheduling"], "wbs1": "Project Management", "resources": ["L-PM"]}, {"id": "103343", "code": "A1020", "name": "Develop cost baseline", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-01-02", "target_end": "2025-01-08", "act_start": "2025-01-02", "act_end": "2025-01-08", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 5.0, "remain_dur_d": 0.0, "budget": 6000.0, "actual": 6000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Project Management", "Cost Control & Reporting"], "wbs1": "Project Management", "resources": ["L-PM"]}, {"id": "103388", "code": "A1025", "name": "Cost Baseline Variance Review & Sponsor Decision", "type": "TT_FinMile", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-01-08", "target_end": "2025-01-08", "act_start": "2025-01-08", "act_end": "2025-01-08", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 0.0, "remain_dur_d": 0.0, "budget": 0.0, "actual": 0.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Project Management", "Cost Control & Reporting"], "wbs1": "Project Management", "resources": []}, {"id": "103344", "code": "A1030", "name": "Ongoing cost control & reporting", "type": "TT_LOE", "status": "TK_Active", "phys": 47.0, "tf_days": 0.0, "target_start": "2025-01-09", "target_end": "2026-09-25", "act_start": "2025-01-08", "act_end": null, "early_start": "2025-10-31", "early_end": "2026-10-09", "target_dur_d": 430.0, "remain_dur_d": 236.0, "budget": 516000.0, "actual": 232800.0, "remain": 283200.0, "wbs_path": ["Hospital construction building", "Project Management", "Cost Control & Reporting"], "wbs1": "Project Management", "resources": ["L-PM"]}, {"id": "103345", "code": "A1040", "name": "Develop risk register", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-01-02", "target_end": "2025-01-06", "act_start": "2025-01-02", "act_end": "2025-01-06", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 3.0, "remain_dur_d": 0.0, "budget": 3600.0, "actual": 3600.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Project Management", "Risk Management"], "wbs1": "Project Management", "resources": ["L-PM"]}, {"id": "103346", "code": "A1050", "name": "Ongoing risk monitoring", "type": "TT_LOE", "status": "TK_Active", "phys": 48.0, "tf_days": 0.0, "target_start": "2025-01-07", "target_end": "2026-09-25", "act_start": "2025-01-06", "act_end": null, "early_start": "2025-10-31", "early_end": "2026-10-09", "target_dur_d": 432.0, "remain_dur_d": 236.0, "budget": 518400.0, "actual": 235200.0, "remain": 283200.0, "wbs_path": ["Hospital construction building", "Project Management", "Risk Management"], "wbs1": "Project Management", "resources": ["L-PM"]}, {"id": "103347", "code": "A1060", "name": "Draft contract templates", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-01-02", "target_end": "2025-01-08", "act_start": "2025-01-02", "act_end": "2025-01-08", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 5.0, "remain_dur_d": 0.0, "budget": 4500.0, "actual": 4500.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Project Management", "Contract Administration"], "wbs1": "Project Management", "resources": ["L-ADMIN"]}, {"id": "103348", "code": "A1070", "name": "Contract negotiation & award", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-01-09", "target_end": "2025-01-23", "act_start": "2025-01-09", "act_end": "2025-01-23", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 10.0, "remain_dur_d": 0.0, "budget": 21000.0, "actual": 21000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Project Management", "Contract Administration"], "wbs1": "Project Management", "resources": ["L-ADMIN", "L-PM"]}, {"id": "103349", "code": "A1080", "name": "Conceptual design", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-01-09", "target_end": "2025-02-06", "act_start": "2025-01-09", "act_end": "2025-02-06", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 20.0, "remain_dur_d": 0.0, "budget": 70000.0, "actual": 70000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Design", "Architectural Design", "Conceptual Design"], "wbs1": "Design", "resources": ["L-ARCH"]}, {"id": "103350", "code": "A1090", "name": "Schematic design", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-02-07", "target_end": "2025-03-14", "act_start": "2025-02-07", "act_end": "2025-03-14", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 25.0, "remain_dur_d": 0.0, "budget": 87500.0, "actual": 87500.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Design", "Architectural Design", "Schematic Design"], "wbs1": "Design", "resources": ["L-ARCH"]}, {"id": "103351", "code": "A1100", "name": "Detailed design", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-03-17", "target_end": "2025-04-25", "act_start": "2025-03-17", "act_end": "2025-04-25", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 30.0, "remain_dur_d": 0.0, "budget": 105000.0, "actual": 105000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Design", "Architectural Design", "Detailed Design"], "wbs1": "Design", "resources": ["L-ARCH"]}, {"id": "103389", "code": "A1105", "name": "Design Complete (Detailed Design Approved)", "type": "TT_FinMile", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-04-25", "target_end": "2025-04-25", "act_start": "2025-04-25", "act_end": "2025-04-25", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 0.0, "remain_dur_d": 0.0, "budget": 0.0, "actual": 0.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Design", "Architectural Design", "Detailed Design"], "wbs1": "Design", "resources": []}, {"id": "103352", "code": "A1110", "name": "Structural design", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-03-17", "target_end": "2025-04-18", "act_start": "2025-03-17", "act_end": "2025-04-18", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 25.0, "remain_dur_d": 0.0, "budget": 75000.0, "actual": 75000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Design", "Structural Design"], "wbs1": "Design", "resources": ["L-STR-ENG"]}, {"id": "103353", "code": "A1120", "name": "MEP design", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-03-17", "target_end": "2025-04-18", "act_start": "2025-03-17", "act_end": "2025-04-18", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 25.0, "remain_dur_d": 0.0, "budget": 75000.0, "actual": 75000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Design", "MEP Design"], "wbs1": "Design", "resources": ["L-STR-ENG"]}, {"id": "103354", "code": "A1130", "name": "Medical equipment planning", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-04-28", "target_end": "2025-05-16", "act_start": "2025-04-28", "act_end": "2025-05-16", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 15.0, "remain_dur_d": 0.0, "budget": 45000.0, "actual": 45000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Design", "Medical Equipment Planning"], "wbs1": "Design", "resources": ["L-STR-ENG"]}, {"id": "103355", "code": "A1140", "name": "Prepare Certificate of Need application", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-02-07", "target_end": "2025-02-21", "act_start": "2025-02-07", "act_end": "2025-02-21", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 10.0, "remain_dur_d": 0.0, "budget": 9000.0, "actual": 9000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Permits & Regulatory Approval", "Certificate of Need"], "wbs1": "Permits & Regulatory Approval", "resources": ["L-ADMIN"]}, {"id": "103356", "code": "A1150", "name": "Certificate of Need approval (wait)", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-02-24", "target_end": "2025-04-04", "act_start": "2025-02-24", "act_end": "2025-04-04", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 30.0, "remain_dur_d": 0.0, "budget": 27000.0, "actual": 27000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Permits & Regulatory Approval", "Certificate of Need"], "wbs1": "Permits & Regulatory Approval", "resources": ["L-ADMIN"]}, {"id": "103357", "code": "A1160", "name": "Submit building permit application", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-04-28", "target_end": "2025-05-09", "act_start": "2025-04-28", "act_end": "2025-05-09", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 10.0, "remain_dur_d": 0.0, "budget": 9000.0, "actual": 9000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Permits & Regulatory Approval", "Building Permits"], "wbs1": "Permits & Regulatory Approval", "resources": ["L-ADMIN"]}, {"id": "103358", "code": "A1170", "name": "Building permit approval (wait)", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-05-12", "target_end": "2025-06-24", "act_start": "2025-05-12", "act_end": "2025-06-24", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 30.0, "remain_dur_d": 0.0, "budget": 27000.0, "actual": 27000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Permits & Regulatory Approval", "Building Permits"], "wbs1": "Permits & Regulatory Approval", "resources": ["L-ADMIN"]}, {"id": "103390", "code": "A1175", "name": "Notice to Proceed \u2014 Construction Authorized", "type": "TT_FinMile", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-06-24", "target_end": "2025-06-24", "act_start": "2025-06-24", "act_end": "2025-06-24", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 0.0, "remain_dur_d": 0.0, "budget": 0.0, "actual": 0.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Permits & Regulatory Approval", "Building Permits"], "wbs1": "Permits & Regulatory Approval", "resources": []}, {"id": "103359", "code": "A1180", "name": "Healthcare facility licensing application", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-04-07", "target_end": "2025-04-25", "act_start": "2025-04-07", "act_end": "2025-04-25", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 15.0, "remain_dur_d": 0.0, "budget": 13500.0, "actual": 13500.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Permits & Regulatory Approval", "Healthcare Facility Licensing"], "wbs1": "Permits & Regulatory Approval", "resources": ["L-ADMIN"]}, {"id": "103360", "code": "A1190", "name": "Site clearing & grading", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-06-25", "target_end": "2025-07-16", "act_start": "2025-06-25", "act_end": "2025-07-16", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 15.0, "remain_dur_d": 0.0, "budget": 147000.0, "actual": 147000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Site Preparation & Civil Works", "Site Clearing & Grading"], "wbs1": "Site Preparation & Civil Works", "resources": ["E-EXCAV", "L-STR-CREW"]}, {"id": "103361", "code": "A1200", "name": "Foundation excavation", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-07-17", "target_end": "2025-07-30", "act_start": "2025-07-17", "act_end": "2025-07-30", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 10.0, "remain_dur_d": 0.0, "budget": 18000.0, "actual": 18000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Site Preparation & Civil Works", "Foundation Work"], "wbs1": "Site Preparation & Civil Works", "resources": ["E-EXCAV"]}, {"id": "103362", "code": "A1210", "name": "Foundation concrete pour", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-07-31", "target_end": "2025-08-20", "act_start": "2025-07-31", "act_end": "2025-08-20", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 15.0, "remain_dur_d": 0.0, "budget": 5956500.0, "actual": 5956500.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Site Preparation & Civil Works", "Foundation Work"], "wbs1": "Site Preparation & Civil Works", "resources": ["E-CONC", "L-STR-CREW", "M-STRUCT"]}, {"id": "103391", "code": "A1215", "name": "Foundation Complete", "type": "TT_FinMile", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-08-20", "target_end": "2025-08-20", "act_start": "2025-08-20", "act_end": "2025-08-20", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 0.0, "remain_dur_d": 0.0, "budget": 0.0, "actual": 0.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Site Preparation & Civil Works", "Foundation Work"], "wbs1": "Site Preparation & Civil Works", "resources": []}, {"id": "103363", "code": "A1220", "name": "Utilities infrastructure installation", "type": "TT_Task", "status": "TK_Complete", "phys": 100.0, "tf_days": null, "target_start": "2025-07-24", "target_end": "2025-08-20", "act_start": "2025-07-24", "act_end": "2025-08-20", "early_start": "2025-10-31", "early_end": "2025-10-31", "target_dur_d": 20.0, "remain_dur_d": 0.0, "budget": 130000.0, "actual": 130000.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Site Preparation & Civil Works", "Utilities Infrastructure (water, power, sewage)"], "wbs1": "Site Preparation & Civil Works", "resources": ["L-MEP-CREW"]}, {"id": "103364", "code": "A1230", "name": "Superstructure \u2013 ED wing", "type": "TT_Task", "status": "TK_Active", "phys": 90.0, "tf_days": 17.0, "target_start": "2025-08-21", "target_end": "2025-10-17", "act_start": "2025-08-21", "act_end": null, "early_start": "2025-10-31", "early_end": "2025-11-05", "target_dur_d": 40.0, "remain_dur_d": 4.0, "budget": 15933500.0, "actual": 14340150.0, "remain": 1625350.0, "wbs_path": ["Hospital construction building", "Structural Construction", "Superstructure (per wing: ED, ICU, Surgical, Inpatient floors)"], "wbs1": "Structural Construction", "resources": ["E-CRANE", "L-STR-CREW", "M-STRUCT"]}, {"id": "103365", "code": "A1240", "name": "Superstructure \u2013 ICU wing", "type": "TT_Task", "status": "TK_Active", "phys": 90.0, "tf_days": 17.0, "target_start": "2025-08-21", "target_end": "2025-10-17", "act_start": "2025-08-21", "act_end": null, "early_start": "2025-10-31", "early_end": "2025-11-05", "target_dur_d": 40.0, "remain_dur_d": 4.0, "budget": 15933500.0, "actual": 15933500.0, "remain": 32000.0, "wbs_path": ["Hospital construction building", "Structural Construction", "Superstructure (per wing: ED, ICU, Surgical, Inpatient floors)"], "wbs1": "Structural Construction", "resources": ["E-CRANE-2", "L-STR-CREW-2", "M-STRUCT"]}, {"id": "103366", "code": "A1250", "name": "Superstructure \u2013 Surgical wing", "type": "TT_Task", "status": "TK_Active", "phys": 90.0, "tf_days": 17.0, "target_start": "2025-08-21", "target_end": "2025-10-17", "act_start": "2025-08-21", "act_end": null, "early_start": "2025-10-31", "early_end": "2025-11-05", "target_dur_d": 40.0, "remain_dur_d": 4.0, "budget": 15933500.0, "actual": 15933500.0, "remain": 32000.0, "wbs_path": ["Hospital construction building", "Structural Construction", "Superstructure (per wing: ED, ICU, Surgical, Inpatient floors)"], "wbs1": "Structural Construction", "resources": ["E-CRANE-3", "L-STR-CREW-3", "M-STRUCT"]}, {"id": "103367", "code": "A1260", "name": "Superstructure \u2013 Inpatient floors", "type": "TT_Task", "status": "TK_Active", "phys": 65.0, "tf_days": 0.0, "target_start": "2025-08-21", "target_end": "2025-11-17", "act_start": "2025-08-21", "act_end": null, "early_start": "2025-10-31", "early_end": "2025-12-02", "target_dur_d": 60.0, "remain_dur_d": 21.0, "budget": 23895500.0, "actual": 15532075.0, "remain": 8443425.0, "wbs_path": ["Hospital construction building", "Structural Construction", "Superstructure (per wing: ED, ICU, Surgical, Inpatient floors)"], "wbs1": "Structural Construction", "resources": ["E-CRANE-4", "L-STR-CREW-4", "M-STRUCT"]}, {"id": "103392", "code": "A1265", "name": "Structural Topping Out", "type": "TT_FinMile", "status": "TK_NotStart", "phys": 0.0, "tf_days": 0.0, "target_start": "2025-12-02", "target_end": "2025-12-02", "act_start": null, "act_end": null, "early_start": "2025-12-02", "early_end": "2025-12-02", "target_dur_d": 0.0, "remain_dur_d": 0.0, "budget": 0.0, "actual": 0.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Structural Construction", "Superstructure (per wing: ED, ICU, Surgical, Inpatient floors)"], "wbs1": "Structural Construction", "resources": []}, {"id": "103368", "code": "A1270", "name": "Building envelope \u2013 facade", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 0.0, "target_start": "2025-12-03", "target_end": "2026-01-15", "act_start": null, "act_end": null, "early_start": "2025-12-03", "early_end": "2026-01-15", "target_dur_d": 30.0, "remain_dur_d": 30.0, "budget": 11763000.0, "actual": 0.0, "remain": 11763000.0, "wbs_path": ["Hospital construction building", "Structural Construction", "Building Envelope (facade, roofing)"], "wbs1": "Structural Construction", "resources": ["L-FACADE-CREW", "M-STRUCT"]}, {"id": "103369", "code": "A1280", "name": "Building envelope \u2013 roofing", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 10.0, "target_start": "2025-12-03", "target_end": "2025-12-31", "act_start": null, "act_end": null, "early_start": "2025-12-03", "early_end": "2025-12-31", "target_dur_d": 20.0, "remain_dur_d": 20.0, "budget": 7842000.0, "actual": 0.0, "remain": 7842000.0, "wbs_path": ["Hospital construction building", "Structural Construction", "Building Envelope (facade, roofing)"], "wbs1": "Structural Construction", "resources": ["L-ROOF-CREW", "M-STRUCT"]}, {"id": "103393", "code": "A1285", "name": "Building Envelope / Dry-In Complete", "type": "TT_FinMile", "status": "TK_NotStart", "phys": 0.0, "tf_days": 0.0, "target_start": "2026-01-15", "target_end": "2026-01-15", "act_start": null, "act_end": null, "early_start": "2026-01-15", "early_end": "2026-01-15", "target_dur_d": 0.0, "remain_dur_d": 0.0, "budget": 0.0, "actual": 0.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Structural Construction", "Building Envelope (facade, roofing)"], "wbs1": "Structural Construction", "resources": []}, {"id": "103370", "code": "A1290", "name": "HVAC installation", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 20.0, "target_start": "2026-01-16", "target_end": "2026-03-23", "act_start": null, "act_end": null, "early_start": "2026-01-16", "early_end": "2026-03-23", "target_dur_d": 45.0, "remain_dur_d": 45.0, "budget": 17170500.0, "actual": 0.0, "remain": 17170500.0, "wbs_path": ["Hospital construction building", "MEP Installation", "HVAC Systems"], "wbs1": "MEP Installation", "resources": ["L-HVAC-CREW", "M-MEP"]}, {"id": "103371", "code": "A1300", "name": "Electrical installation", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 0.0, "target_start": "2026-01-16", "target_end": "2026-03-23", "act_start": null, "act_end": null, "early_start": "2026-01-16", "early_end": "2026-03-23", "target_dur_d": 45.0, "remain_dur_d": 45.0, "budget": 17170500.0, "actual": 0.0, "remain": 17170500.0, "wbs_path": ["Hospital construction building", "MEP Installation", "Electrical Systems"], "wbs1": "MEP Installation", "resources": ["L-ELEC-CREW", "M-MEP"]}, {"id": "103372", "code": "A1310", "name": "Plumbing & medical gas systems", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 25.0, "target_start": "2026-01-16", "target_end": "2026-03-16", "act_start": null, "act_end": null, "early_start": "2026-01-16", "early_end": "2026-03-16", "target_dur_d": 40.0, "remain_dur_d": 40.0, "budget": 15260000.0, "actual": 0.0, "remain": 15260000.0, "wbs_path": ["Hospital construction building", "MEP Installation", "Plumbing & Medical Gas Systems"], "wbs1": "MEP Installation", "resources": ["L-PLUMB-CREW", "M-MEP"]}, {"id": "103373", "code": "A1320", "name": "Fire protection systems", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 35.0, "target_start": "2026-01-16", "target_end": "2026-03-02", "act_start": null, "act_end": null, "early_start": "2026-01-16", "early_end": "2026-03-02", "target_dur_d": 30.0, "remain_dur_d": 30.0, "budget": 11445000.0, "actual": 0.0, "remain": 11445000.0, "wbs_path": ["Hospital construction building", "MEP Installation", "Fire Protection Systems"], "wbs1": "MEP Installation", "resources": ["L-FIRE-CREW", "M-MEP"]}, {"id": "103394", "code": "A1325", "name": "MEP Rough-In Complete", "type": "TT_FinMile", "status": "TK_NotStart", "phys": 0.0, "tf_days": 20.0, "target_start": "2026-03-23", "target_end": "2026-03-23", "act_start": null, "act_end": null, "early_start": "2026-03-23", "early_end": "2026-03-23", "target_dur_d": 0.0, "remain_dur_d": 0.0, "budget": 0.0, "actual": 0.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "MEP Installation", "Fire Protection Systems"], "wbs1": "MEP Installation", "resources": []}, {"id": "103374", "code": "A1330", "name": "IoT patient monitoring installation", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 0.0, "target_start": "2026-04-28", "target_end": "2026-06-09", "act_start": null, "act_end": null, "early_start": "2026-04-28", "early_end": "2026-06-09", "target_dur_d": 30.0, "remain_dur_d": 30.0, "budget": 5550000.0, "actual": 0.0, "remain": 5550000.0, "wbs_path": ["Hospital construction building", "Smart-Systems Integration", "IoT Patient Monitoring Infrastructure"], "wbs1": "Smart-Systems Integration", "resources": ["L-IOT-CREW", "M-SMART"]}, {"id": "103375", "code": "A1340", "name": "BMS installation", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 40.0, "target_start": "2026-04-28", "target_end": "2026-06-09", "act_start": null, "act_end": null, "early_start": "2026-04-28", "early_end": "2026-06-09", "target_dur_d": 30.0, "remain_dur_d": 30.0, "budget": 5550000.0, "actual": 0.0, "remain": 5550000.0, "wbs_path": ["Hospital construction building", "Smart-Systems Integration", "Building Management System (BMS)"], "wbs1": "Smart-Systems Integration", "resources": ["L-BMS-CREW", "M-SMART"]}, {"id": "103376", "code": "A1350", "name": "EMR system integration", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 0.0, "target_start": "2026-06-10", "target_end": "2026-08-06", "act_start": null, "act_end": null, "early_start": "2026-06-10", "early_end": "2026-08-06", "target_dur_d": 40.0, "remain_dur_d": 40.0, "budget": 7400000.0, "actual": 0.0, "remain": 7400000.0, "wbs_path": ["Hospital construction building", "Smart-Systems Integration", "EMR System Integration"], "wbs1": "Smart-Systems Integration", "resources": ["L-IT-CREW", "M-SMART"]}, {"id": "103377", "code": "A1360", "name": "Network & cybersecurity infrastructure", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 0.0, "target_start": "2026-03-24", "target_end": "2026-04-27", "act_start": null, "act_end": null, "early_start": "2026-03-24", "early_end": "2026-04-27", "target_dur_d": 25.0, "remain_dur_d": 25.0, "budget": 4625000.0, "actual": 0.0, "remain": 4625000.0, "wbs_path": ["Hospital construction building", "Smart-Systems Integration", "Network & Cybersecurity Infrastructure"], "wbs1": "Smart-Systems Integration", "resources": ["L-IT-CREW", "M-SMART"]}, {"id": "103395", "code": "A1365", "name": "Smart-Systems Integration Complete", "type": "TT_FinMile", "status": "TK_NotStart", "phys": 0.0, "tf_days": 0.0, "target_start": "2026-08-06", "target_end": "2026-08-06", "act_start": null, "act_end": null, "early_start": "2026-08-06", "early_end": "2026-08-06", "target_dur_d": 0.0, "remain_dur_d": 0.0, "budget": 0.0, "actual": 0.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Smart-Systems Integration", "Network & Cybersecurity Infrastructure"], "wbs1": "Smart-Systems Integration", "resources": []}, {"id": "103378", "code": "A1370", "name": "Interior finishes", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 20.0, "target_start": "2026-03-24", "target_end": "2026-06-02", "act_start": null, "act_end": null, "early_start": "2026-03-24", "early_end": "2026-06-02", "target_dur_d": 50.0, "remain_dur_d": 50.0, "budget": 225000.0, "actual": 0.0, "remain": 225000.0, "wbs_path": ["Hospital construction building", "Interior Finishing & Medical Fit-out", "Interior Finishes (flooring, walls, ceilings)"], "wbs1": "Interior Finishing & Medical Fit-out", "resources": ["L-FIN-CREW"]}, {"id": "103379", "code": "A1380", "name": "Medical equipment installation", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 20.0, "target_start": "2026-06-03", "target_end": "2026-07-16", "act_start": null, "act_end": null, "early_start": "2026-06-03", "early_end": "2026-07-16", "target_dur_d": 30.0, "remain_dur_d": 30.0, "budget": 33945000.0, "actual": 0.0, "remain": 33945000.0, "wbs_path": ["Hospital construction building", "Interior Finishing & Medical Fit-out", "Medical Equipment Installation"], "wbs1": "Interior Finishing & Medical Fit-out", "resources": ["L-MEP-CREW", "M-MEDEQ"]}, {"id": "103380", "code": "A1390", "name": "Furniture & fixtures procurement/install", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 20.0, "target_start": "2026-07-17", "target_end": "2026-08-13", "act_start": null, "act_end": null, "early_start": "2026-07-17", "early_end": "2026-08-13", "target_dur_d": 20.0, "remain_dur_d": 20.0, "budget": 5018000.0, "actual": 0.0, "remain": 5018000.0, "wbs_path": ["Hospital construction building", "Interior Finishing & Medical Fit-out", "Furniture & Fixtures"], "wbs1": "Interior Finishing & Medical Fit-out", "resources": ["L-ADMIN", "M-FF"]}, {"id": "103381", "code": "A1400", "name": "MEP systems testing", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 95.0, "target_start": "2026-03-24", "target_end": "2026-04-13", "act_start": null, "act_end": null, "early_start": "2026-03-24", "early_end": "2026-04-13", "target_dur_d": 15.0, "remain_dur_d": 15.0, "budget": 27000.0, "actual": 0.0, "remain": 27000.0, "wbs_path": ["Hospital construction building", "Commissioning & Testing", "MEP Systems Testing"], "wbs1": "Commissioning & Testing", "resources": ["L-QC"]}, {"id": "103382", "code": "A1410", "name": "Smart-systems testing & validation", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 0.0, "target_start": "2026-08-07", "target_end": "2026-08-27", "act_start": null, "act_end": null, "early_start": "2026-08-07", "early_end": "2026-08-27", "target_dur_d": 15.0, "remain_dur_d": 15.0, "budget": 102000.0, "actual": 0.0, "remain": 102000.0, "wbs_path": ["Hospital construction building", "Commissioning & Testing", "Smart-Systems Testing & Integration Validation"], "wbs1": "Commissioning & Testing", "resources": ["L-IT-CREW", "L-QC"]}, {"id": "103383", "code": "A1420", "name": "Fire & life safety testing", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 95.0, "target_start": "2026-04-14", "target_end": "2026-04-27", "act_start": null, "act_end": null, "early_start": "2026-04-14", "early_end": "2026-04-27", "target_dur_d": 10.0, "remain_dur_d": 10.0, "budget": 18000.0, "actual": 0.0, "remain": 18000.0, "wbs_path": ["Hospital construction building", "Commissioning & Testing", "Fire & Life Safety Testing"], "wbs1": "Commissioning & Testing", "resources": ["L-QC"]}, {"id": "103396", "code": "A1425", "name": "Substantial Completion", "type": "TT_FinMile", "status": "TK_NotStart", "phys": 0.0, "tf_days": 10.0, "target_start": "2026-08-27", "target_end": "2026-08-27", "act_start": null, "act_end": null, "early_start": "2026-08-27", "early_end": "2026-08-27", "target_dur_d": 0.0, "remain_dur_d": 0.0, "budget": 0.0, "actual": 0.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Commissioning & Testing", "Fire & Life Safety Testing"], "wbs1": "Commissioning & Testing", "resources": []}, {"id": "103384", "code": "A1430", "name": "Regulatory inspection", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 10.0, "target_start": "2026-08-28", "target_end": "2026-09-11", "act_start": null, "act_end": null, "early_start": "2026-08-28", "early_end": "2026-09-11", "target_dur_d": 10.0, "remain_dur_d": 10.0, "budget": 30000.0, "actual": 0.0, "remain": 30000.0, "wbs_path": ["Hospital construction building", "Accreditation & Handover", "Regulatory Inspection"], "wbs1": "Accreditation & Handover", "resources": ["L-PM", "L-QC"]}, {"id": "103385", "code": "A1440", "name": "Staff training", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 0.0, "target_start": "2026-08-28", "target_end": "2026-09-25", "act_start": null, "act_end": null, "early_start": "2026-08-28", "early_end": "2026-09-25", "target_dur_d": 20.0, "remain_dur_d": 20.0, "budget": 18000.0, "actual": 0.0, "remain": 18000.0, "wbs_path": ["Hospital construction building", "Accreditation & Handover", "Staff Training"], "wbs1": "Accreditation & Handover", "resources": ["L-ADMIN"]}, {"id": "103386", "code": "A1450", "name": "Facility handover & closeout", "type": "TT_Task", "status": "TK_NotStart", "phys": 0.0, "tf_days": 0.0, "target_start": "2026-09-28", "target_end": "2026-10-09", "act_start": null, "act_end": null, "early_start": "2026-09-28", "early_end": "2026-10-09", "target_dur_d": 10.0, "remain_dur_d": 10.0, "budget": 12000.0, "actual": 0.0, "remain": 12000.0, "wbs_path": ["Hospital construction building", "Accreditation & Handover", "Facility Handover & Closeout"], "wbs1": "Accreditation & Handover", "resources": ["L-PM"]}, {"id": "103397", "code": "A1455", "name": "Project Closeout / Facility Handover Complete", "type": "TT_FinMile", "status": "TK_NotStart", "phys": 0.0, "tf_days": 0.0, "target_start": "2026-10-09", "target_end": "2026-10-09", "act_start": null, "act_end": null, "early_start": "2026-10-09", "early_end": "2026-10-09", "target_dur_d": 0.0, "remain_dur_d": 0.0, "budget": 0.0, "actual": 0.0, "remain": 0.0, "wbs_path": ["Hospital construction building", "Accreditation & Handover", "Facility Handover & Closeout"], "wbs1": "Accreditation & Handover", "resources": []}], "relationships": [{"pred": "A1000", "succ": "A1010", "type": "SS", "lag_d": 0.0}, {"pred": "A1000", "succ": "A1020", "type": "SS", "lag_d": 0.0}, {"pred": "A1000", "succ": "A1040", "type": "SS", "lag_d": 0.0}, {"pred": "A1000", "succ": "A1060", "type": "SS", "lag_d": 0.0}, {"pred": "A1060", "succ": "A1070", "type": "FS", "lag_d": 0.0}, {"pred": "A1000", "succ": "A1080", "type": "FS", "lag_d": 0.0}, {"pred": "A1080", "succ": "A1090", "type": "FS", "lag_d": 0.0}, {"pred": "A1090", "succ": "A1100", "type": "FS", "lag_d": 0.0}, {"pred": "A1090", "succ": "A1110", "type": "FS", "lag_d": 0.0}, {"pred": "A1090", "succ": "A1120", "type": "FS", "lag_d": 0.0}, {"pred": "A1100", "succ": "A1130", "type": "FS", "lag_d": 0.0}, {"pred": "A1080", "succ": "A1140", "type": "FS", "lag_d": 0.0}, {"pred": "A1140", "succ": "A1150", "type": "FS", "lag_d": 0.0}, {"pred": "A1100", "succ": "A1160", "type": "FS", "lag_d": 0.0}, {"pred": "A1160", "succ": "A1170", "type": "FS", "lag_d": 0.0}, {"pred": "A1150", "succ": "A1180", "type": "FS", "lag_d": 0.0}, {"pred": "A1170", "succ": "A1190", "type": "FS", "lag_d": 0.0}, {"pred": "A1190", "succ": "A1200", "type": "FS", "lag_d": 0.0}, {"pred": "A1200", "succ": "A1210", "type": "FS", "lag_d": 0.0}, {"pred": "A1200", "succ": "A1220", "type": "SS", "lag_d": 5.0}, {"pred": "A1210", "succ": "A1230", "type": "FS", "lag_d": 0.0}, {"pred": "A1210", "succ": "A1240", "type": "FS", "lag_d": 0.0}, {"pred": "A1210", "succ": "A1250", "type": "FS", "lag_d": 0.0}, {"pred": "A1210", "succ": "A1260", "type": "FS", "lag_d": 0.0}, {"pred": "A1260", "succ": "A1270", "type": "FS", "lag_d": 0.0}, {"pred": "A1260", "succ": "A1280", "type": "FS", "lag_d": 0.0}, {"pred": "A1270", "succ": "A1290", "type": "FS", "lag_d": 0.0}, {"pred": "A1270", "succ": "A1300", "type": "FS", "lag_d": 0.0}, {"pred": "A1270", "succ": "A1310", "type": "FS", "lag_d": 0.0}, {"pred": "A1270", "succ": "A1320", "type": "FS", "lag_d": 0.0}, {"pred": "A1360", "succ": "A1330", "type": "FS", "lag_d": 0.0}, {"pred": "A1360", "succ": "A1340", "type": "FS", "lag_d": 0.0}, {"pred": "A1330", "succ": "A1350", "type": "FS", "lag_d": 0.0}, {"pred": "A1360", "succ": "A1350", "type": "FS", "lag_d": 0.0}, {"pred": "A1300", "succ": "A1360", "type": "FS", "lag_d": 0.0}, {"pred": "A1290", "succ": "A1370", "type": "FS", "lag_d": 0.0}, {"pred": "A1300", "succ": "A1370", "type": "FS", "lag_d": 0.0}, {"pred": "A1310", "succ": "A1370", "type": "FS", "lag_d": 0.0}, {"pred": "A1320", "succ": "A1370", "type": "FS", "lag_d": 0.0}, {"pred": "A1370", "succ": "A1380", "type": "FS", "lag_d": 0.0}, {"pred": "A1380", "succ": "A1390", "type": "FS", "lag_d": 0.0}, {"pred": "A1290", "succ": "A1400", "type": "FS", "lag_d": 0.0}, {"pred": "A1300", "succ": "A1400", "type": "FS", "lag_d": 0.0}, {"pred": "A1310", "succ": "A1400", "type": "FS", "lag_d": 0.0}, {"pred": "A1320", "succ": "A1400", "type": "FS", "lag_d": 0.0}, {"pred": "A1330", "succ": "A1410", "type": "FS", "lag_d": 0.0}, {"pred": "A1340", "succ": "A1410", "type": "FS", "lag_d": 0.0}, {"pred": "A1350", "succ": "A1410", "type": "FS", "lag_d": 0.0}, {"pred": "A1360", "succ": "A1410", "type": "FS", "lag_d": 0.0}, {"pred": "A1320", "succ": "A1420", "type": "FS", "lag_d": 0.0}, {"pred": "A1400", "succ": "A1420", "type": "FS", "lag_d": 0.0}, {"pred": "A1390", "succ": "A1430", "type": "FS", "lag_d": 0.0}, {"pred": "A1400", "succ": "A1430", "type": "FS", "lag_d": 0.0}, {"pred": "A1410", "succ": "A1430", "type": "FS", "lag_d": 0.0}, {"pred": "A1420", "succ": "A1430", "type": "FS", "lag_d": 0.0}, {"pred": "A1410", "succ": "A1440", "type": "FS", "lag_d": 0.0}, {"pred": "A1430", "succ": "A1450", "type": "FS", "lag_d": 0.0}, {"pred": "A1440", "succ": "A1450", "type": "FS", "lag_d": 0.0}, {"pred": "A1010", "succ": "A1450", "type": "FF", "lag_d": 0.0}, {"pred": "A1030", "succ": "A1450", "type": "FF", "lag_d": 0.0}, {"pred": "A1050", "succ": "A1450", "type": "FF", "lag_d": 0.0}, {"pred": "A1280", "succ": "A1370", "type": "FS", "lag_d": 0.0}, {"pred": "A1230", "succ": "A1270", "type": "FS", "lag_d": 0.0}, {"pred": "A1230", "succ": "A1280", "type": "FS", "lag_d": 0.0}, {"pred": "A1240", "succ": "A1270", "type": "FS", "lag_d": 0.0}, {"pred": "A1240", "succ": "A1280", "type": "FS", "lag_d": 0.0}, {"pred": "A1250", "succ": "A1270", "type": "FS", "lag_d": 0.0}, {"pred": "A1250", "succ": "A1280", "type": "FS", "lag_d": 0.0}, {"pred": "A1110", "succ": "A1230", "type": "FS", "lag_d": 0.0}, {"pred": "A1110", "succ": "A1240", "type": "FS", "lag_d": 0.0}, {"pred": "A1110", "succ": "A1250", "type": "FS", "lag_d": 0.0}, {"pred": "A1110", "succ": "A1260", "type": "FS", "lag_d": 0.0}, {"pred": "A1120", "succ": "A1290", "type": "FS", "lag_d": 0.0}, {"pred": "A1120", "succ": "A1300", "type": "FS", "lag_d": 0.0}, {"pred": "A1120", "succ": "A1310", "type": "FS", "lag_d": 0.0}, {"pred": "A1120", "succ": "A1320", "type": "FS", "lag_d": 0.0}, {"pred": "A1130", "succ": "A1380", "type": "FS", "lag_d": 0.0}, {"pred": "A1180", "succ": "A1430", "type": "FS", "lag_d": 0.0}, {"pred": "A1220", "succ": "A1290", "type": "FS", "lag_d": 0.0}, {"pred": "A1220", "succ": "A1300", "type": "FS", "lag_d": 0.0}, {"pred": "A1070", "succ": "A1190", "type": "FS", "lag_d": 0.0}, {"pred": "A1020", "succ": "A1030", "type": "FS", "lag_d": 0.0}, {"pred": "A1040", "succ": "A1050", "type": "FS", "lag_d": 0.0}, {"pred": "A0999", "succ": "A1000", "type": "SS", "lag_d": 0.0}, {"pred": "A1020", "succ": "A1025", "type": "FF", "lag_d": 0.0}, {"pred": "A1100", "succ": "A1105", "type": "FF", "lag_d": 0.0}, {"pred": "A1170", "succ": "A1175", "type": "FF", "lag_d": 0.0}, {"pred": "A1210", "succ": "A1215", "type": "FF", "lag_d": 0.0}, {"pred": "A1230", "succ": "A1265", "type": "FF", "lag_d": 0.0}, {"pred": "A1240", "succ": "A1265", "type": "FF", "lag_d": 0.0}, {"pred": "A1250", "succ": "A1265", "type": "FF", "lag_d": 0.0}, {"pred": "A1260", "succ": "A1265", "type": "FF", "lag_d": 0.0}, {"pred": "A1270", "succ": "A1285", "type": "FF", "lag_d": 0.0}, {"pred": "A1280", "succ": "A1285", "type": "FF", "lag_d": 0.0}, {"pred": "A1290", "succ": "A1325", "type": "FS", "lag_d": 0.0}, {"pred": "A1300", "succ": "A1325", "type": "FS", "lag_d": 0.0}, {"pred": "A1310", "succ": "A1325", "type": "FS", "lag_d": 0.0}, {"pred": "A1320", "succ": "A1325", "type": "FS", "lag_d": 0.0}, {"pred": "A1330", "succ": "A1365", "type": "FF", "lag_d": 0.0}, {"pred": "A1340", "succ": "A1365", "type": "FF", "lag_d": 0.0}, {"pred": "A1350", "succ": "A1365", "type": "FF", "lag_d": 0.0}, {"pred": "A1360", "succ": "A1365", "type": "FF", "lag_d": 0.0}, {"pred": "A1400", "succ": "A1425", "type": "FF", "lag_d": 0.0}, {"pred": "A1410", "succ": "A1425", "type": "FF", "lag_d": 0.0}, {"pred": "A1420", "succ": "A1425", "type": "FF", "lag_d": 0.0}, {"pred": "A1450", "succ": "A1455", "type": "FF", "lag_d": 0.0}, {"pred": "A1025", "succ": "A1030", "type": "FS", "lag_d": 0.0}, {"pred": "A1105", "succ": "A1130", "type": "FS", "lag_d": 0.0}, {"pred": "A1105", "succ": "A1160", "type": "FS", "lag_d": 0.0}, {"pred": "A1175", "succ": "A1190", "type": "FS", "lag_d": 0.0}, {"pred": "A1215", "succ": "A1230", "type": "FS", "lag_d": 0.0}, {"pred": "A1215", "succ": "A1240", "type": "FS", "lag_d": 0.0}, {"pred": "A1215", "succ": "A1250", "type": "FS", "lag_d": 0.0}, {"pred": "A1215", "succ": "A1260", "type": "FS", "lag_d": 0.0}, {"pred": "A1265", "succ": "A1270", "type": "FS", "lag_d": 0.0}, {"pred": "A1265", "succ": "A1280", "type": "FS", "lag_d": 0.0}, {"pred": "A1285", "succ": "A1290", "type": "FS", "lag_d": 0.0}, {"pred": "A1285", "succ": "A1300", "type": "FS", "lag_d": 0.0}, {"pred": "A1285", "succ": "A1310", "type": "FS", "lag_d": 0.0}, {"pred": "A1285", "succ": "A1320", "type": "FS", "lag_d": 0.0}, {"pred": "A1285", "succ": "A1370", "type": "FS", "lag_d": 0.0}, {"pred": "A1325", "succ": "A1370", "type": "FS", "lag_d": 0.0}, {"pred": "A1325", "succ": "A1400", "type": "FS", "lag_d": 0.0}, {"pred": "A1365", "succ": "A1410", "type": "FS", "lag_d": 0.0}, {"pred": "A1425", "succ": "A1430", "type": "FS", "lag_d": 0.0}], "resources": [{"short": "M-STRUCT", "name": "Structural Materials (concrete, rebar, steel)", "type": "RT_Mat", "budget": 95000000.0, "actual": 65925725.0}, {"short": "M-MEP", "name": "MEP Materials & Fixtures", "type": "RT_Mat", "budget": 60006000.0, "actual": 0.0}, {"short": "M-MEDEQ", "name": "Medical Equipment", "type": "RT_Mat", "budget": 33750000.0, "actual": 0.0}, {"short": "M-SMART", "name": "Smart-Systems Hardware (sensors, servers, network gear)", "type": "RT_Mat", "budget": 22500000.0, "actual": 0.0}, {"short": "M-FF", "name": "Furniture & Fixtures", "type": "RT_Mat", "budget": 5000000.0, "actual": 0.0}, {"short": "L-PM", "name": "Project Manager", "type": "RT_Labor", "budget": 1608000.0, "actual": 734400.0}, {"short": "L-STR-CREW", "name": "Structural Construction Crew", "type": "RT_Labor", "budget": 560000.0, "actual": 528000.0}, {"short": "L-STR-CREW-4", "name": "Structural Construction Crew", "type": "RT_Labor", "budget": 480000.0, "actual": 312000.0}, {"short": "L-IT-CREW", "name": "Smart-Systems Integration Team", "type": "RT_Labor", "budget": 400000.0, "actual": 0.0}, {"short": "L-MEP-CREW", "name": "MEP Installation Crew", "type": "RT_Labor", "budget": 325000.0, "actual": 130000.0}, {"short": "L-STR-CREW-2", "name": "Structural Construction Crew", "type": "RT_Labor", "budget": 320000.0, "actual": 320000.0}, {"short": "L-STR-CREW-3", "name": "Structural Construction Crew", "type": "RT_Labor", "budget": 320000.0, "actual": 320000.0}, {"short": "L-HVAC-CREW", "name": "MEP Installation Crew", "type": "RT_Labor", "budget": 292500.0, "actual": 0.0}, {"short": "L-ELEC-CREW", "name": "MEP Installation Crew", "type": "RT_Labor", "budget": 292500.0, "actual": 0.0}, {"short": "L-ARCH", "name": "Architect Team", "type": "RT_Labor", "budget": 262500.0, "actual": 262500.0}, {"short": "L-PLUMB-CREW", "name": "MEP Installation Crew", "type": "RT_Labor", "budget": 260000.0, "actual": 0.0}, {"short": "L-FIN-CREW", "name": "Finishing Crew", "type": "RT_Labor", "budget": 225000.0, "actual": 0.0}, {"short": "L-STR-ENG", "name": "Structural Engineer Team", "type": "RT_Labor", "budget": 195000.0, "actual": 195000.0}, {"short": "L-FIRE-CREW", "name": "MEP Installation Crew", "type": "RT_Labor", "budget": 195000.0, "actual": 0.0}, {"short": "E-CRANE-4", "name": "Tower Crane", "type": "RT_Equip", "budget": 150000.0, "actual": 97500.0}, {"short": "L-IOT-CREW", "name": "Smart-Systems Integration Team", "type": "RT_Labor", "budget": 150000.0, "actual": 0.0}, {"short": "L-BMS-CREW", "name": "Smart-Systems Integration Team", "type": "RT_Labor", "budget": 150000.0, "actual": 0.0}, {"short": "L-ADMIN", "name": "Project Admin/Support", "type": "RT_Labor", "budget": 135000.0, "actual": 99000.0}, {"short": "L-FACADE-CREW", "name": "Finishing Crew", "type": "RT_Labor", "budget": 135000.0, "actual": 0.0}, {"short": "E-CRANE", "name": "Tower Crane", "type": "RT_Equip", "budget": 100000.0, "actual": 90000.0}, {"short": "E-CRANE-2", "name": "Tower Crane", "type": "RT_Equip", "budget": 100000.0, "actual": 100000.0}, {"short": "E-CRANE-3", "name": "Tower Crane", "type": "RT_Equip", "budget": 100000.0, "actual": 100000.0}, {"short": "L-QC", "name": "QA/QC Inspectors", "type": "RT_Labor", "budget": 90000.0, "actual": 0.0}, {"short": "L-ROOF-CREW", "name": "Finishing Crew", "type": "RT_Labor", "budget": 90000.0, "actual": 0.0}, {"short": "E-EXCAV", "name": "Excavation Equipment", "type": "RT_Equip", "budget": 45000.0, "actual": 45000.0}, {"short": "E-CONC", "name": "Concrete Pumping Equipment", "type": "RT_Equip", "budget": 22500.0, "actual": 22500.0}], "scurve": {"labels": ["2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06", "2026-07", "2026-08", "2026-09", "2026-10"], "pv": [150214.0, 321079.0, 575443.0, 826557.0, 941171.0, 1102286.0, 4311150.0, 29335889.0, 51317379.0, 73298868.0, 79346857.0, 93144471.0, 119448752.0, 139871533.0, 162676564.0, 168850929.0, 172681293.0, 195950824.0, 217973105.0, 223148886.0, 223253000.0, 223259000.0], "ev": [818012.0, 914762.0, 1095012.0, 1272012.0, 1312512.0, 1399512.0, 4534262.0, 66130037.0, 66130037.0, 66130037.0, 66130037.0, 66130037.0, 66130037.0, 66130037.0, 66130037.0, 66130037.0, 66130037.0, 66130037.0, 66130037.0, 66130037.0, 66130037.0, 66130037.0], "ac": [782900.0, 879650.0, 1059900.0, 1236900.0, 1277400.0, 1364400.0, 4499150.0, 69281625.0, 69281625.0, 69281625.0, 69281625.0, 69281625.0, 69281625.0, 69281625.0, 69281625.0, 69281625.0, 69281625.0, 69281625.0, 69281625.0, 69281625.0, 69281625.0, 69281625.0]}};</script>
+<script>// ---------- helpers ----------
+const fmtM = (n)=> '$'+ (n/1000000).toLocaleString('en-US',{maximumFractionDigits:2}) + 'M';
+const fmtN = (n)=> '$'+ Math.round(n).toLocaleString('en-US');
+const fmtPct = (n)=> n.toLocaleString('en-US',{maximumFractionDigits:1}) + '%';
+const fmtIdx = (n)=> n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const jd = (s)=> s? new Date(s+'T00:00:00') : null;
+const dayDiff=(a,b)=> Math.round((jd(b)-jd(a))/86400000);
+const fmtDate=(s)=>{ if(!s) return '—'; const d=jd(s); return d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'2-digit'}); };
+
+const acts = DATA.activities;
+const rels = DATA.relationships;
+const resources = DATA.resources;
+const sc = DATA.scurve;
+const meta = DATA.meta;
+
+const BAC = acts.reduce((s,a)=>s+a.budget,0);
+const AC  = acts.reduce((s,a)=>s+a.actual,0);
+const EV  = acts.reduce((s,a)=>s+a.budget*(a.phys/100),0);
+const REM = acts.reduce((s,a)=>s+a.remain,0);
+const dataDateIdx = sc.labels.indexOf('2025-10');
+const PV = sc.pv[dataDateIdx];
+const CPI = EV/AC, SPI = EV/PV;
+const CV = EV-AC, SV = EV-PV;
+const EAC = AC+REM, ETC = REM, VAC = BAC-EAC;
+const PHYS_PCT = EV/BAC*100;
+const BASELINE_FINISH = meta.baseline_finish;
+const FORECAST_FINISH = meta.finish_forecast;
+const SLIP_DAYS = dayDiff(BASELINE_FINISH, FORECAST_FINISH);
+
+document.getElementById('dataDateBadge').textContent = 'Data Date: ' + fmtDate(meta.data_date);
+const stB = document.getElementById('statusBadge');
+if(SPI<0.9 || CPI<0.9){ stB.textContent='نیازمند اقدام اصلاحی'; stB.className='badge red'; }
+else if(SPI<1 || CPI<1){ stB.textContent='هشدار — انحراف جزئی'; stB.className='badge amber'; }
+else { stB.textContent='مطابق برنامه'; stB.className='badge green'; }
+
+// milestone baseline dates (hardcoded from original approved baseline)
+const MS_BASELINE = {
+  A0999:'2025-01-02', A1025:'2025-01-08', A1105:'2025-04-25', A1175:'2025-06-24',
+  A1215:'2025-08-20', A1265:'2025-11-17', A1285:'2025-12-31', A1325:'2026-03-09',
+  A1365:'2026-07-23', A1425:'2026-08-13', A1455:'2026-09-25'
+};
+const milestones = acts.filter(a=>a.type==='TT_FinMile'||a.type==='TT_Mile');
+
+const RISKS = [
+ {id:'R-01',name:'تأخیر در تأیید مجوز ساخت فراتر از ۳۰ روز',wbs:'Permits & Regulatory',p:4,i:5,resp:'Mitigate',owner:'Commissioning & Accreditation Manager'},
+ {id:'R-02',name:'Over-allocation تیم اجرایی سازه در اجرای موازی ۴ بال',wbs:'Structural Construction',p:3,i:3,resp:'Accept (مستند‌شده)',owner:'Construction Manager'},
+ {id:'R-03',name:'افزایش قیمت فولاد و بتن ناشی از نوسان بازار',wbs:'Structural Construction',p:3,i:4,resp:'Mitigate',owner:'Procurement Manager'},
+ {id:'R-04',name:'ناسازگاری فنی بین EMR و تجهیزات IoT',wbs:'Smart-Systems Integration',p:3,i:4,resp:'Mitigate',owner:'Smart-Systems / IT Manager'},
+ {id:'R-05',name:'کمبود نیروی متخصص ساخت‌وساز درمانی',wbs:'Construction (عمومی)',p:3,i:3,resp:'Mitigate',owner:'Construction Manager'},
+ {id:'R-06',name:'شکاف Cost Baseline ($223.3M) با بودجه منشور ($300M)',wbs:'کل پروژه',p:5,i:3,resp:'Accept — Decision Gate',owner:'Financial Controller'},
+ {id:'R-07',name:'تأخیر تحویل تجهیزات پزشکی تخصصی (Long-Lead)',wbs:'Interior Finishing & Fit-out',p:3,i:4,resp:'Mitigate',owner:'Procurement Manager'},
+ {id:'R-08',name:'خطای طراحی کشف‌نشده پس از شروع اجرا',wbs:'Design',p:2,i:5,resp:'Mitigate',owner:'Design Manager'},
+ {id:'R-09',name:'حادثه ایمنی کارگاهی در اجرای سازه/MEP',wbs:'Construction (عمومی)',p:2,i:5,resp:'Mitigate',owner:'HSE Manager'},
+ {id:'R-10',name:'رد بازرسی نهایی اعتباربخشی',wbs:'Accreditation & Handover',p:2,i:5,resp:'Mitigate',owner:'QA/QC Manager'},
+ {id:'R-11',name:'آسیب‌پذیری امنیت سایبری شبکه هوشمند',wbs:'Smart-Systems Integration',p:2,i:5,resp:'Mitigate',owner:'Smart-Systems / IT Manager'},
+ {id:'R-12',name:'مقاومت کادر درمانی در برابر سیستم‌های جدید',wbs:'Accreditation & Handover',p:3,i:3,resp:'Mitigate',owner:'Commissioning Manager'},
+ {id:'R-13',name:'شرایط جوی نامساعد در فصل اجرای سازه',wbs:'Structural Construction',p:3,i:2,resp:'Accept',owner:'Construction Manager'},
+ {id:'R-14',name:'تغییر درخواستی Sponsor میانه طراحی (Scope Creep)',wbs:'Design',p:3,i:4,resp:'Avoid',owner:'Enterprise (PM)'},
+ {id:'R-15',name:'مسئولیت قانونی ناشی از نقص تجهیزات پزشکی',wbs:'Interior Finishing & Fit-out',p:1,i:5,resp:'Transfer',owner:'Procurement Manager'},
+];
+
+const ISSUES = [
+ {id:'I-01',title:'تأخیر ۱۰ روزه در بال Inpatient (مسیر بحرانی)',cause:'شرایط جوی نامساعد پاییز + Over-allocation اولیه منابع سازه‌ای',owner:'Construction Manager',status:'باز — در حال پایش',action:'افزایش شیفت کاری، بازنگری تخصیص Tower Crane اختصاصی'},
+ {id:'I-02',title:'Over-allocation منابع در اجرای موازی ۴ بال ساختمان',cause:'تخصیص یک تیم/جرثقیل مشترک به فعالیت‌های هم‌زمان',owner:'Construction Manager',status:'حل‌شده',action:'تفکیک منابع تخصصی (E-CRANE-2/3/4، L-STR-CREW-2/3/4)'},
+ {id:'I-03',title:'ناهماهنگی Baseline ذخیره‌شده با هزینه اصلاح‌شده سه فعالیت سازه‌ای',cause:'Baseline قبل از رفع باگ Over-allocation ثبت شده بود',owner:'Financial Controller',status:'شناسایی‌شده — نیازمند Re-baseline',action:'ثبت Baseline جدید پس از تأیید Sponsor، یا اصلاح دستی مقادیر BL'},
+ {id:'I-04',title:'شکاف ۷۷ میلیون دلاری بین Cost Baseline و بودجه منشور',cause:'دقت تخمین Order-of-Magnitude منشور در مقابل تخمین Bottom-Up',owner:'Financial Controller / Enterprise',status:'در انتظار تصمیم Sponsor',action:'Milestone A1025 — بازنگری بودجه یا تخصیص Management Reserve'},
+ {id:'I-05',title:'خطاهای منطق شبکه (Open-End و Redundant Logic) در فاز اولیه برنامه‌ریزی',cause:'عدم اتصال کامل فعالیت‌ها هنگام تعریف اولیه روابط',owner:'Project Manager',status:'حل‌شده',action:'اضافه‌شدن روابط اصلاحی و اجرای مجدد Schedule (F9)'},
+];
+
+// ---------- sidebar ----------
+const NAV = [
+ {n:'۰۱',t:'Project Overview'},
+ {n:'۰۲',t:'Executive Dashboard'},
+ {n:'۰۳',t:'Schedule Performance'},
+ {n:'۰۴',t:'Critical Path Analysis'},
+ {n:'۰۵',t:'Cost Performance'},
+ {n:'۰۶',t:'Resource Performance'},
+ {n:'۰۷',t:'Progress S-Curve'},
+ {n:'۰۸',t:'Earned Value Management'},
+ {n:'۰۹',t:'Risk Dashboard'},
+ {n:'۱۰',t:'Issue & Delay Management'},
+ {n:'۱۱',t:'Lookahead Plan'},
+ {n:'۱۲',t:'Management Summary'},
+];
+const sidebar = document.getElementById('sidebar');
+sidebar.innerHTML = '<div class="brand"><div class="t1">MENU</div><div class="t2">داشبورد کنترل پروژه</div></div>' +
+  NAV.map((x,i)=>`<div class="navitem" data-i="${i}"><span class="num">${x.n}</span><span>${x.t}</span></div>`).join('');
+
+function selectSection(i){
+  document.querySelectorAll('.navitem').forEach(el=>el.classList.toggle('active', +el.dataset.i===i));
+  document.querySelectorAll('.section').forEach(el=>el.classList.toggle('active', +el.dataset.i===i));
+  window.scrollTo({top:0,behavior:'instant'});
+}
+sidebar.addEventListener('click',(e)=>{
+  const el = e.target.closest('.navitem'); if(!el) return;
+  selectSection(+el.dataset.i);
+});
+
+// ---------- build sections ----------
+const root = document.getElementById('sections');
+function sec(i,html){ const d=document.createElement('div'); d.className='section'+(i===0?' active':''); d.dataset.i=i; d.innerHTML=html; root.appendChild(d); }
+
+// 01 Project Overview
+sec(0, `
+<h2>مشخصات کلی پروژه</h2>
+<div class="grid cols-4">
+  <div class="card kpi"><div class="label">نام پروژه</div><div class="value" style="font-size:16px">بیمارستان عمومی هوشمند مدیکور</div></div>
+  <div class="card kpi"><div class="label">نوع کارفرما / Sponsor</div><div class="value" style="font-size:16px">MediCore Health Group</div></div>
+  <div class="card kpi"><div class="label">بودجه مصوب (Charter)</div><div class="value">$300M</div><div class="sub">Order-of-Magnitude, -25%/+75%</div></div>
+  <div class="card kpi"><div class="label">Cost Baseline نهایی</div><div class="value">${fmtM(BAC)}</div></div>
+  <div class="card kpi"><div class="label">تاریخ شروع قرارداد</div><div class="value" style="font-size:18px">${fmtDate(meta.plan_start)}</div></div>
+  <div class="card kpi"><div class="label">تاریخ پایان Baseline</div><div class="value" style="font-size:18px">${fmtDate(BASELINE_FINISH)}</div></div>
+  <div class="card kpi"><div class="label">تاریخ پایان پیش‌بینی‌شده</div><div class="value" style="font-size:18px;color:${SLIP_DAYS>0?'var(--red)':'var(--green)'}">${fmtDate(FORECAST_FINISH)}</div><div class="sub">${SLIP_DAYS>0?'+'+SLIP_DAYS+' روز نسبت به Baseline':'مطابق برنامه'}</div></div>
+  <div class="card kpi"><div class="label">مدت قرارداد</div><div class="value">${dayDiff(meta.plan_start,BASELINE_FINISH)} روز</div><div class="sub">≈ ۲۱ ماه تقویمی</div></div>
+</div>
+<h2>محدوده کار</h2>
+<div class="card"><ul class="plain">
+<li>احداث بیمارستان عمومی ۲۰۰ تخته با زیربنای تقریبی ۵۰۰,۰۰۰ فوت مربع</li>
+<li>شامل بخش‌های اورژانس، ICU، جراحی و طبقات بستری، به‌همراه زیرساخت کامل هوشمند (IoT، BMS، EMR)</li>
+<li>ساختار WBS شامل ۴۵ گره اصلی از مدیریت پروژه تا تحویل و اعتباربخشی نهایی</li>
+<li>مدل زمان‌بندی و هزینه در Primavera P6 با ۴۳ فعالیت اجرایی و ۱۱ نقطه عطف (Milestone) تهیه شده است</li>
+</ul></div>
+<h2>وضعیت کلی پروژه در تاریخ گزارش (${fmtDate(meta.data_date)})</h2>
+<div class="grid cols-3">
+  <div class="card kpi"><div class="label">پیشرفت فیزیکی واقعی</div><div class="value">${fmtPct(PHYS_PCT)}</div><div class="progress" style="margin-top:8px"><div style="width:${PHYS_PCT}%;background:var(--p)"></div></div></div>
+  <div class="card kpi"><div class="label">CPI</div><div class="value" style="color:${CPI<1?'var(--red)':'var(--green)'}">${fmtIdx(CPI)}</div><div class="sub">شاخص عملکرد هزینه</div></div>
+  <div class="card kpi"><div class="label">SPI</div><div class="value" style="color:${SPI<1?'var(--red)':'var(--green)'}">${fmtIdx(SPI)}</div><div class="sub">شاخص عملکرد زمان</div></div>
+</div>
+`);
+
+// 02 Executive Dashboard
+sec(1, `
+<h2>شاخص‌های کلیدی عملکرد (KPI)</h2>
+<div class="grid cols-4">
+  <div class="card kpi"><div class="label">بودجه مصوب (BAC)</div><div class="value">${fmtM(BAC)}</div></div>
+  <div class="card kpi"><div class="label">هزینه واقعی (AC)</div><div class="value">${fmtM(AC)}</div></div>
+  <div class="card kpi"><div class="label">ارزش کسب‌شده (EV)</div><div class="value">${fmtM(EV)}</div></div>
+  <div class="card kpi"><div class="label">پیش‌بینی هزینه نهایی (EAC)</div><div class="value" style="color:${EAC>BAC?'var(--red)':'var(--green)'}">${fmtM(EAC)}</div></div>
+  <div class="card kpi"><div class="label">پیشرفت برنامه‌ای (طبق Baseline)</div><div class="value">${fmtPct(PV/BAC*100)}</div></div>
+  <div class="card kpi"><div class="label">پیشرفت واقعی (فیزیکی)</div><div class="value">${fmtPct(PHYS_PCT)}</div></div>
+  <div class="card kpi"><div class="label">انحراف زمان (SV)</div><div class="value" style="color:var(--red)">${fmtM(SV)}</div><div class="sub">${SLIP_DAYS} روز عقب‌تر از Baseline</div></div>
+  <div class="card kpi"><div class="label">انحراف هزینه (CV)</div><div class="value" style="color:var(--red)">${fmtM(CV)}</div><div class="sub">Cost Overrun نسبت به EV</div></div>
+</div>
+<h2>روند شاخص‌های CPI و SPI</h2>
+<div class="two-col">
+  <div class="card"><div class="chart-wrap"><canvas id="chExecBar"></canvas></div></div>
+  <div class="card">
+    <div class="muted small" style="margin-bottom:10px">تفسیر سریع</div>
+    <ul class="plain small">
+      <li>CPI=${fmtIdx(CPI)}: به ازای هر ۱ دلار هزینه، ${fmtIdx(CPI)} دلار ارزش کسب شده.</li>
+      <li>SPI=${fmtIdx(SPI)}: تنها ${fmtPct(SPI*100)} از کار برنامه‌ریزی‌شده تا این تاریخ انجام شده.</li>
+      <li>ریشه اصلی انحراف: تأخیر بال Inpatient (مسیر بحرانی) و Over-allocation اولیه منابع سازه‌ای.</li>
+    </ul>
+  </div>
+</div>
+`);
+
+// 03 Schedule Performance
+const msRows = milestones.map(m=>{
+  const bl = MS_BASELINE[m.code];
+  const fc = m.early_end || m.act_end;
+  const variance = bl && fc ? dayDiff(bl,fc) : 0;
+  const done = m.status==='TK_Complete';
+  return {...m, bl, fc, variance, done};
+});
+sec(2, `
+<h2>پیشرفت کلی برنامه زمانی</h2>
+<div class="grid cols-3">
+  <div class="card kpi"><div class="label">مدت Baseline</div><div class="value">${dayDiff(meta.plan_start,BASELINE_FINISH)} روز</div></div>
+  <div class="card kpi"><div class="label">مدت پیش‌بینی فعلی</div><div class="value">${dayDiff(meta.plan_start,FORECAST_FINISH)} روز</div></div>
+  <div class="card kpi"><div class="label">انحراف کل برنامه</div><div class="value" style="color:var(--red)">${SLIP_DAYS}+ روز</div></div>
+</div>
+<h2>وضعیت نقاط عطف (Milestones)</h2>
+<div class="twrap"><table>
+<thead><tr><th>کد</th><th>عنوان</th><th>تاریخ Baseline</th><th>تاریخ پیش‌بینی/واقعی</th><th>انحراف (روز)</th><th>وضعیت</th></tr></thead>
+<tbody>
+${msRows.map(m=>`<tr>
+  <td>${m.code}</td><td>${m.name}</td><td>${fmtDate(m.bl)}</td><td>${fmtDate(m.fc)}</td>
+  <td style="color:${m.variance>0?'var(--red)':'var(--green)'}">${m.variance>0?'+':''}${m.variance}</td>
+  <td><span class="pill" style="background:${m.done?'#dcfce7':'#e2e8f0'};color:${m.done?'#166534':'#475569'}">${m.done?'تکمیل‌شده':(m.status==='TK_Active'?'در حال اجرا':'شروع‌نشده')}</span></td>
+</tr>`).join('')}
+</tbody></table></div>
+<h2>Planned vs Actual — بسته‌های اصلی WBS</h2>
+<div class="twrap"><table>
+<thead><tr><th>بخش (WBS)</th><th>شروع Baseline</th><th>پایان Baseline</th><th>شروع/پایان جاری</th><th>% پیشرفت فیزیکی</th></tr></thead>
+<tbody id="wbsSchedBody"></tbody>
+</table></div>
+`);
+
+// 04 Critical Path
+const driving = acts.filter(a=> a.tf_days!==null && a.tf_days<=0 && a.type!=='' ).sort((a,b)=>a.code.localeCompare(b.code));
+sec(3, `
+<h2>خلاصه مسیر بحرانی</h2>
+<div class="grid cols-3">
+  <div class="card kpi"><div class="label">تعداد فعالیت‌های Critical</div><div class="value">${driving.length}</div></div>
+  <div class="card kpi"><div class="label">Total Float مسیر بحرانی</div><div class="value">۰ روز</div></div>
+  <div class="card kpi"><div class="label">نزدیک‌ترین فعالیت حساس (کمترین Float مثبت)</div><div class="value" style="font-size:15px">${(()=>{const near=acts.filter(a=>a.tf_days>0).sort((a,b)=>a.tf_days-b.tf_days)[0]; return near? near.code+' ('+Math.round(near.tf_days)+'د)':'—';})()}</div></div>
+</div>
+<h2>فعالیت‌های روی مسیر بحرانی (Total Float ≤ 0)</h2>
+<div class="twrap"><table>
+<thead><tr><th>کد</th><th>نام فعالیت</th><th>WBS</th><th>شروع</th><th>پایان</th><th>پیشرفت</th></tr></thead>
+<tbody>
+${driving.map(a=>`<tr><td>${a.code}</td><td>${a.name}</td><td class="small">${a.wbs1}</td><td>${fmtDate(a.early_start||a.act_start)}</td><td>${fmtDate(a.early_end||a.act_end)}</td><td>${a.phys}%</td></tr>`).join('')}
+</tbody></table></div>
+<h2>فعالیت‌های حساس (Total Float بین ۱ تا ۲۰ روز)</h2>
+<div class="twrap"><table>
+<thead><tr><th>کد</th><th>نام فعالیت</th><th>Total Float (روز)</th></tr></thead>
+<tbody>
+${acts.filter(a=>a.tf_days>0 && a.tf_days<=20).sort((a,b)=>a.tf_days-b.tf_days).map(a=>`<tr><td>${a.code}</td><td>${a.name}</td><td>${Math.round(a.tf_days)}</td></tr>`).join('')}
+</tbody></table></div>
+`);
+
+// 05 Cost Performance
+const wbsCost = {};
+acts.forEach(a=>{
+  const k=a.wbs1||'—';
+  if(!wbsCost[k]) wbsCost[k]={budget:0,actual:0,remain:0};
+  wbsCost[k].budget+=a.budget; wbsCost[k].actual+=a.actual; wbsCost[k].remain+=a.remain;
+});
+const wbsKeys = Object.keys(wbsCost).filter(k=>wbsCost[k].budget>0);
+sec(4, `
+<h2>خلاصه هزینه پروژه</h2>
+<div class="grid cols-4">
+  <div class="card kpi"><div class="label">بودجه کل (BAC)</div><div class="value">${fmtM(BAC)}</div></div>
+  <div class="card kpi"><div class="label">هزینه واقعی تا امروز (AC)</div><div class="value">${fmtM(AC)}</div></div>
+  <div class="card kpi"><div class="label">هزینه باقی‌مانده (ETC)</div><div class="value">${fmtM(ETC)}</div></div>
+  <div class="card kpi"><div class="label">پیش‌بینی نهایی (EAC)</div><div class="value" style="color:${EAC>BAC?'var(--red)':'var(--green)'}">${fmtM(EAC)}</div><div class="sub">VAC: ${fmtM(VAC)}</div></div>
+</div>
+<h2>مقایسه بودجه، هزینه واقعی و باقی‌مانده به تفکیک بخش</h2>
+<div class="card"><div class="chart-wrap" style="height:340px"><canvas id="chCostBar"></canvas></div></div>
+<h2>جدول تفصیلی هزینه بر اساس WBS</h2>
+<div class="twrap"><table>
+<thead><tr><th>بخش</th><th>بودجه</th><th>هزینه واقعی</th><th>باقی‌مانده</th><th>% مصرف بودجه</th></tr></thead>
+<tbody>${wbsKeys.map(k=>{const w=wbsCost[k];return `<tr><td>${k}</td><td>${fmtN(w.budget)}</td><td>${fmtN(w.actual)}</td><td>${fmtN(w.remain)}</td><td>${(w.actual/w.budget*100||0).toFixed(1)}%</td></tr>`}).join('')}</tbody>
+</table></div>
+`);
+
+// 06 Resource Performance
+const typeMap = {RT_Labor:'نیروی انسانی',RT_Equip:'تجهیزات',RT_Mat:'مصالح'};
+const byType = {};
+resources.forEach(r=>{ const t=typeMap[r.type]||r.type; byType[t]=(byType[t]||0)+r.budget; });
+sec(5, `
+<h2>خلاصه منابع پروژه</h2>
+<div class="grid cols-3">
+  <div class="card kpi"><div class="label">تعداد منابع فعال</div><div class="value">${resources.length}</div></div>
+  <div class="card kpi"><div class="label">جمع بودجه منابع</div><div class="value">${fmtM(resources.reduce((s,r)=>s+r.budget,0))}</div></div>
+  <div class="card kpi"><div class="label">جمع هزینه واقعی منابع</div><div class="value">${fmtM(resources.reduce((s,r)=>s+r.actual,0))}</div></div>
+</div>
+<div class="two-col">
+  <div class="card"><div class="chart-wrap"><canvas id="chResBar"></canvas></div></div>
+  <div class="card"><div class="chart-wrap"><canvas id="chResPie"></canvas></div></div>
+</div>
+<h2>یادداشت تخصیص و Over-allocation</h2>
+<div class="card"><ul class="plain small">
+<li>در اجرای موازی ۴ بال ساختمانی، منابع تخصصی جداگانه (جرثقیل و تیم اجرایی) برای هر بال تعریف شد تا از تداخل تخصیص جلوگیری شود.</li>
+<li>یک سطح باقی‌مانده و آگاهانه از هم‌پوشانی (به‌خصوص در روزهای پایانی هفته، ناشی از Resource Leveling) به‌عنوان ریسک R-02 پذیرفته و مستند شده است.</li>
+<li>منابع تخصصی مجزا برای هر رشته MEP (HVAC، برق، لوله‌کشی، آتش‌نشانی) و سیستم‌های هوشمند (IoT، BMS) تعریف شده تا از هم‌پوشانی جلوگیری شود.</li>
+</ul></div>
+<h2>جدول منابع</h2>
+<div class="twrap"><table>
+<thead><tr><th>کد منبع</th><th>نام</th><th>نوع</th><th>بودجه</th><th>هزینه واقعی</th></tr></thead>
+<tbody>${resources.map(r=>`<tr><td>${r.short}</td><td>${r.name}</td><td>${typeMap[r.type]||r.type}</td><td>${fmtN(r.budget)}</td><td>${fmtN(r.actual)}</td></tr>`).join('')}</tbody>
+</table></div>
+`);
+
+// 07 S-Curve
+sec(6, `
+<h2>منحنی S — مقایسه پیشرفت برنامه‌ای و واقعی</h2>
+<div class="card"><div class="chart-wrap" style="height:380px"><canvas id="chSCurve"></canvas></div></div>
+<h2>تحلیل انحراف</h2>
+<div class="grid cols-3">
+  <div class="card kpi"><div class="label">PV در تاریخ گزارش</div><div class="value">${fmtM(PV)}</div></div>
+  <div class="card kpi"><div class="label">EV در تاریخ گزارش</div><div class="value">${fmtM(EV)}</div></div>
+  <div class="card kpi"><div class="label">فاصله EV تا PV</div><div class="value" style="color:var(--red)">${fmtM(EV-PV)}</div></div>
+</div>
+`);
+
+// 08 EVM
+sec(7, `
+<h2>شاخص‌های Earned Value Management</h2>
+<div class="twrap"><table>
+<thead><tr><th>شاخص</th><th>مقدار</th><th>تفسیر</th></tr></thead>
+<tbody>
+<tr><td>Planned Value (PV)</td><td>${fmtN(PV)}</td><td>ارزش کاری که طبق Baseline باید تا امروز انجام می‌شد</td></tr>
+<tr><td>Earned Value (EV)</td><td>${fmtN(EV)}</td><td>ارزش واقعی کار انجام‌شده</td></tr>
+<tr><td>Actual Cost (AC)</td><td>${fmtN(AC)}</td><td>هزینه واقعاً پرداخت‌شده</td></tr>
+<tr><td>Cost Variance (CV)</td><td style="color:var(--red)">${fmtN(CV)}</td><td>EV−AC؛ منفی یعنی Overrun هزینه</td></tr>
+<tr><td>Schedule Variance (SV)</td><td style="color:var(--red)">${fmtN(SV)}</td><td>EV−PV؛ منفی یعنی عقب‌ماندگی زمانی</td></tr>
+<tr><td>CPI</td><td>${fmtIdx(CPI)}</td><td>${CPI<1?'زیر ۱ — کارایی هزینه پایین‌تر از برنامه':'مطابق یا بهتر از برنامه'}</td></tr>
+<tr><td>SPI</td><td>${fmtIdx(SPI)}</td><td>${SPI<1?'زیر ۱ — عقب‌تر از برنامه':'مطابق یا جلوتر از برنامه'}</td></tr>
+<tr><td>Estimate at Completion (EAC)</td><td>${fmtN(EAC)}</td><td>پیش‌بینی هزینه نهایی پروژه</td></tr>
+<tr><td>Estimate to Complete (ETC)</td><td>${fmtN(ETC)}</td><td>هزینه باقی‌مانده تا اتمام</td></tr>
+<tr><td>Variance at Completion (VAC)</td><td style="color:${VAC<0?'var(--red)':'var(--green)'}">${fmtN(VAC)}</td><td>BAC−EAC</td></tr>
+</tbody></table></div>
+<div class="grid cols-3" style="margin-top:16px">
+  <div class="card kpi"><div class="label">CPI</div><div class="value" style="color:${CPI<1?'var(--red)':'var(--green)'}">${fmtIdx(CPI)}</div><div class="progress" style="margin-top:8px"><div style="width:${Math.min(CPI*100,100)}%;background:${CPI<1?'var(--red)':'var(--green)'}"></div></div></div>
+  <div class="card kpi"><div class="label">SPI</div><div class="value" style="color:${SPI<1?'var(--red)':'var(--green)'}">${fmtIdx(SPI)}</div><div class="progress" style="margin-top:8px"><div style="width:${Math.min(SPI*100,100)}%;background:${SPI<1?'var(--red)':'var(--green)'}"></div></div></div>
+  <div class="card kpi"><div class="label">TCPI (برای رسیدن به BAC اصلی)</div><div class="value">${fmtIdx((BAC-EV)/(BAC-AC))}</div></div>
+</div>
+`);
+
+// 09 Risk Dashboard
+function riskColor(score){ if(score>=15) return '#dc2626'; if(score>=8) return '#d97706'; return '#16a34a'; }
+sec(8, `
+<h2>ماتریس ریسک پروژه</h2>
+<div class="grid cols-4">
+  <div class="card kpi"><div class="label">تعداد کل ریسک‌ها</div><div class="value">${RISKS.length}</div></div>
+  <div class="card kpi"><div class="label">ریسک بحرانی (امتیاز ≥۱۵)</div><div class="value" style="color:var(--red)">${RISKS.filter(r=>r.p*r.i>=15).length}</div></div>
+  <div class="card kpi"><div class="label">ریسک متوسط (۸ تا ۱۴)</div><div class="value" style="color:var(--amber)">${RISKS.filter(r=>r.p*r.i>=8&&r.p*r.i<15).length}</div></div>
+  <div class="card kpi"><div class="label">ریسک پایین (&lt;۸)</div><div class="value" style="color:var(--green)">${RISKS.filter(r=>r.p*r.i<8).length}</div></div>
+</div>
+<h2>فهرست ریسک‌ها</h2>
+<div class="twrap"><table>
+<thead><tr><th>کد</th><th>شرح ریسک</th><th>WBS مرتبط</th><th>احتمال</th><th>اثر</th><th>امتیاز</th><th>استراتژی</th><th>مالک</th></tr></thead>
+<tbody>${RISKS.sort((a,b)=>b.p*b.i-a.p*a.i).map(r=>`<tr>
+<td>${r.id}</td><td>${r.name}</td><td class="small">${r.wbs}</td><td>${r.p}</td><td>${r.i}</td>
+<td><span class="risk-cell" style="background:${riskColor(r.p*r.i)}">${r.p*r.i}</span></td>
+<td class="small">${r.resp}</td><td class="small">${r.owner}</td>
+</tr>`).join('')}</tbody></table></div>
+`);
+
+// 10 Issues
+sec(9, `
+<h2>مدیریت مشکلات و تأخیرات</h2>
+<div class="grid cols-3">
+  <div class="card kpi"><div class="label">تعداد کل موارد ثبت‌شده</div><div class="value">${ISSUES.length}</div></div>
+  <div class="card kpi"><div class="label">حل‌شده</div><div class="value" style="color:var(--green)">${ISSUES.filter(i=>i.status==='حل‌شده').length}</div></div>
+  <div class="card kpi"><div class="label">باز / در انتظار تصمیم</div><div class="value" style="color:var(--amber)">${ISSUES.filter(i=>i.status!=='حل‌شده').length}</div></div>
+</div>
+<div class="twrap"><table>
+<thead><tr><th>کد</th><th>عنوان مشکل</th><th>علت ریشه‌ای</th><th>مسئول پیگیری</th><th>وضعیت</th><th>اقدام اصلاحی</th></tr></thead>
+<tbody>${ISSUES.map(i=>`<tr>
+<td>${i.id}</td><td>${i.title}</td><td class="small">${i.cause}</td><td class="small">${i.owner}</td>
+<td><span class="pill" style="background:${i.status==='حل‌شده'?'#dcfce7':'#fef3c7'};color:${i.status==='حل‌شده'?'#166534':'#92400e'}">${i.status}</span></td>
+<td class="small">${i.action}</td>
+</tr>`).join('')}</tbody></table></div>
+`);
+
+// 11 Lookahead
+const dd = jd(meta.data_date);
+const lookaheadEnd = new Date(dd.getTime()+28*86400000);
+const upcoming = acts.filter(a=>{
+  const s = jd(a.early_start||a.act_start);
+  return s && s>=dd && s<=lookaheadEnd || (a.status==='TK_Active');
+}).sort((a,b)=> (jd(a.early_start||a.act_start)) - (jd(b.early_start||b.act_start)));
+sec(10, `
+<h2>برنامه ۴ هفته پیش‌رو (از ${fmtDate(meta.data_date)})</h2>
+<div class="twrap"><table>
+<thead><tr><th>کد</th><th>فعالیت</th><th>شروع</th><th>پایان</th><th>مدت باقی‌مانده</th><th>منابع درگیر</th></tr></thead>
+<tbody>${upcoming.map(a=>`<tr><td>${a.code}</td><td>${a.name}</td><td>${fmtDate(a.early_start||a.act_start)}</td><td>${fmtDate(a.early_end||a.act_end)}</td><td>${Math.round(a.remain_dur_d)} روز</td><td class="small">${a.resources.join('، ')||'—'}</td></tr>`).join('')}</tbody>
+</table></div>
+<h2>محدودیت‌های اجرایی پیش‌رو</h2>
+<div class="card"><ul class="plain small">
+<li>تکمیل بال Inpatient (A1260) به‌عنوان فعالیت بحرانی، پیش‌نیاز شروع نما و سقف (A1270/A1280) است.</li>
+<li>در صورت تداوم شرایط جوی نامساعد، احتمال تأخیر بیشتر در تکمیل این بال وجود دارد (ریسک R-13).</li>
+<li>هماهنگی زودهنگام با پیمانکار MEP برای شروع به‌موقع بعد از Dry-In Complete (A1285) توصیه می‌شود.</li>
+</ul></div>
+`);
+
+// 12 Management Summary
+sec(11, `
+<h2>خلاصه مدیریتی وضعیت پروژه</h2>
+<div class="card">
+<p style="line-height:2;font-size:13.5px">
+پروژه ساخت بیمارستان عمومی هوشمند مدیکور در تاریخ گزارش (${fmtDate(meta.data_date)}) با پیشرفت فیزیکی
+<b>${fmtPct(PHYS_PCT)}</b> در برابر پیشرفت برنامه‌ریزی‌شده <b>${fmtPct(PV/BAC*100)}</b> قرار دارد. شاخص عملکرد هزینه
+(CPI=${fmtIdx(CPI)}) و شاخص عملکرد زمان (SPI=${fmtIdx(SPI)}) هر دو زیر ۱ هستند که نشان‌دهنده‌ی
+Overrun هزینه به میزان <b>${fmtM(Math.abs(CV))}</b> و عقب‌ماندگی زمانی معادل <b>${SLIP_DAYS} روز</b> نسبت به Baseline اصلی است.
+پیش‌بینی هزینه نهایی پروژه (EAC) معادل <b>${fmtM(EAC)}</b> برآورد می‌شود.
+</p>
+</div>
+<h2>مهم‌ترین انحرافات</h2>
+<div class="card"><ul class="plain">
+<li>تأخیر ۱۰ روزه در بال Inpatient (فعالیت بحرانی پروژه) به دلیل شرایط جوی و Over-allocation اولیه منابع.</li>
+<li>افزایش هزینه سازه به میزان تقریبی ۴.۵٪ نسبت به ارزش کسب‌شده، ناشی از نوسان قیمت فولاد/بتن.</li>
+<li>شکاف ۷۷ میلیون دلاری بین بودجه مصوب منشور و برآورد Bottom-Up، همچنان در انتظار تصمیم Sponsor.</li>
+</ul></div>
+<h2>اولویت‌های مدیریتی پیش‌رو</h2>
+<div class="card"><ul class="plain">
+<li>برگزاری جلسه Decision Gate با Sponsor برای نهایی‌کردن بودجه رسمی پروژه (Milestone A1025).</li>
+<li>تمرکز منابع اجرایی بر تکمیل سریع‌تر بال Inpatient برای کاهش انحراف مسیر بحرانی.</li>
+<li>بازنگری Baseline رسمی برای رفع ناهماهنگی هزینه سه فعالیت سازه‌ای (Issue I-03).</li>
+<li>پایش مستمر ریسک‌های بالای امتیاز (R-01، R-06) در جلسات هفتگی کنترل پروژه.</li>
+</ul></div>
+`);
+
+// ---------- fill WBS schedule table (section 03) ----------
+(function(){
+  const blMap = {
+    'Project Management':['2025-01-02','2025-09-25'],
+    'Design':['2025-01-09','2025-05-16'],
+    'Permits & Regulatory Approval':['2025-02-07','2025-06-24'],
+    'Site Preparation & Civil Works':['2025-06-25','2025-08-20'],
+    'Structural Construction':['2025-08-21','2025-12-31'],
+    'MEP Installation':['2026-01-02','2026-03-09'],
+    'Smart-Systems Integration':['2026-03-10','2026-07-23'],
+    'Interior Finishing & Medical Fit-out':['2026-03-10','2026-07-30'],
+    'Commissioning & Testing':['2026-03-10','2026-08-13'],
+    'Accreditation & Handover':['2026-08-14','2026-09-25'],
+  };
+  const cur = {};
+  acts.forEach(a=>{
+    const k=a.wbs1; if(!k||!blMap[k]) return;
+    const s = a.early_start||a.act_start, e=a.early_end||a.act_end;
+    if(!cur[k]) cur[k]={s:s,e:e,wb:a.budget,we:0};
+    else{ if(s<cur[k].s) cur[k].s=s; if(e>cur[k].e) cur[k].e=e; }
+    cur[k].wb=(cur[k].wb||0); cur[k].we=(cur[k].we||0)+a.budget*(a.phys/100);
+  });
+  const tb = document.getElementById('wbsSchedBody');
+  tb.innerHTML = Object.keys(blMap).map(k=>{
+    const bl=blMap[k]; const c=cur[k]||{s:bl[0],e:bl[1],we:0,wb:1};
+    const pct = (c.we/ (acts.filter(a=>a.wbs1===k).reduce((s,a)=>s+a.budget,0)||1) *100);
+    return `<tr><td>${k}</td><td>${fmtDate(bl[0])}</td><td>${fmtDate(bl[1])}</td><td>${fmtDate(c.s)} → ${fmtDate(c.e)}</td><td>${pct.toFixed(0)}%</td></tr>`;
+  }).join('');
+})();
+
+// ---------- charts ----------
+const CH = { color: getComputedStyle(document.documentElement) };
+function themeColor(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+Chart.defaults.font.family = 'Vazirmatn, sans-serif';
+Chart.defaults.color = themeColor('--ink2');
+
+new Chart(document.getElementById('chExecBar'), {
+  type:'bar',
+  data:{ labels:['CPI','SPI'], datasets:[{ label:'شاخص', data:[CPI,SPI], backgroundColor:[CPI<1?'#dc2626':'#16a34a', SPI<1?'#dc2626':'#16a34a'], borderRadius:8 }]},
+  options:{ scales:{ y:{ suggestedMax:1.2, grid:{color:themeColor('--border')} }, x:{grid:{display:false}} }, plugins:{legend:{display:false}} }
+});
+
+new Chart(document.getElementById('chCostBar'), {
+  type:'bar',
+  data:{ labels:wbsKeys, datasets:[
+    {label:'بودجه', data:wbsKeys.map(k=>wbsCost[k].budget), backgroundColor:'#2563eb', borderRadius:6},
+    {label:'هزینه واقعی', data:wbsKeys.map(k=>wbsCost[k].actual), backgroundColor:'#dc2626', borderRadius:6},
+    {label:'باقی‌مانده', data:wbsKeys.map(k=>wbsCost[k].remain), backgroundColor:'#94a3b8', borderRadius:6},
+  ]},
+  options:{ responsive:true, maintainAspectRatio:false, scales:{ x:{grid:{display:false},ticks:{autoSkip:false,maxRotation:40,minRotation:20,font:{size:10}}}, y:{grid:{color:themeColor('--border')}} } }
+});
+
+new Chart(document.getElementById('chResBar'), {
+  type:'bar',
+  data:{ labels:resources.slice(0,10).map(r=>r.short), datasets:[{label:'بودجه', data:resources.slice(0,10).map(r=>r.budget), backgroundColor:'#0891b2', borderRadius:6}]},
+  options:{ indexAxis:'y', plugins:{legend:{display:false}}, scales:{ x:{grid:{color:themeColor('--border')}}, y:{grid:{display:false}} } }
+});
+new Chart(document.getElementById('chResPie'), {
+  type:'doughnut',
+  data:{ labels:Object.keys(byType), datasets:[{data:Object.values(byType), backgroundColor:['#2563eb','#0891b2','#d97706','#16a34a']}]},
+  options:{ plugins:{legend:{position:'bottom'}} }
+});
+
+new Chart(document.getElementById('chSCurve'), {
+  type:'line',
+  data:{ labels: sc.labels, datasets:[
+    {label:'Planned Value (Baseline)', data:sc.pv, borderColor:'#2563eb', backgroundColor:'transparent', tension:.3, pointRadius:0},
+    {label:'Earned Value', data:sc.ev, borderColor:'#16a34a', backgroundColor:'transparent', tension:.3, pointRadius:0},
+    {label:'Actual Cost', data:sc.ac, borderColor:'#dc2626', backgroundColor:'transparent', tension:.3, pointRadius:0},
+  ]},
+  options:{ responsive:true, maintainAspectRatio:false, interaction:{mode:'index',intersect:false}, scales:{ x:{grid:{display:false},ticks:{maxTicksLimit:12}}, y:{grid:{color:themeColor('--border')},ticks:{callback:(v)=>'$'+(v/1e6).toFixed(0)+'M'}} } }
+});
+</script>
+</body>
+</html>

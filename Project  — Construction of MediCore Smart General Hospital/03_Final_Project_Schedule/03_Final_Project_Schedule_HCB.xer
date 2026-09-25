@@ -1,0 +1,496 @@
+ERMHDR	24.12	2026-09-24	Project	ADMIN	amirreza	dbxDatabaseNoName	Project Management	USD
+%T	CURRTYPE
+%F	curr_id	decimal_digit_cnt	curr_symbol	decimal_symbol	digit_group_symbol	pos_curr_fmt_type	neg_curr_fmt_type	curr_type	curr_short_name	group_digit_cnt	base_exch_rate
+%R	1	2	$	.	,	#1.1	(#1.1)	US Dollar	USD	3	1
+%R	13	2	£	.	,	#1.1	(#1.1)	Pound Sterling	GBP	3	0.618603
+%R	14	2	¥	.	,	#1.1	(#1.1)	Japanese Yen	JPY	3	91.2708
+%R	15	2	€	.	,	#1.1	(#1.1)	Euro	EUR	3	0.689711
+%R	16	2	¥	.	,	#1.1	(#1.1)	Chinese Yuan Renminbi	CNY	3	6.82502
+%R	17	2	$	.	,	#1.1	(#1.1)	Canadian Dollar	CAD	3	1.03757
+%R	18	2	RUB	.	,	#1.1	(#1.1)	Russian Ruble	RUB	3	0.033948
+%R	19	2	$	.	,	#1.1	(#1.1)	Argentine Peso	ARS	3	3.79109
+%R	20	2	$b	.	,	#1.1	(#1.1)	Bolivian Boliviano	BOB	3	7.5708
+%R	21	2	R$	.	,	#1.1	(#1.1)	Brazilian Real	BRL	3	1.7665
+%R	22	2	$	.	,	#1.1	(#1.1)	Chilean Peso	CLP	3	507.58
+%R	23	2	$	.	,	#1.1	(#1.1)	Columbian Peso	COP	3	1957.74
+%R	24	2	$	.	,	#1.1	(#1.1)	Guyanese Dollar	GYD	3	202.95
+%R	25	2	Gs	.	,	#1.1	(#1.1)	Paraguayan Guarani	PYG	3	4640
+%R	26	2	S/.	.	,	#1.1	(#1.1)	Peruvian Nuevo Sol	PEN	3	2.7244
+%R	27	2	$	.	,	#1.1	(#1.1)	Surinamese Dollar	SRD	3	2.8
+%R	28	2	Bs	.	,	#1.1	(#1.1)	Venezuelan Bolivar Fuerto	VEF	3	2.1446
+%R	29	2	$U	.	,	#1.1	(#1.1)	Uruguayan Peso	UYU	3	21.247
+%R	30	2	TO	.	,	#1.1	(#1.1)	Toman	TOM	3	9E-006
+%T	FINTMPL
+%F	fintmpl_id	fintmpl_name	default_flag
+%R	1	Calendar	Y
+%T	OBS
+%F	obs_id	parent_obs_id	guid	seq_num	obs_name	obs_descr
+%R	540			0	Enterprise	<html>  <head>      </head>  <body bgcolor=""#ffffff"">    Enterprise  </body></html>
+%R	1761	540	wM+oatUTfE27PhoN7VeJOg	1	Design Manager	
+%R	1766	540	xDO95KPYkEqE2AAef6t0Uw	2	Construction Manager	
+%R	1772	540	OFLDzjhqqUmd6yUa+8Gkbg	4	Smart-Systems / IT Integration Manager	
+%R	1776	540	JC+eEowOsEGt8t/WMIdZcg	6	Procurement Manager	
+%R	1780	540	0TVeFWSP80e7WK0pwe27hQ	8	QA/QC Manager	
+%R	1783	540	twHEH2Be/kSbOPj/VcDriQ	10	HSE Manager (Health, Safety, Environment)	
+%R	1786	540	r7qHkpPS8EWIKUOgQwmQOQ	12	Commissioning & Accreditation Manager	
+%R	1789	540	3eqbQPLIOEu6AwrXBQRTDw	14	Financial Controller	
+%T	UDFTYPE
+%F	udf_type_id	table_name	udf_type_name	udf_type_label	logical_data_type	super_flag	indicator_expression	summary_indicator_expression	export_flag
+%R	826	TASK	user_field_826	WF	FT_FLOAT_2_DECIMALS	N			
+%T	UMEASURE
+%F	unit_id	seq_num	unit_abbrev	unit_name
+%R	112	101	LS	Lump Sum
+%T	PROJECT
+%F	proj_id	fy_start_month_num	rsrc_self_add_flag	allow_complete_flag	rsrc_multi_assign_flag	checkout_flag	project_flag	step_complete_flag	cost_qty_recalc_flag	batch_sum_flag	name_sep_char	def_complete_pct_type	proj_short_name	acct_id	orig_proj_id	source_proj_id	base_type_id	clndr_id	sum_base_proj_id	task_code_base	task_code_step	priority_num	wbs_max_sum_level	strgy_priority_num	last_checksum	critical_drtn_hr_cnt	def_cost_per_qty	last_recalc_date	plan_start_date	plan_end_date	scd_end_date	add_date	last_tasksum_date	fcst_start_date	def_duration_type	task_code_prefix	guid	def_qty_type	add_by_name	web_local_root_path	proj_url	def_rate_type	add_act_remain_flag	act_this_per_link_flag	def_task_type	act_pct_link_flag	critical_path_type	task_code_prefix_flag	def_rollup_dates_flag	use_project_baseline_flag	rem_target_link_flag	reset_planned_flag	allow_neg_act_flag	sum_assign_level	last_fin_dates_id	fintmpl_id	last_baseline_update_date	cr_external_key	apply_actuals_date	location_id	last_schedule_date	loaded_scope_level	export_flag	new_fin_dates_id	baselines_to_export	baseline_names_to_export	next_data_date	close_period_flag	sum_refresh_date	trsrcsum_loaded	sumtask_loaded
+%R	4635	1	Y	Y	Y	N	Y	N	N	Y	.	CP_Phys	HCB					5829	4636	1000	10	10	2	500		0	0.0000	2025-10-31 00:00	2025-01-01 00:00		2026-10-09 17:00	2026-09-19 00:00			DT_FixedDUR2	A	C1/vQJ0hUEq5hG4K3vRqRA	QT_Hour	ADMIN			COST_PER_QTY	N	Y	TT_Task	Y	CT_TotFloat	Y	Y	Y	Y	N	N	SL_Taskrsrc		1			2026-09-23 12:57		2026-09-23 13:07	7	Y						1899-12-30 00:00		
+%T	APPLYACTOPTIONS
+%F	proj_id	respect_duration_type
+%R	4635	N
+%T	CALENDAR
+%F	clndr_id	default_flag	clndr_name	proj_id	base_clndr_id	last_chng_date	clndr_type	day_hr_cnt	week_hr_cnt	month_hr_cnt	year_hr_cnt	rsrc_private	clndr_data
+%R	5829	Y	Trades -  5 Day Workweek			2026-09-23 00:00	CA_Base	8	40	172	2000	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||3()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||4()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||5()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||6()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||7()())))  (0||VIEW(ShowTotal|N)())  (0||Exceptions()(    (0||0(d|40179)())    (0||1(d|40329)())    (0||2(d|40364)())    (0||3(d|40427)())    (0||4(d|40507)())    (0||5(d|40536)())    (0||6(d|40543)())    (0||7(d|40693)())    (0||8(d|40728)())    (0||9(d|40791)())    (0||10(d|40871)())    (0||11(d|40903)())    (0||12(d|40910)())    (0||13(d|41057)())    (0||14(d|41094)())    (0||15(d|41155)())    (0||16(d|41235)())    (0||17(d|41268)())    (0||18(d|41275)())    (0||19(d|41421)())    (0||20(d|41459)())    (0||21(d|41519)())    (0||22(d|41606)())    (0||23(d|41633)())    (0||24(d|45658)())    (0||25(d|45677)())    (0||26(d|45705)())    (0||27(d|45803)())    (0||28(d|45827)())    (0||29(d|45842)())    (0||30(d|45901)())    (0||31(d|45943)())    (0||32(d|45972)())    (0||33(d|45988)())    (0||34(d|46016)())    (0||35(d|46023)())    (0||36(d|46041)())    (0||37(d|46069)())    (0||38(d|46167)())    (0||39(d|46192)())    (0||40(d|46206)())    (0||41(d|46272)())    (0||42(d|46307)())    (0||43(d|46337)())    (0||44(d|46352)())    (0||45(d|46381)())))))
+%R	6646	N	Western Work Calendar			2026-04-28 00:00	CA_Base	8	40	176	2088	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||3()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||4()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||5()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||6()(      (0||0(s|10:00|f|14:00)())))    (0||7()())))  (0||VIEW(ShowTotal|N)())  (0||Exceptions()(    (0||0(d|40179)())    (0||1(d|40329)())    (0||2(d|40364)())    (0||3(d|40427)())    (0||4(d|40507)())    (0||5(d|40536)())    (0||6(d|40543)())    (0||7(d|40693)())    (0||8(d|40728)())    (0||9(d|40791)())    (0||10(d|40871)())    (0||11(d|40903)())    (0||12(d|40910)())    (0||13(d|41057)())    (0||14(d|41094)())    (0||15(d|41155)())    (0||16(d|41235)())    (0||17(d|41268)())    (0||18(d|41275)())    (0||19(d|41421)())    (0||20(d|41459)())    (0||21(d|41519)())    (0||22(d|41606)())    (0||23(d|41633)())))))
+%R	6650	N	M-STRUCT - Structural Materials (concrete, rebar, steel)				CA_Rsrc	8	40	172	2088	Y	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||3()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||4()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||5()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||6()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||7()())))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()(    (0||0(d|40179)())    (0||1(d|40329)())    (0||2(d|40364)())    (0||3(d|40427)())    (0||4(d|40507)())    (0||5(d|40536)())    (0||6(d|40543)())    (0||7(d|40693)())    (0||8(d|40728)())    (0||9(d|40791)())    (0||10(d|40871)())    (0||11(d|40903)())    (0||12(d|40910)())    (0||13(d|41057)())    (0||14(d|41094)())    (0||15(d|41155)())    (0||16(d|41235)())    (0||17(d|41268)())    (0||18(d|41275)())    (0||19(d|41421)())    (0||20(d|41459)())    (0||21(d|41519)())    (0||22(d|41606)())    (0||23(d|41633)())    (0||24(d|45658)())    (0||25(d|45677)())    (0||26(d|45705)())    (0||27(d|45803)())    (0||28(d|45827)())    (0||29(d|45842)())    (0||30(d|45901)())    (0||31(d|45943)())    (0||32(d|45972)())    (0||33(d|45988)())    (0||34(d|46016)())    (0||35(d|46023)())    (0||36(d|46041)())    (0||37(d|46069)())    (0||38(d|46167)())    (0||39(d|46192)())    (0||40(d|46206)())    (0||41(d|46272)())    (0||42(d|46307)())    (0||43(d|46337)())    (0||44(d|46352)())    (0||45(d|46381)())))))
+%R	6651	N	M-SMART - Smart-Systems Hardware (sensors, servers, network gear)				CA_Rsrc	8	40	172	2088	Y	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||3()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||4()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||5()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||6()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||7()())))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()(    (0||0(d|40179)())    (0||1(d|40329)())    (0||2(d|40364)())    (0||3(d|40427)())    (0||4(d|40507)())    (0||5(d|40536)())    (0||6(d|40543)())    (0||7(d|40693)())    (0||8(d|40728)())    (0||9(d|40791)())    (0||10(d|40871)())    (0||11(d|40903)())    (0||12(d|40910)())    (0||13(d|41057)())    (0||14(d|41094)())    (0||15(d|41155)())    (0||16(d|41235)())    (0||17(d|41268)())    (0||18(d|41275)())    (0||19(d|41421)())    (0||20(d|41459)())    (0||21(d|41519)())    (0||22(d|41606)())    (0||23(d|41633)())    (0||24(d|45658)())    (0||25(d|45677)())    (0||26(d|45705)())    (0||27(d|45803)())    (0||28(d|45827)())    (0||29(d|45842)())    (0||30(d|45901)())    (0||31(d|45943)())    (0||32(d|45972)())    (0||33(d|45988)())    (0||34(d|46016)())    (0||35(d|46023)())    (0||36(d|46041)())    (0||37(d|46069)())    (0||38(d|46167)())    (0||39(d|46192)())    (0||40(d|46206)())    (0||41(d|46272)())    (0||42(d|46307)())    (0||43(d|46337)())    (0||44(d|46352)())    (0||45(d|46381)())))))
+%R	6652	N	M-MEDEQ - Medical Equipment				CA_Rsrc	8	40	172	2088	Y	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||3()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||4()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||5()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||6()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||7()())))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()(    (0||0(d|40179)())    (0||1(d|40329)())    (0||2(d|40364)())    (0||3(d|40427)())    (0||4(d|40507)())    (0||5(d|40536)())    (0||6(d|40543)())    (0||7(d|40693)())    (0||8(d|40728)())    (0||9(d|40791)())    (0||10(d|40871)())    (0||11(d|40903)())    (0||12(d|40910)())    (0||13(d|41057)())    (0||14(d|41094)())    (0||15(d|41155)())    (0||16(d|41235)())    (0||17(d|41268)())    (0||18(d|41275)())    (0||19(d|41421)())    (0||20(d|41459)())    (0||21(d|41519)())    (0||22(d|41606)())    (0||23(d|41633)())    (0||24(d|45658)())    (0||25(d|45677)())    (0||26(d|45705)())    (0||27(d|45803)())    (0||28(d|45827)())    (0||29(d|45842)())    (0||30(d|45901)())    (0||31(d|45943)())    (0||32(d|45972)())    (0||33(d|45988)())    (0||34(d|46016)())    (0||35(d|46023)())    (0||36(d|46041)())    (0||37(d|46069)())    (0||38(d|46167)())    (0||39(d|46192)())    (0||40(d|46206)())    (0||41(d|46272)())    (0||42(d|46307)())    (0||43(d|46337)())    (0||44(d|46352)())    (0||45(d|46381)())))))
+%R	6653	N	M-MEP - MEP Materials & Fixtures			2026-09-21 00:00	CA_Rsrc	8	40	172	2088	Y	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||3()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||4()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||5()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||6()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||7()())))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()(    (0||0(d|40179)())    (0||1(d|40329)())    (0||2(d|40364)())    (0||3(d|40427)())    (0||4(d|40507)())    (0||5(d|40536)())    (0||6(d|40543)())    (0||7(d|40693)())    (0||8(d|40728)())    (0||9(d|40791)())    (0||10(d|40871)())    (0||11(d|40903)())    (0||12(d|40910)())    (0||13(d|41057)())    (0||14(d|41094)())    (0||15(d|41155)())    (0||16(d|41235)())    (0||17(d|41268)())    (0||18(d|41275)())    (0||19(d|41421)())    (0||20(d|41459)())    (0||21(d|41519)())    (0||22(d|41606)())    (0||23(d|41633)())    (0||24(d|45658)())    (0||25(d|45677)())    (0||26(d|45705)())    (0||27(d|45803)())    (0||28(d|45827)())    (0||29(d|45842)())    (0||30(d|45901)())    (0||31(d|45943)())    (0||32(d|45972)())    (0||33(d|45988)())    (0||34(d|46016)())    (0||35(d|46023)())    (0||36(d|46041)())    (0||37(d|46069)())    (0||38(d|46167)())    (0||39(d|46192)())    (0||40(d|46206)())    (0||41(d|46272)())    (0||42(d|46307)())    (0||43(d|46337)())    (0||44(d|46352)())    (0||45(d|46381)())))))
+%R	6654	N	M-FF - Furniture & Fixtures			2026-09-21 00:00	CA_Rsrc	8	40	172	2088	Y	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||3()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||4()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||5()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||6()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||7()())))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()(    (0||0(d|40179)())    (0||1(d|40329)())    (0||2(d|40364)())    (0||3(d|40427)())    (0||4(d|40507)())    (0||5(d|40536)())    (0||6(d|40543)())    (0||7(d|40693)())    (0||8(d|40728)())    (0||9(d|40791)())    (0||10(d|40871)())    (0||11(d|40903)())    (0||12(d|40910)())    (0||13(d|41057)())    (0||14(d|41094)())    (0||15(d|41155)())    (0||16(d|41235)())    (0||17(d|41268)())    (0||18(d|41275)())    (0||19(d|41421)())    (0||20(d|41459)())    (0||21(d|41519)())    (0||22(d|41606)())    (0||23(d|41633)())    (0||24(d|45658)())    (0||25(d|45677)())    (0||26(d|45705)())    (0||27(d|45803)())    (0||28(d|45827)())    (0||29(d|45842)())    (0||30(d|45901)())    (0||31(d|45943)())    (0||32(d|45972)())    (0||33(d|45988)())    (0||34(d|46016)())    (0||35(d|46023)())    (0||36(d|46041)())    (0||37(d|46069)())    (0||38(d|46167)())    (0||39(d|46192)())    (0||40(d|46206)())    (0||41(d|46272)())    (0||42(d|46307)())    (0||43(d|46337)())    (0||44(d|46352)())    (0||45(d|46381)())))))
+%T	SCHEDOPTIONS
+%F	schedoptions_id	proj_id	sched_outer_depend_type	sched_open_critical_flag	sched_lag_early_start_flag	sched_retained_logic	sched_setplantoforecast	sched_float_type	sched_calendar_on_relationship_lag	sched_use_expect_end_flag	sched_progress_override	level_float_thrs_cnt	level_outer_assign_flag	level_outer_assign_priority	level_over_alloc_pct	level_within_float_flag	level_keep_sched_date_flag	level_all_rsrc_flag	sched_use_project_end_date_for_float	enable_multiple_longest_path_calc	limit_multiple_longest_path_calc	max_multiple_longest_path	use_total_float_multiple_longest_paths	key_activity_for_multiple_longest_paths	LevelPriorityList
+%R	1	4635	SD_Both	N	Y	Y	N	FT_FF	rcal_Predecessor	Y	N	0	N	5	25	N	N	Y	Y	N	Y	10	Y		priority_type,ASC_BY_FIELD/ASC
+%T	PROJWBS
+%F	wbs_id	proj_id	obs_id	seq_num	est_wt	proj_node_flag	sum_data_flag	status_code	wbs_short_name	wbs_name	phase_id	parent_wbs_id	ev_user_pct	ev_etc_user_value	orig_cost	indep_remain_total_cost	ann_dscnt_rate_pct	dscnt_period_type	indep_remain_work_qty	anticip_start_date	anticip_end_date	ev_compute_type	ev_etc_compute_type	guid	tmpl_guid	plan_open_state
+%R	26696	4635	540	11	1	Y	N	WS_Open	HCB	Hospital construction building		26272	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	CIvFwUrLO0adVeyLz+wZHA		
+%R	26697	4635	540	1	1	N	N	WS_Open	1	Project Management		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	jsFZSLW4Vkuzavo4X+JTcQ		
+%R	26700	4635	540	1	1	N	N	WS_Open	1	Planning & Scheduling		26697	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	o8Q05HnvhU65Jsz/bmhGkA		
+%R	26701	4635	1789	2	1	N	N	WS_Open	2	Cost Control & Reporting		26697	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	GRBUT9XIgUu+C9tI7CPKcw		
+%R	26702	4635	540	3	1	N	N	WS_Open	3	Risk Management		26697	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	69zloS/Hm0Oci8MIMwfw5A		
+%R	26703	4635	1776	4	1	N	N	WS_Open	4	Contract Administration		26697	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	O0iuDzj8gUekaTdC+I8kOw		
+%R	26704	4635	1761	2	1	N	N	WS_Open	2	Design		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	d/vp4fhfl0u8Z//PNpzk3g		
+%R	26705	4635	1761	1	1	N	N	WS_Open	1	Architectural Design		26704	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	63ShTva3jEm6Kois/V83rw		
+%R	26708	4635	1761	1	1	N	N	WS_Open	1	Conceptual Design		26705	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	1KDY0nAQrU2bsQ7zM+EVBQ		
+%R	26709	4635	1761	2	1	N	N	WS_Open	2	Schematic Design		26705	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	TKGxGOAYkkqD2LfRA3bQcw		
+%R	26710	4635	1761	3	1	N	N	WS_Open	3	Detailed Design		26705	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	lx6+XZ5dBkKkSv8FSApojA		
+%R	26711	4635	1761	2	1	N	N	WS_Open	2	Structural Design		26704	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	1NLeTP1nlEy23YGfal8fdw		
+%R	26712	4635	1761	3	1	N	N	WS_Open	3	MEP Design		26704	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	6Kfd334amUmOrm6gZFIdbQ		
+%R	26713	4635	1761	4	1	N	N	WS_Open	4	Medical Equipment Planning		26704	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	ksgVdSxldkeuY92dkUXdZw		
+%R	26714	4635	1786	3	1	N	N	WS_Open	3	Permits & Regulatory Approval		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	grH9GCFjV0eW4p1J28IVMg		
+%R	26715	4635	1786	1	1	N	N	WS_Open	1	Certificate of Need		26714	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	N0BeCNluDUima1EYpUjPkg		
+%R	26716	4635	1786	2	1	N	N	WS_Open	2	Building Permits		26714	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	EkntORLcu0KCrwmIowDHFg		
+%R	26717	4635	1786	3	1	N	N	WS_Open	3	Healthcare Facility Licensing		26714	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	689PDKNdME6t4vg2ic3kpw		
+%R	26718	4635	1766	4	1	N	N	WS_Open	4	Site Preparation & Civil Works		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	0HXwFrReLEet07EsoI3yYw		
+%R	26719	4635	1766	1	1	N	N	WS_Open	1	Site Clearing & Grading		26718	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	n62BogBRf0WEugajpodgkg		
+%R	26720	4635	1766	2	1	N	N	WS_Open	2	Foundation Work		26718	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	aeb9cnF+lUels6e1c7WbZw		
+%R	26721	4635	1766	3	1	N	N	WS_Open	3	Utilities Infrastructure (water, power, sewage)		26718	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	g7/VmmGFXEyK8JWwpRdW0A		
+%R	26722	4635	1766	5	1	N	N	WS_Open	5	Structural Construction		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	QzNCHI0ifkyosIcOcSxtGQ		
+%R	26723	4635	1766	1	1	N	N	WS_Open	1	Superstructure (per wing: ED, ICU, Surgical, Inpatient floors)		26722	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	p+5QL+zspkOl/mVkFCejSg		
+%R	26724	4635	1766	2	1	N	N	WS_Open	2	Building Envelope (facade, roofing)		26722	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	RPV0e+6UqkuZ81qfQiRmAg		
+%R	26725	4635	1766	6	1	N	N	WS_Open	6	MEP Installation		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	XEi5OhLMIUSFunPuj2E0TQ		
+%R	26726	4635	1766	1	1	N	N	WS_Open	1	HVAC Systems		26725	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	zQ9bn1loe0WE5UlUl0uVIw		
+%R	26727	4635	1766	2	1	N	N	WS_Open	2	Electrical Systems		26725	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	mzwZj4/4k0S8oOrGdWRpQw		
+%R	26728	4635	1766	3	1	N	N	WS_Open	3	Plumbing & Medical Gas Systems		26725	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	pJQTuwPGZUGLSuyzMCQwRA		
+%R	26730	4635	1766	4	1	N	N	WS_Open	4	Fire Protection Systems		26725	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	zFd9zv4UQ0+VAQCpfRP+UQ		
+%R	26731	4635	1772	7	1	N	N	WS_Open	7	Smart-Systems Integration		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	+eqLwi4gGkGx4Nnpg3AllQ		
+%R	26732	4635	1772	1	1	N	N	WS_Open	1	IoT Patient Monitoring Infrastructure		26731	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	g45G1ds9ZUWu1XoA5O1pcw		
+%R	26733	4635	1772	2	1	N	N	WS_Open	2	Building Management System (BMS)		26731	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	oOzBwdBHGEioiijACk6Xeg		
+%R	26734	4635	1772	3	1	N	N	WS_Open	3	EMR System Integration		26731	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	nf7KsfGfe0+E0qUcseJwcw		
+%R	26735	4635	1772	4	1	N	N	WS_Open	4	Network & Cybersecurity Infrastructure		26731	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	q5EDNnhLe0iWI4OKGbXq4Q		
+%R	26736	4635	1766	8	1	N	N	WS_Open	8	Interior Finishing & Medical Fit-out		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	CpLwdjSFIEuXoPw2lD0+qg		
+%R	26737	4635	1766	1	1	N	N	WS_Open	1	Interior Finishes (flooring, walls, ceilings)		26736	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	0NT7Z2YOeEmt38vblRVWRg		
+%R	26738	4635	1766	2	1	N	N	WS_Open	2	Medical Equipment Installation		26736	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	CUc4dBzJ4Em85vkZTwv3Pg		
+%R	26739	4635	1776	3	1	N	N	WS_Open	3	Furniture & Fixtures		26736	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	E3zh7/2ugEa9dQis6OHPEg		
+%R	26740	4635	1786	9	1	N	N	WS_Open	9	Commissioning & Testing		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	Zv0ghbDPFESao0BIUdF9oQ		
+%R	26741	4635	1780	1	1	N	N	WS_Open	1	MEP Systems Testing		26740	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	5QydD4rlvEG68pMK0RPXxA		
+%R	26742	4635	1772	2	1	N	N	WS_Open	2	Smart-Systems Testing & Integration Validation		26740	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	05ctRt6wnkC7/d5VMV+aTA		
+%R	26743	4635	1783	3	1	N	N	WS_Open	3	Fire & Life Safety Testing		26740	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	NUzBnjfbhkKtji8Soz6K9A		
+%R	26744	4635	1786	10	1	N	N	WS_Open	10	Accreditation & Handover		26696	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	WSYDj5kqjkm5f+meDieQQA		
+%R	26745	4635	1780	1	1	N	N	WS_Open	1	Regulatory Inspection		26744	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	XXWvEsAj9UKtNf90CxmmXQ		
+%R	26746	4635	1786	2	1	N	N	WS_Open	2	Staff Training		26744	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	pCY1MBUQ6Ey8yhlrivBlqw		
+%R	26747	4635	540	3	1	N	N	WS_Open	3	Facility Handover & Closeout		26744	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	nISbGgamkkCQle5lk072ag		
+%T	RSRC
+%F	rsrc_id	parent_rsrc_id	clndr_id	role_id	shift_id	user_id	pobs_id	guid	rsrc_seq_num	email_addr	employee_code	office_phone	other_phone	rsrc_name	rsrc_short_name	rsrc_title_name	def_qty_per_hr	cost_qty_type	ot_factor	active_flag	auto_compute_act_flag	def_cost_qty_link_flag	ot_flag	curr_id	unit_id	rsrc_type	location_id	rsrc_notes	load_tasks_flag	level_flag	last_checksum
+%R	7190	7189	6646					ppee7kxkWU6mjmm5roRgiA	8					QA/QC Inspectors	L-QC		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7191	7189	6646					T7wvbCWIGUSw32pEAwnKaw	100					Project Admin/Support	L-ADMIN		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7192	7189	6646					xll6Y+erT0yhspONwX1law	7					Smart-Systems Integration Team	L-IT-CREW		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7193	7189	6646					aqWPV5zks0a2gAWfrrunUg	6					Finishing Crew	L-FIN-CREW		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7194	7189	6646					m1a5b58ixUGm+XccAXPS5g	5					MEP Installation Crew	L-MEP-CREW		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7195	7189	6646					euEe50rtp0+L4BKJsPhK9A	4					Structural Construction Crew	L-STR-CREW		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7197	7189	6646					nUfYqoKySECB7qktvKAxoQ	2					Structural Engineer Team	L-STR-ENG		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7198	7189	6646					N8rMKTK4yUqbiKk0mvyY3A	1					Architect Team	L-ARCH		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7199	7189	6646					rO5VvR2EFUONuULofcaXMg	0					Project Manager	L-PM		3	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7200	7189	6646					gq0+aad6QU+wBWGvfZhjIQ	200					Tower Crane	E-CRANE		1	QT_Day	0	Y	Y	Y	N	1		RT_Equip					
+%R	7201	7189	6646					a3TXuIMGMUy3CmBzgDL3Zg	300					Excavation Equipment	E-EXCAV		1	QT_Day		Y	Y	Y	N	1		RT_Equip					
+%R	7202	7189	6646					cKRmnPRbOUG6NgucgWxxSQ	400					Concrete Pumping Equipment	E-CONC		1	QT_Day		Y	Y	Y	N	1		RT_Equip					
+%R	7203	7189	6650					m3LxYhakhEiP6WE32kP4bQ	500					Structural Materials (concrete, rebar, steel)	M-STRUCT		0.125	QT_Hour	0	Y	Y	Y	N	1	112	RT_Mat					
+%R	7204	7189	6653					venNVLSyoU2L99ktu7Of0w	600					MEP Materials & Fixtures	M-MEP		0.125	QT_Hour	0	Y	Y	Y	N	1	112	RT_Mat					
+%R	7205	7189	6651					tRwR95Uf6ES5HPsyjOw5rA	700					Smart-Systems Hardware (sensors, servers, network gear)	M-SMART		0.125	QT_Hour	0	Y	Y	Y	N	1	112	RT_Mat					
+%R	7206	7189	6652					2s7cDGWQYUOMjI5dqBE6dA	800					Medical Equipment	M-MEDEQ		0.125	QT_Hour	0	Y	Y	Y	N	1	112	RT_Mat					
+%R	7207	7189	6654					kEp+vYWcYE6MiOyt0c2FBw	900					Furniture & Fixtures	M-FF		0.125	QT_Hour	0	Y	Y	Y	N	1	112	RT_Mat					
+%R	7208	7200	6646					sSYLD73d2kW0RkHV0uKkvw	3					Tower Crane	E-CRANE-2		1	QT_Day		Y	Y	Y	N	1		RT_Equip					
+%R	7212	7200	6646					LARe4Ua6QEan/zQ2aLOoPA	103					Tower Crane	E-CRANE-3		1	QT_Day		Y	Y	Y	N	1		RT_Equip					
+%R	7213	7200	6646					PUrJlMlDu0+kAOTpewb+9Q	203					Tower Crane	E-CRANE-4		1	QT_Day		Y	Y	Y	N	1		RT_Equip					
+%R	7214	7195	6646					dCp0HdWwekOkU0LLPUX5XA	0					Structural Construction Crew	L-STR-CREW-2		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7215	7195	6646					DMNN1oXm+kqQCBNU1bLu6Q	100					Structural Construction Crew	L-STR-CREW-3		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7216	7195	6646					GnRyugYlOkq0Gpruoiw6LA	200					Structural Construction Crew	L-STR-CREW-4		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7217	7194	6646					+Oc6LFPy8ESBE2gRBKYlBg	0					MEP Installation Crew	L-HVAC-CREW		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7218	7194	6646					VoH2yIBiL0utWFJbwhROKw	100					MEP Installation Crew	L-ELEC-CREW		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7219	7194	6646					Lnb4Q55n5UyWcJpjGNLtDA	200					MEP Installation Crew	L-PLUMB-CREW		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7220	7194	6646					jaY+Rgobn0281tgLf/Nwsw	300					MEP Installation Crew	L-FIRE-CREW		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7221	7193	6646					C1twgJ/5A0ulxNxHLqYqYg	0					Finishing Crew	L-FACADE-CREW		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7222	7193	6646					D7FI9l61TUuVaZVx79DGdg	100					Finishing Crew	L-ROOF-CREW		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7223	7192	6646					Gpom8DobSk66ihHzbgFz9A	0					Smart-Systems Integration Team	L-IOT-CREW		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7224	7192	6646					jnB37hBFJ0Wks0PRxhOjDg	100					Smart-Systems Integration Team	L-BMS-CREW		1	QT_Day		Y	Y	Y	N	1		RT_Labor					
+%R	7189		6646					//FXxDoZqk6MgKzLVcBtAA	1					Hospital construction building	HCB		1	QT_Hour		Y	Y	Y	N	1		RT_Labor					
+%T	RSRCRATE
+%F	rsrc_rate_id	rsrc_id	max_qty_per_hr	cost_per_qty	start_date	shift_period_id	cost_per_qty2	cost_per_qty3	cost_per_qty4	cost_per_qty5
+%R	7276	7190	1	225.0000	2026-01-01 00:00					
+%R	7277	7191	1	112.5000	2026-01-01 00:00					
+%R	7278	7192	1	625.0000	2026-01-01 00:00					
+%R	7279	7193	1	562.5000	2026-01-01 00:00					
+%R	7280	7194	1	812.5000	2026-01-01 00:00					
+%R	7281	7195	1	1000.0000	2026-01-01 00:00					
+%R	7283	7197	1	375.0000	2026-01-01 00:00					
+%R	7284	7198	1	437.5000	2026-01-01 00:00					
+%R	7285	7199	3	150.0000	2026-01-01 00:00					
+%R	7286	7200	1	312.5000	2026-01-01 00:00					
+%R	7287	7201	1	225.0000	2026-01-01 00:00					
+%R	7288	7202	1	187.5000	2026-01-01 00:00					
+%R	7289	7203	0.125	95000000.0000	2026-01-01 00:00					
+%R	7290	7204	0.125	60000000.0000	2026-01-01 00:00					
+%R	7291	7205	0.125	22500000.0000	2026-01-01 00:00					
+%R	7292	7206	0.125	33750000.0000	2026-01-01 00:00					
+%R	7293	7207	0.125	5000000.0000	2026-01-01 00:00					
+%R	7294	7208	1	312.5000	2026-01-01 00:00					
+%R	7298	7212	1	312.5000	2026-01-01 00:00					
+%R	7299	7213	1	312.5000	2026-01-01 00:00					
+%R	7300	7214	1	1000.0000	2026-01-01 00:00					
+%R	7301	7215	1	1000.0000	2026-01-01 00:00					
+%R	7302	7216	1	1000.0000	2026-01-01 00:00					
+%R	7303	7217	1	812.5000	2026-01-01 00:00					
+%R	7304	7218	1	812.5000	2026-01-01 00:00					
+%R	7305	7219	1	812.5000	2026-01-01 00:00					
+%R	7306	7220	1	812.5000	2026-01-01 00:00					
+%R	7307	7221	1	562.5000	2026-01-01 00:00					
+%R	7308	7222	1	562.5000	2026-01-01 00:00					
+%R	7309	7223	1	625.0000	2026-01-01 00:00					
+%R	7310	7224	1	625.0000	2026-01-01 00:00					
+%T	TASK
+%F	task_id	proj_id	wbs_id	clndr_id	phys_complete_pct	rev_fdbk_flag	est_wt	lock_plan_flag	auto_compute_act_flag	complete_pct_type	task_type	duration_type	status_code	task_code	task_name	rsrc_id	total_float_hr_cnt	free_float_hr_cnt	remain_drtn_hr_cnt	act_work_qty	remain_work_qty	target_work_qty	target_drtn_hr_cnt	target_equip_qty	act_equip_qty	remain_equip_qty	cstr_date	act_start_date	act_end_date	late_start_date	late_end_date	expect_end_date	early_start_date	early_end_date	restart_date	reend_date	target_start_date	target_end_date	rem_late_start_date	rem_late_end_date	cstr_type	priority_type	suspend_date	resume_date	float_path	float_path_order	guid	tmpl_guid	cstr_date2	cstr_type2	driving_path_flag	act_this_per_work_qty	act_this_per_equip_qty	external_early_start_date	external_late_end_date	create_date	update_date	create_user	update_user	location_id	crt_path_num
+%R	103341	4635	26700	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1000	Develop schedule baseline	7199			0	40	0	40	40	0	0	0		2025-01-02 08:00	2025-01-08 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-01-02 08:00	2025-01-08 17:00				PT_Normal					VEfFboqzRke3ilh4QKOqkA				Y	40	0			2026-09-20 12:59	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103342	4635	26700	5829	48	N	1	N	N	CP_Phys	TT_LOE	DT_FixedDUR2	TK_Active	A1010	Ongoing schedule updates	7199	0	0	1888	1592	1888	3480	3480	0	0	0		2025-01-02 08:00		2025-10-31 08:00	2026-10-09 17:00		2025-10-31 08:00	2026-10-09 17:00	2025-10-31 08:00	2026-10-09 17:00	2025-01-02 08:00	2026-09-25 17:00	2025-10-31 08:00	2026-10-09 17:00		PT_Normal					ry4rdeWQoUy5HyUV3dCAtQ				Y	1592	0			2026-09-20 12:59	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103343	4635	26701	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1020	Develop cost baseline	7199			0	40	0	40	40	0	0	0		2025-01-02 08:00	2025-01-08 17:00	2026-10-09 17:00	2026-10-09 17:00		2025-10-31 00:00	2025-10-31 00:00			2025-01-02 08:00	2025-01-08 17:00				PT_Normal					7D7HAGA2ykO6BsQ9vHPBcw				Y	40	0			2026-09-20 12:59	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103344	4635	26701	5829	47	N	1	N	N	CP_Phys	TT_LOE	DT_FixedDUR2	TK_Active	A1030	Ongoing cost control & reporting	7199	0	0	1888	1552	1888	3440	3440	0	0	0		2025-01-08 17:00		2025-01-09 08:00	2026-10-09 17:00		2025-10-31 08:00	2026-10-09 17:00	2025-10-31 08:00	2026-10-09 17:00	2025-01-09 08:00	2026-09-25 17:00	2025-01-09 08:00	2026-10-09 17:00		PT_Normal					x9yPgKifBUucpSXNuANPVw				Y	1552	0			2026-09-20 13:00	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103345	4635	26702	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1040	Develop risk register	7199			0	24	0	24	24	0	0	0		2025-01-02 08:00	2025-01-06 17:00	2026-10-09 17:00	2026-10-09 17:00		2025-10-31 00:00	2025-10-31 00:00			2025-01-02 08:00	2025-01-06 17:00				PT_Normal					g4EiBvN5Z0yBpPxNQvViCg				Y	24	0			2026-09-20 13:00	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103346	4635	26702	5829	48	N	1	N	N	CP_Phys	TT_LOE	DT_FixedDUR2	TK_Active	A1050	Ongoing risk monitoring	7199	0	0	1888	1568	1888	3456	3456	0	0	0		2025-01-06 17:00		2025-01-07 08:00	2026-10-09 17:00		2025-10-31 08:00	2026-10-09 17:00	2025-10-31 08:00	2026-10-09 17:00	2025-01-07 08:00	2026-09-25 17:00	2025-01-07 08:00	2026-10-09 17:00		PT_Normal					1NsmFAVCQ0essQsn6iLdJQ				Y	1568	0			2026-09-20 13:00	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103347	4635	26703	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1060	Draft contract templates	7191			0	40	0	40	40	0	0	0		2025-01-02 08:00	2025-01-08 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-01-02 08:00	2025-01-08 17:00				PT_Normal					hwpUW+8UWkmLz4xg58kpyA				Y	40	0			2026-09-20 13:01	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103348	4635	26703	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1070	Contract negotiation & award	7199			0	160	0	160	80	0	0	0		2025-01-09 08:00	2025-01-23 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-01-09 08:00	2025-01-23 17:00				PT_Normal					cWi/LV3iM0+dF7hYojIs4g				Y	160	0			2026-09-20 13:01	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103349	4635	26708	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1080	Conceptual design	7198			0	160	0	160	160	0	0	0		2025-01-09 08:00	2025-02-06 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-01-09 08:00	2025-02-06 17:00				PT_Normal					KHdUDh/2U0qt1HoEwlgbTg				Y	160	0			2026-09-20 13:01	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103350	4635	26709	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1090	Schematic design	7198			0	200	0	200	200	0	0	0		2025-02-07 08:00	2025-03-14 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-02-07 08:00	2025-03-14 17:00				PT_Normal					a1tD6hRMYEO9TnT/OWibjw				Y	200	0			2026-09-20 13:01	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103351	4635	26710	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1100	Detailed design	7198			0	240	0	240	240	0	0	0		2025-03-17 08:00	2025-04-25 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-03-17 08:00	2025-04-25 17:00				PT_Normal					HYvJ44FBn0OZI0/Of0NYBw				Y	240	0			2026-09-20 13:01	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103352	4635	26711	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1110	Structural design	7197			0	200	0	200	200	0	0	0		2025-03-17 08:00	2025-04-18 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-03-17 08:00	2025-04-18 17:00				PT_Normal					v/JD9rNq/06RoFUnvoik+Q				Y	200	0			2026-09-20 13:02	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103353	4635	26712	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1120	MEP design	7197			0	200	0	200	200	0	0	0		2025-03-17 08:00	2025-04-18 17:00	2026-01-16 08:00	2026-01-16 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-03-17 08:00	2025-04-18 17:00				PT_Normal					2AgjHGVuEUWDN5wq571VcA				N	200	0			2026-09-20 13:02	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103354	4635	26713	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1130	Medical equipment planning	7197			0	120	0	120	120	0	0	0		2025-04-28 08:00	2025-05-16 17:00	2026-07-02 08:00	2026-07-02 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-04-28 08:00	2025-05-16 17:00				PT_Normal					7+P/5/+FEUObC2MI9hxX9g				N	120	0			2026-09-20 13:02	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103355	4635	26715	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1140	Prepare Certificate of Need application	7191			0	80	0	80	80	0	0	0		2025-02-07 08:00	2025-02-21 17:00	2026-09-14 08:00	2026-09-14 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-02-07 08:00	2025-02-21 17:00				PT_Normal					ciov/AYfrEGUXjxDpJfeOw				N	80	0			2026-09-20 13:06	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103356	4635	26715	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1150	Certificate of Need approval (wait)	7191			0	240	0	240	240	0	0	0		2025-02-24 08:00	2025-04-04 17:00	2026-09-14 08:00	2026-09-14 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-02-24 08:00	2025-04-04 17:00				PT_Normal					hAQrPTf4ukixSKCXw0uXiw				N	240	0			2026-09-20 13:06	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103357	4635	26716	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1160	Submit building permit application	7191			0	80	0	80	80	0	0	0		2025-04-28 08:00	2025-05-09 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-04-28 08:00	2025-05-09 17:00				PT_Normal					8g94VWqHi0G/SQd8LU1SXA				Y	80	0			2026-09-20 13:07	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103358	4635	26716	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1170	Building permit approval (wait)	7191			0	240	0	240	240	0	0	0		2025-05-12 08:00	2025-06-24 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-05-12 08:00	2025-06-24 17:00				PT_Normal					a9aflDtuSUeUcTKbZYE9PQ				Y	240	0			2026-09-20 13:07	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103359	4635	26717	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1180	Healthcare facility licensing application	7191			0	120	0	120	120	0	0	0		2025-04-07 08:00	2025-04-25 17:00	2026-09-14 08:00	2026-09-14 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-04-07 08:00	2025-04-25 17:00				PT_Normal					CsQGGhuxqkukErEl7leicw				N	120	0			2026-09-20 13:07	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103360	4635	26719	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1190	Site clearing & grading	7195			0	120	0	120	120	120	120	0		2025-06-25 08:00	2025-07-16 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-06-25 08:00	2025-07-16 17:00				PT_Normal					QYRE5ijjFE+e+xuoU8DDhQ				Y	120	120			2026-09-20 13:08	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103361	4635	26720	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1200	Foundation excavation				0	0	0	0	80	80	80	0		2025-07-17 08:00	2025-07-30 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-07-17 08:00	2025-07-30 17:00				PT_Normal					w5LYdKGPE0eLLmOxYP/VtQ				Y	0	80			2026-09-20 13:08	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103362	4635	26720	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1210	Foundation concrete pour	7195			0	120	0	120	120	120	120	0		2025-07-31 08:00	2025-08-20 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-07-31 08:00	2025-08-20 17:00				PT_Normal					9+b8KDdpDU+YWRRElKfUTA				Y	120	120			2026-09-20 13:08	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103363	4635	26721	5829	100	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Complete	A1220	Utilities infrastructure installation	7194			0	160	0	160	160	0	0	0		2025-07-24 08:00	2025-08-20 17:00	2026-01-16 08:00	2026-01-16 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-07-24 08:00	2025-08-20 17:00				PT_Normal					Vn0gm54FzEGh191kKogKtg				N	160	0			2026-09-20 13:08	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103364	4635	26723	5829	90	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Active	A1230	Superstructure – ED wing	7195	136	136	32	288	64	320	320	320	288	32		2025-08-21 08:00		2025-11-26 08:00	2025-12-02 17:00		2025-10-31 08:00	2025-11-05 17:00	2025-10-31 08:00	2025-11-05 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-11-26 08:00	2025-12-02 17:00		PT_Normal					6W4okQQ720KTCfL0Aem+cw				N	288	288			2026-09-20 13:10	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103365	4635	26723	5829	90	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Active	A1240	Superstructure – ICU wing	7214	136	136	32	320	32	320	320	320	320	0		2025-08-21 08:00		2025-11-26 08:00	2025-12-02 17:00		2025-10-31 08:00	2025-11-05 17:00	2025-10-31 08:00	2025-11-05 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-11-26 08:00	2025-12-02 17:00		PT_Normal					JwWyaZvmR0GtxQoA41hINA				N	320	320			2026-09-20 13:10	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103366	4635	26723	5829	90	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Active	A1250	Superstructure – Surgical wing	7215	136	136	32	320	32	320	320	320	320	0		2025-08-21 08:00		2025-11-26 08:00	2025-12-02 17:00		2025-10-31 08:00	2025-11-05 17:00	2025-10-31 08:00	2025-11-05 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-11-26 08:00	2025-12-02 17:00		PT_Normal					NuRzsZJ8VUSd0e8ejXVmKQ				N	320	320			2026-09-20 13:10	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103367	4635	26723	5829	65	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_Active	A1260	Superstructure – Inpatient floors	7216	0	0	168	312	248	480	480	480	312	168		2025-08-21 08:00		2025-10-31 08:00	2025-12-02 17:00		2025-10-31 08:00	2025-12-02 17:00	2025-10-31 08:00	2025-12-02 17:00	2025-08-21 08:00	2025-11-17 17:00	2025-10-31 08:00	2025-12-02 17:00		PT_Normal					8RpOWcxp4UqG3QKvaK7XCA				Y	312	312			2026-09-20 13:10	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103368	4635	26724	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1270	Building envelope – facade		0	0	240	0	240	240	240	0	0	0				2025-12-03 08:00	2026-01-15 17:00		2025-12-03 08:00	2026-01-15 17:00	2025-12-03 08:00	2026-01-15 17:00	2025-12-03 08:00	2026-01-15 17:00	2025-12-03 08:00	2026-01-15 17:00		PT_Normal					8xLlIv3a+kKM8zDNiKONaA				Y	0	0			2026-09-20 13:11	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103369	4635	26724	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1280	Building envelope – roofing		80	80	160	0	160	160	160	0	0	0				2025-12-17 08:00	2026-01-15 17:00		2025-12-03 08:00	2025-12-31 17:00	2025-12-03 08:00	2025-12-31 17:00	2025-12-03 08:00	2025-12-31 17:00	2025-12-17 08:00	2026-01-15 17:00		PT_Normal					5m6KQj9m2kqiOBu67QKEqA				N	0	0			2026-09-20 13:11	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103370	4635	26726	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1290	HVAC installation		160	0	360	0	360	360	360	0	0	0				2026-02-17 08:00	2026-04-20 17:00		2026-01-16 08:00	2026-03-23 17:00	2026-01-16 08:00	2026-03-23 17:00	2026-01-16 08:00	2026-03-23 17:00	2026-02-17 08:00	2026-04-20 17:00		PT_Normal					iukcFUQnU0m3REZ2jgkO9A				N	0	0			2026-09-20 13:12	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103371	4635	26727	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1300	Electrical installation		0	0	360	0	360	360	360	0	0	0				2026-01-16 08:00	2026-03-23 17:00		2026-01-16 08:00	2026-03-23 17:00	2026-01-16 08:00	2026-03-23 17:00	2026-01-16 08:00	2026-03-23 17:00	2026-01-16 08:00	2026-03-23 17:00		PT_Normal					GwNq2WXqbUi0BPs7tcwoVw				Y	0	0			2026-09-20 13:12	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103372	4635	26728	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1310	Plumbing & medical gas systems		200	40	320	0	320	320	320	0	0	0				2026-02-24 08:00	2026-04-20 17:00		2026-01-16 08:00	2026-03-16 17:00	2026-01-16 08:00	2026-03-16 17:00	2026-01-16 08:00	2026-03-16 17:00	2026-02-24 08:00	2026-04-20 17:00		PT_Normal					aGf/tKH/50GQXIsOOcSpbA				N	0	0			2026-09-20 13:12	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103373	4635	26730	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1320	Fire protection systems		280	120	240	0	240	240	240	0	0	0				2026-03-10 08:00	2026-04-20 17:00		2026-01-16 08:00	2026-03-02 17:00	2026-01-16 08:00	2026-03-02 17:00	2026-01-16 08:00	2026-03-02 17:00	2026-03-10 08:00	2026-04-20 17:00		PT_Normal					Dzcpn1iz/EWcQPNXW6ioRw				N	0	0			2026-09-20 13:12	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103374	4635	26732	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1330	IoT patient monitoring installation		0	0	240	0	240	240	240	0	0	0				2026-04-28 08:00	2026-06-09 17:00		2026-04-28 08:00	2026-06-09 17:00	2026-04-28 08:00	2026-06-09 17:00	2026-04-28 08:00	2026-06-09 17:00	2026-04-28 08:00	2026-06-09 17:00		PT_Normal					6KBTmXPg6EKJx99m8/bVSw				Y	0	0			2026-09-20 13:13	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103375	4635	26733	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1340	BMS installation		320	320	240	0	240	240	240	0	0	0				2026-06-25 08:00	2026-08-06 17:00		2026-04-28 08:00	2026-06-09 17:00	2026-04-28 08:00	2026-06-09 17:00	2026-04-28 08:00	2026-06-09 17:00	2026-06-25 08:00	2026-08-06 17:00		PT_Normal					f8zQ2Lo1nUmVIbTENKgMsQ				N	0	0			2026-09-20 13:13	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103376	4635	26734	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1350	EMR system integration	7192	0	0	320	0	320	320	320	0	0	0				2026-06-10 08:00	2026-08-06 17:00		2026-06-10 08:00	2026-08-06 17:00	2026-06-10 08:00	2026-08-06 17:00	2026-06-10 08:00	2026-08-06 17:00	2026-06-10 08:00	2026-08-06 17:00		PT_Normal					TGEfT2FB50yjhe8+xhzdFw				Y	0	0			2026-09-20 13:13	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103377	4635	26735	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1360	Network & cybersecurity infrastructure	7192	0	0	200	0	200	200	200	0	0	0				2026-03-24 08:00	2026-04-27 17:00		2026-03-24 08:00	2026-04-27 17:00	2026-03-24 08:00	2026-04-27 17:00	2026-03-24 08:00	2026-04-27 17:00	2026-03-24 08:00	2026-04-27 17:00		PT_Normal					ZFz7GjpFwEG42cRr8eHtBA				Y	0	0			2026-09-20 13:13	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103378	4635	26737	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1370	Interior finishes	7193	160	0	400	0	400	400	400	0	0	0				2026-04-21 08:00	2026-07-01 17:00		2026-03-24 08:00	2026-06-02 17:00	2026-03-24 08:00	2026-06-02 17:00	2026-03-24 08:00	2026-06-02 17:00	2026-04-21 08:00	2026-07-01 17:00		PT_Normal					kI0nPA5d90KF9q6u/i81+g				N	0	0			2026-09-20 13:14	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103379	4635	26738	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1380	Medical equipment installation	7194	160	0	240	0	240	240	240	0	0	0				2026-07-02 08:00	2026-08-13 17:00		2026-06-03 08:00	2026-07-16 17:00	2026-06-03 08:00	2026-07-16 17:00	2026-06-03 08:00	2026-07-16 17:00	2026-07-02 08:00	2026-08-13 17:00		PT_Normal					kVOsoRY53ECtMjthgJ1GjA				N	0	0			2026-09-20 13:14	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103380	4635	26739	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1390	Furniture & fixtures procurement/install	7191	160	80	160	0	160	160	160	0	0	0				2026-08-14 08:00	2026-09-11 17:00		2026-07-17 08:00	2026-08-13 17:00	2026-07-17 08:00	2026-08-13 17:00	2026-07-17 08:00	2026-08-13 17:00	2026-08-14 08:00	2026-09-11 17:00		PT_Normal					QGYOkDoVpUOm/T+CzoJo5Q				N	0	0			2026-09-20 13:14	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103381	4635	26741	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1400	MEP systems testing	7190	760	0	120	0	120	120	120	0	0	0				2026-08-07 08:00	2026-08-27 17:00		2026-03-24 08:00	2026-04-13 17:00	2026-03-24 08:00	2026-04-13 17:00	2026-03-24 08:00	2026-04-13 17:00	2026-08-07 08:00	2026-08-27 17:00		PT_Normal					iPYKg4QGakapA8ma2Op/zg				N	0	0			2026-09-20 13:15	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103382	4635	26742	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1410	Smart-systems testing & validation	7190	0	0	120	0	240	240	120	0	0	0				2026-08-07 08:00	2026-08-27 17:00		2026-08-07 08:00	2026-08-27 17:00	2026-08-07 08:00	2026-08-27 17:00	2026-08-07 08:00	2026-08-27 17:00	2026-08-07 08:00	2026-08-27 17:00		PT_Normal					+9J8wxl7wE26vRnA+3ZLFw				Y	0	0			2026-09-20 13:15	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103383	4635	26743	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1420	Fire & life safety testing	7190	760	680	80	0	80	80	80	0	0	0				2026-08-28 08:00	2026-09-11 17:00		2026-04-14 08:00	2026-04-27 17:00	2026-04-14 08:00	2026-04-27 17:00	2026-04-14 08:00	2026-04-27 17:00	2026-08-28 08:00	2026-09-11 17:00		PT_Normal					YODRAY+WcEa9Pezt7owLIg				N	0	0			2026-09-20 13:15	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103384	4635	26745	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1430	Regulatory inspection	7190	80	80	80	0	160	160	80	0	0	0				2026-09-14 08:00	2026-09-25 17:00		2026-08-28 08:00	2026-09-11 17:00	2026-08-28 08:00	2026-09-11 17:00	2026-08-28 08:00	2026-09-11 17:00	2026-09-14 08:00	2026-09-25 17:00		PT_Normal					lIpRCewFvUmx/xuvse2pMQ				N	0	0			2026-09-20 13:15	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103385	4635	26746	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1440	Staff training	7191	0	0	160	0	160	160	160	0	0	0				2026-08-28 08:00	2026-09-25 17:00		2026-08-28 08:00	2026-09-25 17:00	2026-08-28 08:00	2026-09-25 17:00	2026-08-28 08:00	2026-09-25 17:00	2026-08-28 08:00	2026-09-25 17:00		PT_Normal					Z/mf1hYb8ESnoPkSP9Q39g				Y	0	0			2026-09-20 13:16	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103386	4635	26747	5829	0	N	1	N	N	CP_Phys	TT_Task	DT_FixedDUR2	TK_NotStart	A1450	Facility handover & closeout	7199	0	0	80	0	80	80	80	0	0	0				2026-09-28 08:00	2026-10-09 17:00		2026-09-28 08:00	2026-10-09 17:00	2026-09-28 08:00	2026-10-09 17:00	2026-09-28 08:00	2026-10-09 17:00	2026-09-28 08:00	2026-10-09 17:00		PT_Normal					KDdfbdL1VkyJ52xQXFPlpw				Y	0	0			2026-09-20 13:16	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103387	4635	26700	5829	100	N	0	N	N	CP_Phys	TT_Mile	DT_FixedDrtn	TK_Complete	A0999	Project Kickoff / Charter Approved				0	0	0	0	0	0	0	0		2025-01-02 08:00	2025-01-02 08:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-01-02 08:00	2025-01-02 08:00				PT_Normal					DhcFsFY0fkyDfZeaPWpnZA				Y	0	0			2026-09-22 12:05	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103388	4635	26701	5829	100	N	0	N	N	CP_Phys	TT_FinMile	DT_FixedDrtn	TK_Complete	A1025	Cost Baseline Variance Review & Sponsor Decision				0	0	0	0	0	0	0	0		2025-01-08 17:00	2025-01-08 17:00	2026-10-09 17:00	2026-10-09 17:00		2025-10-31 00:00	2025-10-31 00:00			2025-01-08 17:00	2025-01-08 17:00				PT_Normal					+wG62OVDwEmNN4NqxQotLg				Y	0	0			2026-09-22 12:07	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103389	4635	26710	5829	100	N	0	N	N	CP_Phys	TT_FinMile	DT_FixedDrtn	TK_Complete	A1105	Design Complete (Detailed Design Approved)				0	0	0	0	0	0	0	0		2025-04-25 17:00	2025-04-25 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-04-25 17:00	2025-04-25 17:00				PT_Normal					6vynp/4GdUKCfY3G9QmpPg				Y	0	0			2026-09-22 12:09	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103390	4635	26716	5829	100	N	0	N	N	CP_Phys	TT_FinMile	DT_FixedDrtn	TK_Complete	A1175	Notice to Proceed — Construction Authorized				0	0	0	0	0	0	0	0		2025-06-24 17:00	2025-06-24 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-06-24 17:00	2025-06-24 17:00				PT_Normal					K+75vH/BsE+dwea8Doa+bA				Y	0	0			2026-09-22 12:10	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103391	4635	26720	5829	100	N	0	N	N	CP_Phys	TT_FinMile	DT_FixedDrtn	TK_Complete	A1215	Foundation Complete				0	0	0	0	0	0	0	0		2025-08-20 17:00	2025-08-20 17:00	2025-10-31 08:00	2025-10-31 08:00		2025-10-31 00:00	2025-10-31 00:00			2025-08-20 17:00	2025-08-20 17:00				PT_Normal					We4C9C3RQ0iH1UqjkzccUQ				Y	0	0			2026-09-22 12:11	2026-09-23 13:04	NotPrmUser	NotPrmUser		
+%R	103392	4635	26723	5829	0	N	0	N	N	CP_Phys	TT_FinMile	DT_FixedDrtn	TK_NotStart	A1265	Structural Topping Out		0	0	0	0	0	0	0	0	0	0				2025-12-02 17:00	2025-12-02 17:00		2025-12-02 17:00	2025-12-02 17:00	2025-12-02 17:00	2025-12-02 17:00	2025-12-02 17:00	2025-12-02 17:00	2025-12-02 17:00	2025-12-02 17:00		PT_Normal					IOonWCXRMk2pXj5lB0lBZQ				Y	0	0			2026-09-22 12:12	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103393	4635	26724	5829	0	N	0	N	N	CP_Phys	TT_FinMile	DT_FixedDrtn	TK_NotStart	A1285	Building Envelope / Dry-In Complete		0	0	0	0	0	0	0	0	0	0				2026-01-15 17:00	2026-01-15 17:00		2026-01-15 17:00	2026-01-15 17:00	2026-01-15 17:00	2026-01-15 17:00	2026-01-15 17:00	2026-01-15 17:00	2026-01-15 17:00	2026-01-15 17:00		PT_Normal					3lO9j5Cse0S29b7A3KuEJg				Y	0	0			2026-09-22 12:12	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103394	4635	26730	5829	0	N	0	N	N	CP_Phys	TT_FinMile	DT_FixedDrtn	TK_NotStart	A1325	MEP Rough-In Complete		160	0	0	0	0	0	0	0	0	0				2026-04-20 17:00	2026-04-20 17:00		2026-03-23 17:00	2026-03-23 17:00	2026-03-23 17:00	2026-03-23 17:00	2026-03-23 17:00	2026-03-23 17:00	2026-04-20 17:00	2026-04-20 17:00		PT_Normal					u/PAj/rG+EiPe6YzNbdm2Q				N	0	0			2026-09-22 12:13	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103395	4635	26735	5829	0	N	0	N	N	CP_Phys	TT_FinMile	DT_FixedDrtn	TK_NotStart	A1365	Smart-Systems Integration Complete		0	0	0	0	0	0	0	0	0	0				2026-08-06 17:00	2026-08-06 17:00		2026-08-06 17:00	2026-08-06 17:00	2026-08-06 17:00	2026-08-06 17:00	2026-08-06 17:00	2026-08-06 17:00	2026-08-06 17:00	2026-08-06 17:00		PT_Normal					dW9AwA5jHk6hW1lSnz8veA				Y	0	0			2026-09-22 12:14	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103396	4635	26743	5829	0	N	0	N	N	CP_Phys	TT_FinMile	DT_FixedDrtn	TK_NotStart	A1425	Substantial Completion		80	0	0	0	0	0	0	0	0	0				2026-09-11 17:00	2026-09-11 17:00		2026-08-27 17:00	2026-08-27 17:00	2026-08-27 17:00	2026-08-27 17:00	2026-08-27 17:00	2026-08-27 17:00	2026-09-11 17:00	2026-09-11 17:00		PT_Normal					qRN18Z+CKEeA7kQEj/sijQ				N	0	0			2026-09-22 12:14	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%R	103397	4635	26747	5829	0	N	0	N	N	CP_Phys	TT_FinMile	DT_FixedDrtn	TK_NotStart	A1455	Project Closeout / Facility Handover Complete		0	0	0	0	0	0	0	0	0	0				2026-10-09 17:00	2026-10-09 17:00		2026-10-09 17:00	2026-10-09 17:00	2026-10-09 17:00	2026-10-09 17:00	2026-10-09 17:00	2026-10-09 17:00	2026-10-09 17:00	2026-10-09 17:00		PT_Normal					yLhUVtRjbE+nHrErfCK0FA				Y	0	0			2026-09-22 12:15	2026-09-23 13:07	NotPrmUser	NotPrmUser		
+%T	TASKPRED
+%F	task_pred_id	task_id	pred_task_id	proj_id	pred_proj_id	pred_type	lag_hr_cnt	comments	float_path	aref	arls
+%R	42510	103342	103341	4635	4635	PR_SS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42511	103343	103341	4635	4635	PR_SS	0			2025-10-31 00:00	2026-10-09 17:00
+%R	42513	103345	103341	4635	4635	PR_SS	0			2025-10-31 00:00	2026-10-09 17:00
+%R	42515	103347	103341	4635	4635	PR_SS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42516	103348	103347	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42517	103349	103341	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42518	103350	103349	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42519	103351	103350	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42520	103352	103350	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42521	103353	103350	4635	4635	PR_FS	0			2025-10-31 00:00	2026-01-16 08:00
+%R	42522	103354	103351	4635	4635	PR_FS	0			2025-10-31 00:00	2026-07-02 08:00
+%R	42523	103355	103349	4635	4635	PR_FS	0			2025-10-31 00:00	2026-09-14 08:00
+%R	42524	103356	103355	4635	4635	PR_FS	0			2025-10-31 00:00	2026-09-14 08:00
+%R	42525	103357	103351	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42526	103358	103357	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42527	103359	103356	4635	4635	PR_FS	0			2025-10-31 00:00	2026-09-14 08:00
+%R	42528	103360	103358	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42529	103361	103360	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42530	103362	103361	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42531	103363	103361	4635	4635	PR_SS	40			2025-10-31 00:00	2026-01-16 08:00
+%R	42532	103364	103362	4635	4635	PR_FS	0			2025-10-31 00:00	2025-11-26 08:00
+%R	42533	103365	103362	4635	4635	PR_FS	0			2025-10-31 00:00	2025-11-26 08:00
+%R	42534	103366	103362	4635	4635	PR_FS	0			2025-10-31 00:00	2025-11-26 08:00
+%R	42535	103367	103362	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42536	103368	103367	4635	4635	PR_FS	0			2025-12-02 17:00	2025-12-03 08:00
+%R	42537	103369	103367	4635	4635	PR_FS	0			2025-12-02 17:00	2025-12-17 08:00
+%R	42538	103370	103368	4635	4635	PR_FS	0			2026-01-15 17:00	2026-02-17 08:00
+%R	42539	103371	103368	4635	4635	PR_FS	0			2026-01-15 17:00	2026-01-16 08:00
+%R	42540	103372	103368	4635	4635	PR_FS	0			2026-01-15 17:00	2026-02-24 08:00
+%R	42541	103373	103368	4635	4635	PR_FS	0			2026-01-15 17:00	2026-03-10 08:00
+%R	42542	103374	103377	4635	4635	PR_FS	0			2026-04-27 17:00	2026-04-28 08:00
+%R	42543	103375	103377	4635	4635	PR_FS	0			2026-04-27 17:00	2026-06-25 08:00
+%R	42544	103376	103374	4635	4635	PR_FS	0			2026-06-09 17:00	2026-06-10 08:00
+%R	42545	103376	103377	4635	4635	PR_FS	0			2026-04-27 17:00	2026-06-10 08:00
+%R	42546	103377	103371	4635	4635	PR_FS	0			2026-03-23 17:00	2026-03-24 08:00
+%R	42547	103378	103370	4635	4635	PR_FS	0			2026-03-23 17:00	2026-04-21 08:00
+%R	42548	103378	103371	4635	4635	PR_FS	0			2026-03-23 17:00	2026-04-21 08:00
+%R	42549	103378	103372	4635	4635	PR_FS	0			2026-03-16 17:00	2026-04-21 08:00
+%R	42550	103378	103373	4635	4635	PR_FS	0			2026-03-02 17:00	2026-04-21 08:00
+%R	42551	103379	103378	4635	4635	PR_FS	0			2026-06-02 17:00	2026-07-02 08:00
+%R	42552	103380	103379	4635	4635	PR_FS	0			2026-07-16 17:00	2026-08-14 08:00
+%R	42554	103381	103370	4635	4635	PR_FS	0			2026-03-23 17:00	2026-08-07 08:00
+%R	42555	103381	103371	4635	4635	PR_FS	0			2026-03-23 17:00	2026-08-07 08:00
+%R	42556	103381	103372	4635	4635	PR_FS	0			2026-03-16 17:00	2026-08-07 08:00
+%R	42557	103381	103373	4635	4635	PR_FS	0			2026-03-02 17:00	2026-08-07 08:00
+%R	42558	103382	103374	4635	4635	PR_FS	0			2026-06-09 17:00	2026-08-07 08:00
+%R	42559	103382	103375	4635	4635	PR_FS	0			2026-06-09 17:00	2026-08-07 08:00
+%R	42560	103382	103376	4635	4635	PR_FS	0			2026-08-06 17:00	2026-08-07 08:00
+%R	42561	103382	103377	4635	4635	PR_FS	0			2026-04-27 17:00	2026-08-07 08:00
+%R	42562	103383	103373	4635	4635	PR_FS	0			2026-03-02 17:00	2026-08-28 08:00
+%R	42563	103383	103381	4635	4635	PR_FS	0			2026-04-13 17:00	2026-08-28 08:00
+%R	42564	103384	103380	4635	4635	PR_FS	0			2026-08-13 17:00	2026-09-14 08:00
+%R	42565	103384	103381	4635	4635	PR_FS	0			2026-04-13 17:00	2026-09-14 08:00
+%R	42566	103384	103382	4635	4635	PR_FS	0			2026-08-27 17:00	2026-09-14 08:00
+%R	42567	103384	103383	4635	4635	PR_FS	0			2026-04-27 17:00	2026-09-14 08:00
+%R	42568	103385	103382	4635	4635	PR_FS	0			2026-08-27 17:00	2026-08-28 08:00
+%R	42569	103386	103384	4635	4635	PR_FS	0			2026-09-11 17:00	2026-09-28 08:00
+%R	42570	103386	103385	4635	4635	PR_FS	0			2026-09-25 17:00	2026-09-28 08:00
+%R	42571	103386	103342	4635	4635	PR_FF	0			2026-09-28 08:00	2026-10-09 17:00
+%R	42572	103386	103344	4635	4635	PR_FF	0			2026-09-28 08:00	2026-10-09 17:00
+%R	42573	103386	103346	4635	4635	PR_FF	0			2026-09-28 08:00	2026-10-09 17:00
+%R	42574	103378	103369	4635	4635	PR_FS	0			2025-12-31 17:00	2026-04-21 08:00
+%R	42575	103368	103364	4635	4635	PR_FS	0			2025-11-05 17:00	2025-12-03 08:00
+%R	42576	103369	103364	4635	4635	PR_FS	0			2025-11-05 17:00	2025-12-17 08:00
+%R	42577	103368	103365	4635	4635	PR_FS	0			2025-11-05 17:00	2025-12-03 08:00
+%R	42578	103369	103365	4635	4635	PR_FS	0			2025-11-05 17:00	2025-12-17 08:00
+%R	42579	103368	103366	4635	4635	PR_FS	0			2025-11-05 17:00	2025-12-03 08:00
+%R	42580	103369	103366	4635	4635	PR_FS	0			2025-11-05 17:00	2025-12-17 08:00
+%R	42581	103364	103352	4635	4635	PR_FS	0			2025-10-31 00:00	2025-11-26 08:00
+%R	42582	103365	103352	4635	4635	PR_FS	0			2025-10-31 00:00	2025-11-26 08:00
+%R	42583	103366	103352	4635	4635	PR_FS	0			2025-10-31 00:00	2025-11-26 08:00
+%R	42584	103367	103352	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42585	103370	103353	4635	4635	PR_FS	0			2025-10-31 00:00	2026-02-17 08:00
+%R	42586	103371	103353	4635	4635	PR_FS	0			2025-10-31 00:00	2026-01-16 08:00
+%R	42587	103372	103353	4635	4635	PR_FS	0			2025-10-31 00:00	2026-02-24 08:00
+%R	42588	103373	103353	4635	4635	PR_FS	0			2025-10-31 00:00	2026-03-10 08:00
+%R	42589	103379	103354	4635	4635	PR_FS	0			2025-10-31 00:00	2026-07-02 08:00
+%R	42590	103384	103359	4635	4635	PR_FS	0			2025-10-31 00:00	2026-09-14 08:00
+%R	42591	103370	103363	4635	4635	PR_FS	0			2025-10-31 00:00	2026-02-17 08:00
+%R	42592	103371	103363	4635	4635	PR_FS	0			2025-10-31 00:00	2026-01-16 08:00
+%R	42593	103360	103348	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42594	103344	103343	4635	4635	PR_FS	0			2025-10-31 00:00	2025-01-09 08:00
+%R	42595	103346	103345	4635	4635	PR_FS	0			2025-10-31 00:00	2025-01-07 08:00
+%R	42596	103341	103387	4635	4635	PR_SS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42597	103388	103343	4635	4635	PR_FF	0			2025-10-31 00:00	2026-10-09 17:00
+%R	42598	103389	103351	4635	4635	PR_FF	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42599	103390	103358	4635	4635	PR_FF	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42600	103391	103362	4635	4635	PR_FF	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42601	103392	103364	4635	4635	PR_FF	0			2025-11-05 17:00	2025-12-02 17:00
+%R	42602	103392	103365	4635	4635	PR_FF	0			2025-11-05 17:00	2025-12-02 17:00
+%R	42603	103392	103366	4635	4635	PR_FF	0			2025-11-05 17:00	2025-12-02 17:00
+%R	42604	103392	103367	4635	4635	PR_FF	0			2025-12-02 17:00	2025-12-02 17:00
+%R	42605	103393	103368	4635	4635	PR_FF	0			2026-01-15 17:00	2026-01-15 17:00
+%R	42606	103393	103369	4635	4635	PR_FF	0			2025-12-31 17:00	2026-01-15 17:00
+%R	42607	103394	103370	4635	4635	PR_FS	0			2026-03-23 17:00	2026-04-20 17:00
+%R	42608	103394	103371	4635	4635	PR_FS	0			2026-03-23 17:00	2026-04-20 17:00
+%R	42609	103394	103372	4635	4635	PR_FS	0			2026-03-16 17:00	2026-04-20 17:00
+%R	42610	103394	103373	4635	4635	PR_FS	0			2026-03-02 17:00	2026-04-20 17:00
+%R	42611	103395	103374	4635	4635	PR_FF	0			2026-06-09 17:00	2026-08-06 17:00
+%R	42612	103395	103375	4635	4635	PR_FF	0			2026-06-09 17:00	2026-08-06 17:00
+%R	42613	103395	103376	4635	4635	PR_FF	0			2026-08-06 17:00	2026-08-06 17:00
+%R	42614	103395	103377	4635	4635	PR_FF	0			2026-04-27 17:00	2026-08-06 17:00
+%R	42615	103396	103381	4635	4635	PR_FF	0			2026-04-13 17:00	2026-09-11 17:00
+%R	42616	103396	103382	4635	4635	PR_FF	0			2026-08-27 17:00	2026-09-11 17:00
+%R	42617	103396	103383	4635	4635	PR_FF	0			2026-04-27 17:00	2026-09-11 17:00
+%R	42618	103397	103386	4635	4635	PR_FF	0			2026-10-09 17:00	2026-10-09 17:00
+%R	42619	103344	103388	4635	4635	PR_FS	0			2025-10-31 00:00	2025-01-09 08:00
+%R	42620	103354	103389	4635	4635	PR_FS	0			2025-10-31 00:00	2026-07-02 08:00
+%R	42621	103357	103389	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42622	103360	103390	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42623	103364	103391	4635	4635	PR_FS	0			2025-10-31 00:00	2025-11-26 08:00
+%R	42624	103365	103391	4635	4635	PR_FS	0			2025-10-31 00:00	2025-11-26 08:00
+%R	42625	103366	103391	4635	4635	PR_FS	0			2025-10-31 00:00	2025-11-26 08:00
+%R	42626	103367	103391	4635	4635	PR_FS	0			2025-10-31 00:00	2025-10-31 08:00
+%R	42627	103368	103392	4635	4635	PR_FS	0			2025-12-02 17:00	2025-12-03 08:00
+%R	42628	103369	103392	4635	4635	PR_FS	0			2025-12-02 17:00	2025-12-17 08:00
+%R	42629	103370	103393	4635	4635	PR_FS	0			2026-01-15 17:00	2026-02-17 08:00
+%R	42630	103371	103393	4635	4635	PR_FS	0			2026-01-15 17:00	2026-01-16 08:00
+%R	42631	103372	103393	4635	4635	PR_FS	0			2026-01-15 17:00	2026-02-24 08:00
+%R	42632	103373	103393	4635	4635	PR_FS	0			2026-01-15 17:00	2026-03-10 08:00
+%R	42633	103378	103393	4635	4635	PR_FS	0			2026-01-15 17:00	2026-04-21 08:00
+%R	42634	103378	103394	4635	4635	PR_FS	0			2026-03-23 17:00	2026-04-21 08:00
+%R	42635	103381	103394	4635	4635	PR_FS	0			2026-03-23 17:00	2026-08-07 08:00
+%R	42636	103382	103395	4635	4635	PR_FS	0			2026-08-06 17:00	2026-08-07 08:00
+%R	42637	103384	103396	4635	4635	PR_FS	0			2026-08-27 17:00	2026-09-14 08:00
+%T	TASKRSRC
+%F	taskrsrc_id	task_id	proj_id	cost_qty_link_flag	role_id	acct_id	rsrc_id	pobs_id	skill_level	remain_qty	target_qty	remain_qty_per_hr	target_lag_drtn_hr_cnt	target_qty_per_hr	act_ot_qty	act_reg_qty	relag_drtn_hr_cnt	ot_factor	cost_per_qty	target_cost	act_reg_cost	act_ot_cost	remain_cost	act_start_date	act_end_date	restart_date	reend_date	target_start_date	target_end_date	rem_late_start_date	rem_late_end_date	rollup_dates_flag	target_crv	remain_crv	actual_crv	ts_pend_act_end_flag	guid	rate_type	act_this_per_cost	act_this_per_qty	curv_id	rsrc_type	cost_per_qty_source_type	create_user	create_date	has_rsrchours	taskrsrc_sum_id
+%R	85272	103341	4635	Y			7199			0	40	1	0	1	0	40	0		150.0000	6000.0000	6000.0000	0.0000	0.0000	2025-01-02 08:00	2025-01-08 17:00			2025-01-02 08:00	2025-01-08 17:00			Y				N	OGwHnq9J3E6lrDi9NfFm+A	COST_PER_QTY	6000.0000	40		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:53		
+%R	85273	103342	4635	Y			7199			1888	3480	1	0	1	0	1592	0		150.0000	522000.0000	238800.0000	0.0000	283200.0000	2025-01-02 08:00		2025-10-31 08:00	2026-10-09 17:00	2025-01-02 08:00	2026-09-25 17:00	2025-10-31 08:00	2026-10-09 17:00	Y				N	p+KpydJlSku4Et9n/SClKw	COST_PER_QTY	238800.0000	1592		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:54		
+%R	85274	103343	4635	Y			7199			0	40	1	0	1	0	40	0		150.0000	6000.0000	6000.0000	0.0000	0.0000	2025-01-02 08:00	2025-01-08 17:00			2025-01-02 08:00	2025-01-08 17:00			Y				N	cxqCvjEvEUSSMshStsAy0Q	COST_PER_QTY	6000.0000	40		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:54		
+%R	85275	103344	4635	Y			7199			1888	3440	1	0	1	0	1552	0		150.0000	516000.0000	232800.0000	0.0000	283200.0000	2025-01-08 17:00		2025-10-31 08:00	2026-10-09 17:00	2025-01-09 08:00	2026-09-25 17:00	2025-01-09 08:00	2026-10-09 17:00	Y				N	6dzJdK8UVkKgDSdrKs26jg	COST_PER_QTY	232800.0000	1552		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:55		
+%R	85276	103345	4635	Y			7199			0	24	1	0	1	0	24	0		150.0000	3600.0000	3600.0000	0.0000	0.0000	2025-01-02 08:00	2025-01-06 17:00			2025-01-02 08:00	2025-01-06 17:00			Y				N	aEtTEql84kmThnWiTBOJeA	COST_PER_QTY	3600.0000	24		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:55		
+%R	85277	103346	4635	Y			7199			1888	3456	1	0	1	0	1568	0		150.0000	518400.0000	235200.0000	0.0000	283200.0000	2025-01-06 17:00		2025-10-31 08:00	2026-10-09 17:00	2025-01-07 08:00	2026-09-25 17:00	2025-01-07 08:00	2026-10-09 17:00	Y				N	+eBt2PG1uUuT6EbRQ6EGsA	COST_PER_QTY	235200.0000	1568		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:55		
+%R	85278	103347	4635	Y			7191			0	40	1	0	1	0	40	0		112.5000	4500.0000	4500.0000	0.0000	0.0000	2025-01-02 08:00	2025-01-08 17:00			2025-01-02 08:00	2025-01-08 17:00			Y				N	Sg3D8hSRd0m/LR8mg1bZoA	COST_PER_QTY	4500.0000	40		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:55		
+%R	85279	103348	4635	Y			7199			0	80	1	0	1	0	80	0		150.0000	12000.0000	12000.0000	0.0000	0.0000	2025-01-09 08:00	2025-01-23 17:00			2025-01-09 08:00	2025-01-23 17:00			Y				N	GAcTv+2ctEm4ZV3aZMmd5Q	COST_PER_QTY	12000.0000	80		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:55		
+%R	85280	103348	4635	Y			7191			0	80	1	0	1	0	80	0		112.5000	9000.0000	9000.0000	0.0000	0.0000	2025-01-09 08:00	2025-01-23 17:00			2025-01-09 08:00	2025-01-23 17:00			Y				N	J500hkYyd0OaOIlQrR+Nyw	COST_PER_QTY	9000.0000	80		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:55		
+%R	85281	103349	4635	Y			7198			0	160	1	0	1	0	160	0		437.5000	70000.0000	70000.0000	0.0000	0.0000	2025-01-09 08:00	2025-02-06 17:00			2025-01-09 08:00	2025-02-06 17:00			Y				N	KtLR+mIJ4E6ylWoA0+fNww	COST_PER_QTY	70000.0000	160		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:56		
+%R	85282	103350	4635	Y			7198			0	200	1	0	1	0	200	0		437.5000	87500.0000	87500.0000	0.0000	0.0000	2025-02-07 08:00	2025-03-14 17:00			2025-02-07 08:00	2025-03-14 17:00			Y				N	cfajFIUj9E2nrj/obp13yA	COST_PER_QTY	87500.0000	200		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:56		
+%R	85283	103351	4635	Y			7198			0	240	1	0	1	0	240	0		437.5000	105000.0000	105000.0000	0.0000	0.0000	2025-03-17 08:00	2025-04-25 17:00			2025-03-17 08:00	2025-04-25 17:00			Y				N	tWY6jA9rm0uwdfcXpvdquA	COST_PER_QTY	105000.0000	240		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:56		
+%R	85284	103352	4635	Y			7197			0	200	1	0	1	0	200	0		375.0000	75000.0000	75000.0000	0.0000	0.0000	2025-03-17 08:00	2025-04-18 17:00			2025-03-17 08:00	2025-04-18 17:00			Y				N	G74nxUEOxkaRI79La28yKg	COST_PER_QTY	75000.0000	200		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:56		
+%R	85285	103353	4635	Y			7197			0	200	1	0	1	0	200	0		375.0000	75000.0000	75000.0000	0.0000	0.0000	2025-03-17 08:00	2025-04-18 17:00			2025-03-17 08:00	2025-04-18 17:00			Y				N	34th2xFuuUquwDYFgBXNTQ	COST_PER_QTY	75000.0000	200		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:56		
+%R	85286	103354	4635	Y			7197			0	120	1	0	1	0	120	0		375.0000	45000.0000	45000.0000	0.0000	0.0000	2025-04-28 08:00	2025-05-16 17:00			2025-04-28 08:00	2025-05-16 17:00			Y				N	iCodOOiU1U2jv/mKwqgW8Q	COST_PER_QTY	45000.0000	120		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 11:56		
+%R	85287	103355	4635	Y			7191			0	80	1	0	1	0	80	0		112.5000	9000.0000	9000.0000	0.0000	0.0000	2025-02-07 08:00	2025-02-21 17:00			2025-02-07 08:00	2025-02-21 17:00			Y				N	gKW5D3MnV0mF9gjJzaFqhQ	COST_PER_QTY	9000.0000	80		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:02		
+%R	85288	103356	4635	Y			7191			0	240	1	0	1	0	240	0		112.5000	27000.0000	27000.0000	0.0000	0.0000	2025-02-24 08:00	2025-04-04 17:00			2025-02-24 08:00	2025-04-04 17:00			Y				N	fxDBAPVl4kiuv9VOo71m2w	COST_PER_QTY	27000.0000	240		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:02		
+%R	85289	103357	4635	Y			7191			0	80	1	0	1	0	80	0		112.5000	9000.0000	9000.0000	0.0000	0.0000	2025-04-28 08:00	2025-05-09 17:00			2025-04-28 08:00	2025-05-09 17:00			Y				N	c9thMZ5bHkqoTTbaMd8xPQ	COST_PER_QTY	9000.0000	80		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:02		
+%R	85290	103358	4635	Y			7191			0	240	1	0	1	0	240	0		112.5000	27000.0000	27000.0000	0.0000	0.0000	2025-05-12 08:00	2025-06-24 17:00			2025-05-12 08:00	2025-06-24 17:00			Y				N	FS9NqOCNAUaScRD3BnTuUg	COST_PER_QTY	27000.0000	240		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:02		
+%R	85291	103359	4635	Y			7191			0	120	1	0	1	0	120	0		112.5000	13500.0000	13500.0000	0.0000	0.0000	2025-04-07 08:00	2025-04-25 17:00			2025-04-07 08:00	2025-04-25 17:00			Y				N	wki5A95CIkaLzwTtUWVLJw	COST_PER_QTY	13500.0000	120		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:02		
+%R	85292	103360	4635	Y			7201			0	120	1	0	1	0	120	0		225.0000	27000.0000	27000.0000	0.0000	0.0000	2025-06-25 08:00	2025-07-16 17:00			2025-06-25 08:00	2025-07-16 17:00			Y				N	0/aCQoF8N06gpVR/MAFirw	COST_PER_QTY	27000.0000	120		RT_Equip	ST_Rsrc	NotPrmUser	2026-09-21 12:02		
+%R	85293	103360	4635	Y			7195			0	120	1	0	1	0	120	0		1000.0000	120000.0000	120000.0000	0.0000	0.0000	2025-06-25 08:00	2025-07-16 17:00			2025-06-25 08:00	2025-07-16 17:00			Y				N	efeJq+76uUSw7HQZ6JJEjg	COST_PER_QTY	120000.0000	120		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:02		
+%R	85294	103361	4635	Y			7201			0	80	1	0	1	0	80	0		225.0000	18000.0000	18000.0000	0.0000	0.0000	2025-07-17 08:00	2025-07-30 17:00			2025-07-17 08:00	2025-07-30 17:00			Y				N	5mWPbyhLp02mdlhX/SHcjg	COST_PER_QTY	18000.0000	80		RT_Equip	ST_Rsrc	NotPrmUser	2026-09-21 12:02		
+%R	85295	103362	4635	Y			7202			0	120	1	0	1	0	120	0		187.5000	22500.0000	22500.0000	0.0000	0.0000	2025-07-31 08:00	2025-08-20 17:00			2025-07-31 08:00	2025-08-20 17:00			Y				N	xO2wh+AOu0696MIH5yOT0g	COST_PER_QTY	22500.0000	120		RT_Equip	ST_Rsrc	NotPrmUser	2026-09-21 12:03		
+%R	85296	103362	4635	Y			7195			0	120	1	0	1	0	120	0		1000.0000	120000.0000	120000.0000	0.0000	0.0000	2025-07-31 08:00	2025-08-20 17:00			2025-07-31 08:00	2025-08-20 17:00			Y				N	Gs3l/fzPlkKy+HWS/3y2Qg	COST_PER_QTY	120000.0000	120		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:03		
+%R	85297	103362	4635	Y			7203			0	0.0612	0.00051	0	0.00051	0	0.0612	0	0	95000000.0000	5814000.0000	5814000.0000	0.0000	0.0000	2025-07-31 08:00	2025-08-20 17:00			2025-07-31 08:00	2025-08-20 17:00			Y				N	0nj18M7bgES1BHzmAzxnCA	COST_PER_QTY	5814000.0000	0.0612		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:03		
+%R	85298	103363	4635	Y			7194			0	160	1	0	1	0	160	0		812.5000	130000.0000	130000.0000	0.0000	0.0000	2025-07-24 08:00	2025-08-20 17:00			2025-07-24 08:00	2025-08-20 17:00			Y				N	/+SYFKDZQE6aycPj2NEtng	COST_PER_QTY	130000.0000	160		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:03		
+%R	85299	103364	4635	Y			7200			32	320	1	0	1	0	288	0	0	312.5000	100000.0000	90000.0000	0.0000	10000.0000	2025-08-21 08:00		2025-10-31 08:00	2025-11-05 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-11-26 08:00	2025-12-02 17:00	Y				N	YwFy5MqGMk6x8beF3HQ0DA	COST_PER_QTY	90000.0000	288		RT_Equip	ST_Rsrc	NotPrmUser	2026-09-21 12:04		
+%R	85303	103364	4635	Y			7195			64	320	2	0	1	0	288	0		1000.0000	320000.0000	288000.0000	0.0000	64000.0000	2025-08-21 08:00		2025-10-31 08:00	2025-11-05 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-11-26 08:00	2025-12-02 17:00	Y				N	p3Sg3jx7/UyBr3YrR//UmQ	COST_PER_QTY	288000.0000	288		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:04		
+%R	85307	103364	4635	Y			7203			0.01633	0.1633	0.0005103125	0	0.0005103125	0	0.14697	0	0	95000000.0000	15513500.0000	13962150.0000	0.0000	1551350.0000	2025-08-21 08:00		2025-10-31 08:00	2025-11-05 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-11-26 08:00	2025-12-02 17:00	Y				N	sNjNFAvErUyt/u8HCBydzw	COST_PER_QTY	13962150.0000	0.14697		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:04		
+%R	85308	103365	4635	Y			7203			0	0.1633	0.0005103125	0	0.0005103125	0	0.1633	0	0	95000000.0000	15513500.0000	15513500.0000	0.0000	0.0000	2025-08-21 08:00		2025-10-31 08:00	2025-10-31 08:00	2025-08-21 08:00	2025-10-17 17:00	2025-12-02 17:00	2025-12-02 17:00	Y				N	reeO14rnzEaSdN8JGXaCBw	COST_PER_QTY	15513500.0000	0.1633		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:04		
+%R	85309	103366	4635	Y			7203			0	0.1633	0.0005103125	0	0.0005103125	0	0.1633	0	0	95000000.0000	15513500.0000	15513500.0000	0.0000	0.0000	2025-08-21 08:00		2025-10-31 08:00	2025-10-31 08:00	2025-08-21 08:00	2025-10-17 17:00	2025-12-02 17:00	2025-12-02 17:00	Y				N	klxQmJ7XdkWDr2qZduzl3A	COST_PER_QTY	15513500.0000	0.1633		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:04		
+%R	85310	103367	4635	Y			7203			0.0857150000000003	0.2449	0.000510208333333335	0	0.000510208333333333	0	0.159185	0	0	95000000.0000	23265500.0000	15122575.0000	0.0000	8142925.0000	2025-08-21 08:00		2025-10-31 08:00	2025-12-02 17:00	2025-08-21 08:00	2025-11-17 17:00	2025-10-31 08:00	2025-12-02 17:00	Y				N	qQMKixe+VEqc/0pM7h9lnw	COST_PER_QTY	15122575.0000	0.159185		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:04		
+%R	85313	103368	4635	Y			7203			0.1224	0.1224	0.00051	0	0.00051	0	0	0	0	95000000.0000	11628000.0000	0.0000	0.0000	11628000.0000			2025-12-03 08:00	2026-01-15 17:00	2025-12-03 08:00	2026-01-15 17:00	2025-12-03 08:00	2026-01-15 17:00	Y				N	ckvNT4vGzkaQslswk6OgDg	COST_PER_QTY	0.0000	0		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:04		
+%R	85314	103369	4635	Y			7203			0.0816	0.0816	0.00051	0	0.00051	0	0	0	0	95000000.0000	7752000.0000	0.0000	0.0000	7752000.0000			2025-12-03 08:00	2025-12-31 17:00	2025-12-03 08:00	2025-12-31 17:00	2025-12-17 08:00	2026-01-15 17:00	Y				N	X/H8jDmFeEuierNXI+vEEg	COST_PER_QTY	0.0000	0		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:04		
+%R	85319	103370	4635	Y			7204			0.2813	0.2813	0.000781388888888889	0	0.000781388888888889	0	0	0	0	60000000.0000	16878000.0000	0.0000	0.0000	16878000.0000			2026-01-16 08:00	2026-03-23 17:00	2026-01-16 08:00	2026-03-23 17:00	2026-02-17 08:00	2026-04-20 17:00	Y				N	8fl2FwfHhE6+BFfrnhbzeA	COST_PER_QTY	0.0000	0		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:05		
+%R	85320	103371	4635	Y			7204			0.2813	0.2813	0.000781388888888889	0	0.000781388888888889	0	0	0	0	60000000.0000	16878000.0000	0.0000	0.0000	16878000.0000			2026-01-16 08:00	2026-03-23 17:00	2026-01-16 08:00	2026-03-23 17:00	2026-01-16 08:00	2026-03-23 17:00	Y				N	qI4PH3+ryUm90xSFESL/zg	COST_PER_QTY	0.0000	0		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:05		
+%R	85321	103372	4635	Y			7204			0.25	0.25	0.00078125	0	0.00078125	0	0	0	0	60000000.0000	15000000.0000	0.0000	0.0000	15000000.0000			2026-01-16 08:00	2026-03-16 17:00	2026-01-16 08:00	2026-03-16 17:00	2026-02-24 08:00	2026-04-20 17:00	Y				N	n3FJ8yiDsEqkY1kg+FXV1A	COST_PER_QTY	0.0000	0		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:05		
+%R	85322	103373	4635	Y			7204			0.1875	0.1875	0.00078125	0	0.00078125	0	0	0	0	60000000.0000	11250000.0000	0.0000	0.0000	11250000.0000			2026-01-16 08:00	2026-03-02 17:00	2026-01-16 08:00	2026-03-02 17:00	2026-03-10 08:00	2026-04-20 17:00	Y				N	cAW0TKokQUKGYNKkExIC5w	COST_PER_QTY	0.0000	0		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:05		
+%R	85325	103376	4635	Y			7192			320	320	1	0	1	0	0	0		625.0000	200000.0000	0.0000	0.0000	200000.0000			2026-06-10 08:00	2026-08-06 17:00	2026-06-10 08:00	2026-08-06 17:00	2026-06-10 08:00	2026-08-06 17:00	Y				N	JVPTb+qxlE6Rslh7V0AWEg	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:05		
+%R	85326	103377	4635	Y			7192			200	200	1	0	1	0	0	0		625.0000	125000.0000	0.0000	0.0000	125000.0000			2026-03-24 08:00	2026-04-27 17:00	2026-03-24 08:00	2026-04-27 17:00	2026-03-24 08:00	2026-04-27 17:00	Y				N	f7J7K6nXtEqlAFWmp2vFdA	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:05		
+%R	85327	103374	4635	Y			7205			0.24	0.24	0.001	0	0.001	0	0	0	0	22500000.0000	5400000.0000	0.0000	0.0000	5400000.0000			2026-04-28 08:00	2026-06-09 17:00	2026-04-28 08:00	2026-06-09 17:00	2026-04-28 08:00	2026-06-09 17:00	Y				N	9xyRyJKE2E2Ot+sg4BDxfA	COST_PER_QTY	0.0000	0		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:05		
+%R	85328	103375	4635	Y			7205			0.24	0.24	0.001	0	0.001	0	0	0	0	22500000.0000	5400000.0000	0.0000	0.0000	5400000.0000			2026-04-28 08:00	2026-06-09 17:00	2026-04-28 08:00	2026-06-09 17:00	2026-06-25 08:00	2026-08-06 17:00	Y				N	ToZApErCmkWlC6oPIZvdKw	COST_PER_QTY	0.0000	0		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:05		
+%R	85329	103376	4635	Y			7205			0.32	0.32	0.001	0	0.001	0	0	0	0	22500000.0000	7200000.0000	0.0000	0.0000	7200000.0000			2026-06-10 08:00	2026-08-06 17:00	2026-06-10 08:00	2026-08-06 17:00	2026-06-10 08:00	2026-08-06 17:00	Y				N	5AFFcuY5C02BgOjAD8VYqA	COST_PER_QTY	0.0000	0		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:05		
+%R	85330	103377	4635	Y			7205			0.2	0.2	0.001	0	0.001	0	0	0	0	22500000.0000	4500000.0000	0.0000	0.0000	4500000.0000			2026-03-24 08:00	2026-04-27 17:00	2026-03-24 08:00	2026-04-27 17:00	2026-03-24 08:00	2026-04-27 17:00	Y				N	WTPeaqe/AE62C9EOPnaceg	COST_PER_QTY	0.0000	0		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:05		
+%R	85331	103378	4635	Y			7193			400	400	1	0	1	0	0	0		562.5000	225000.0000	0.0000	0.0000	225000.0000			2026-03-24 08:00	2026-06-02 17:00	2026-03-24 08:00	2026-06-02 17:00	2026-04-21 08:00	2026-07-01 17:00	Y				N	REsU1s/dyUmWhQVBUKHgAQ	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:06		
+%R	85332	103379	4635	Y			7194			240	240	1	0	1	0	0	0		812.5000	195000.0000	0.0000	0.0000	195000.0000			2026-06-03 08:00	2026-07-16 17:00	2026-06-03 08:00	2026-07-16 17:00	2026-07-02 08:00	2026-08-13 17:00	Y				N	mKSLIRK0jUSWQSnfwZFPNw	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:06		
+%R	85333	103379	4635	Y			7206			1	1	0.00416666666666667	0	0.00416666666666667	0	0	0	0	33750000.0000	33750000.0000	0.0000	0.0000	33750000.0000			2026-06-03 08:00	2026-07-16 17:00	2026-06-03 08:00	2026-07-16 17:00	2026-07-02 08:00	2026-08-13 17:00	Y				N	XpDNt9sljEuWJp9LJRGYQQ	COST_PER_QTY	0.0000	0		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:06		
+%R	85334	103380	4635	Y			7191			160	160	1	0	1	0	0	0		112.5000	18000.0000	0.0000	0.0000	18000.0000			2026-07-17 08:00	2026-08-13 17:00	2026-07-17 08:00	2026-08-13 17:00	2026-08-14 08:00	2026-09-11 17:00	Y				N	4WBYrSIXQ0iAWqqcyTt6RQ	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:06		
+%R	85335	103380	4635	Y			7207			1	1	0.00625	0	0.00625	0	0	0	0	5000000.0000	5000000.0000	0.0000	0.0000	5000000.0000			2026-07-17 08:00	2026-08-13 17:00	2026-07-17 08:00	2026-08-13 17:00	2026-08-14 08:00	2026-09-11 17:00	Y				N	iWjZqkWkvkOEs9KP5wzUoQ	COST_PER_QTY	0.0000	0		RT_Mat	ST_Rsrc	NotPrmUser	2026-09-21 12:06		
+%R	85336	103381	4635	Y			7190			120	120	1	0	1	0	0	0		225.0000	27000.0000	0.0000	0.0000	27000.0000			2026-03-24 08:00	2026-04-13 17:00	2026-03-24 08:00	2026-04-13 17:00	2026-08-07 08:00	2026-08-27 17:00	Y				N	xRf7bGUV9E+rmQ0PWOJGjA	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:07		
+%R	85337	103382	4635	Y			7190			120	120	1	0	1	0	0	0		225.0000	27000.0000	0.0000	0.0000	27000.0000			2026-08-07 08:00	2026-08-27 17:00	2026-08-07 08:00	2026-08-27 17:00	2026-08-07 08:00	2026-08-27 17:00	Y				N	/RNO5GL6aUCLlGnlSmM5fw	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:07		
+%R	85338	103382	4635	Y			7192			120	120	1	0	1	0	0	0		625.0000	75000.0000	0.0000	0.0000	75000.0000			2026-08-07 08:00	2026-08-27 17:00	2026-08-07 08:00	2026-08-27 17:00	2026-08-07 08:00	2026-08-27 17:00	Y				N	G4YLJHsJlUmrmIyXMKGUSQ	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:07		
+%R	85339	103383	4635	Y			7190			80	80	1	0	1	0	0	0		225.0000	18000.0000	0.0000	0.0000	18000.0000			2026-04-14 08:00	2026-04-27 17:00	2026-04-14 08:00	2026-04-27 17:00	2026-08-28 08:00	2026-09-11 17:00	Y				N	rrFkFtnBlk2odUqIDuLb2g	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:07		
+%R	85340	103384	4635	Y			7190			80	80	1	0	1	0	0	0		225.0000	18000.0000	0.0000	0.0000	18000.0000			2026-08-28 08:00	2026-09-11 17:00	2026-08-28 08:00	2026-09-11 17:00	2026-09-14 08:00	2026-09-25 17:00	Y				N	lMoH2nXJUUesnmt5MxjUJA	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:07		
+%R	85341	103384	4635	Y			7199			80	80	1	0	1	0	0	0		150.0000	12000.0000	0.0000	0.0000	12000.0000			2026-08-28 08:00	2026-09-11 17:00	2026-08-28 08:00	2026-09-11 17:00	2026-09-14 08:00	2026-09-25 17:00	Y				N	ZGAfVQ6s10OwhEfPq94PZw	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:07		
+%R	85342	103385	4635	Y			7191			160	160	1	0	1	0	0	0		112.5000	18000.0000	0.0000	0.0000	18000.0000			2026-08-28 08:00	2026-09-25 17:00	2026-08-28 08:00	2026-09-25 17:00	2026-08-28 08:00	2026-09-25 17:00	Y				N	MifM1DF30kWLnDZagqCz1g	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:07		
+%R	85343	103386	4635	Y			7199			80	80	1	0	1	0	0	0		150.0000	12000.0000	0.0000	0.0000	12000.0000			2026-09-28 08:00	2026-10-09 17:00	2026-09-28 08:00	2026-10-09 17:00	2026-09-28 08:00	2026-10-09 17:00	Y				N	xDCivMK3b0yO+kg/Jlxxkw	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-21 12:07		
+%R	85344	103365	4635	Y			7208			0	320	1	0	1	0	320	0		312.5000	100000.0000	100000.0000	0.0000	0.0000	2025-08-21 08:00		2025-10-31 08:00	2025-10-31 08:00	2025-08-21 08:00	2025-10-17 17:00	2025-12-02 17:00	2025-12-02 17:00	Y				N	Q2tMbryXBEq9JwHUPwA4lA	COST_PER_QTY	100000.0000	320		RT_Equip	ST_Rsrc	NotPrmUser	2026-09-22 16:44		
+%R	85348	103366	4635	Y			7212			0	320	1	0	1	0	320	0		312.5000	100000.0000	100000.0000	0.0000	0.0000	2025-08-21 08:00		2025-10-31 08:00	2025-10-31 08:00	2025-08-21 08:00	2025-10-17 17:00	2025-12-02 17:00	2025-12-02 17:00	Y				N	FdX6lE9JUEW6MnJugKnGFw	COST_PER_QTY	100000.0000	320		RT_Equip	ST_Rsrc	NotPrmUser	2026-09-22 16:44		
+%R	85352	103367	4635	Y			7213			168	480	1	0	1	0	312	0		312.5000	150000.0000	97500.0000	0.0000	52500.0000	2025-08-21 08:00		2025-10-31 08:00	2025-12-02 17:00	2025-08-21 08:00	2025-11-17 17:00	2025-10-31 08:00	2025-12-02 17:00	Y				N	IMLlSKofVUSHYlRdKanNoQ	COST_PER_QTY	97500.0000	312		RT_Equip	ST_Rsrc	NotPrmUser	2026-09-22 16:44		
+%R	85353	103370	4635	Y			7217			360	360	1	0	1	0	0	0		812.5000	292500.0000	0.0000	0.0000	292500.0000			2026-01-16 08:00	2026-03-23 17:00	2026-01-16 08:00	2026-03-23 17:00	2026-02-17 08:00	2026-04-20 17:00	Y				N	MtBbAHSa3UCDYDbXmtNnYA	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-22 16:46		
+%R	85354	103371	4635	Y			7218			360	360	1	0	1	0	0	0		812.5000	292500.0000	0.0000	0.0000	292500.0000			2026-01-16 08:00	2026-03-23 17:00	2026-01-16 08:00	2026-03-23 17:00	2026-01-16 08:00	2026-03-23 17:00	Y				N	ejdAlGFhcEueKVDvtc32SQ	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-22 16:46		
+%R	85355	103372	4635	Y			7219			320	320	1	0	1	0	0	0		812.5000	260000.0000	0.0000	0.0000	260000.0000			2026-01-16 08:00	2026-03-16 17:00	2026-01-16 08:00	2026-03-16 17:00	2026-02-24 08:00	2026-04-20 17:00	Y				N	WL4wQ0A9W0arG8eLeZ9wVg	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-22 16:46		
+%R	85356	103373	4635	Y			7220			240	240	1	0	1	0	0	0		812.5000	195000.0000	0.0000	0.0000	195000.0000			2026-01-16 08:00	2026-03-02 17:00	2026-01-16 08:00	2026-03-02 17:00	2026-03-10 08:00	2026-04-20 17:00	Y				N	5uOuBicBqEmN6MsFYiSlhg	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-22 16:46		
+%R	85357	103368	4635	Y			7221			240	240	1	0	1	0	0	0		562.5000	135000.0000	0.0000	0.0000	135000.0000			2025-12-03 08:00	2026-01-15 17:00	2025-12-03 08:00	2026-01-15 17:00	2025-12-03 08:00	2026-01-15 17:00	Y				N	ssvZSSCLdUqc6GKno/1ftg	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-22 16:47		
+%R	85358	103369	4635	Y			7222			160	160	1	0	1	0	0	0		562.5000	90000.0000	0.0000	0.0000	90000.0000			2025-12-03 08:00	2025-12-31 17:00	2025-12-03 08:00	2025-12-31 17:00	2025-12-17 08:00	2026-01-15 17:00	Y				N	hAVVcFZiLUyxw5HkOF9bow	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-22 16:47		
+%R	85359	103374	4635	Y			7223			240	240	1	0	1	0	0	0		625.0000	150000.0000	0.0000	0.0000	150000.0000			2026-04-28 08:00	2026-06-09 17:00	2026-04-28 08:00	2026-06-09 17:00	2026-04-28 08:00	2026-06-09 17:00	Y				N	o2VI9ybKREaPewsg4984Og	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-22 16:47		
+%R	85360	103375	4635	Y			7224			240	240	1	0	1	0	0	0		625.0000	150000.0000	0.0000	0.0000	150000.0000			2026-04-28 08:00	2026-06-09 17:00	2026-04-28 08:00	2026-06-09 17:00	2026-06-25 08:00	2026-08-06 17:00	Y				N	OdlcjDIEGECiQBy8yCWT+Q	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-22 16:48		
+%R	85430	103365	4635	Y			7214			32	320	1	0	1	0	320	0		1000.0000	320000.0000	320000.0000	0.0000	32000.0000	2025-08-21 08:00		2025-10-31 08:00	2025-11-05 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-11-26 08:00	2025-12-02 17:00	Y				N	UYdMonIfdUWKSQWBYD541g	COST_PER_QTY	320000.0000	320		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-23 12:17		
+%R	85431	103366	4635	Y			7215			32	320	1	0	1	0	320	0		1000.0000	320000.0000	320000.0000	0.0000	32000.0000	2025-08-21 08:00		2025-10-31 08:00	2025-11-05 17:00	2025-08-21 08:00	2025-10-17 17:00	2025-11-26 08:00	2025-12-02 17:00	Y				N	F9k+hkU9zE2kjiYWjeem9A	COST_PER_QTY	320000.0000	320		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-23 12:17		
+%R	85432	103367	4635	Y			7216			248	480	1.47619047619048	0	1	0	312	0		1000.0000	480000.0000	312000.0000	0.0000	248000.0000	2025-08-21 08:00		2025-10-31 08:00	2025-12-02 17:00	2025-08-21 08:00	2025-11-17 17:00	2025-10-31 08:00	2025-12-02 17:00	Y				N	eWpz+NI7FUWMfgsrz2wV2g	COST_PER_QTY	312000.0000	312		RT_Labor	ST_Rsrc	NotPrmUser	2026-09-23 12:17		
+%T	UDFVALUE
+%F	udf_type_id	fk_id	proj_id	udf_date	udf_number	udf_text	udf_code_id
+%R	826	103341	4635		0.00270101152881754		
+%R	826	103342	4635		0.234988003007126		
+%R	826	103343	4635		0.00270101152881754		
+%R	826	103344	4635		0.232286991478309		
+%R	826	103345	4635		0.00162060691729053		
+%R	826	103346	4635		0.233367396089836		
+%R	826	103347	4635		0.00202575864661316		
+%R	826	103348	4635		0.0094535403508614		
+%R	826	103349	4635		0.031511801169538		
+%R	826	103350	4635		0.0393897514619225		
+%R	826	103351	4635		0.047267701754307		
+%R	826	103352	4635		0.0337626441102193		
+%R	826	103353	4635		0.0337626441102193		
+%R	826	103354	4635		0.0202575864661316		
+%R	826	103355	4635		0.00405151729322631		
+%R	826	103356	4635		0.0121545518796789		
+%R	826	103357	4635		0.00405151729322631		
+%R	826	103358	4635		0.0121545518796789		
+%R	826	103359	4635		0.00607727593983947		
+%R	826	103360	4635		0.0661747824560298		
+%R	826	103361	4635		0.00810303458645263		
+%R	826	103362	4635		2.68142919523362		
+%R	826	103363	4635		0.0585219164577134		
+%R	826	103364	4635		7.17276119906905		
+%R	826	103365	4635		7.02870725086545		
+%R	826	103366	4635		7.02870725086545		
+%R	826	103367	4635		10.5409225755045		
+%R	826	103368	4635		5.29533310224679		
+%R	826	103369	4635		3.53022206816453		
+%R	826	103370	4635		7.7296197425936		
+%R	826	103371	4635		7.7296197425936		
+%R	826	103372	4635		6.86957265495928		
+%R	826	103373	4635		5.15217949121946		
+%R	826	103374	4635		2.49843566415623		
+%R	826	103375	4635		2.49843566415623		
+%R	826	103376	4635		3.3312475522083		
+%R	826	103377	4635		2.08202972013019		
+%R	826	103378	4635		0.101287932330658		
+%R	826	103379	4635		15.2809727242852		
+%R	826	103380	4635		2.25894597526774		
+%R	826	103381	4635		0.0121545518796789		
+%R	826	103382	4635		0.0459171959898982		
+%R	826	103383	4635		0.00810303458645263		
+%R	826	103384	4635		0.0135050576440877		
+%R	826	103385	4635		0.00810303458645263		
+%R	826	103386	4635		0.00540202305763508		
+%R	826	103387	4635		0		
+%R	826	103388	4635		0		
+%R	826	103389	4635		0		
+%R	826	103390	4635		0		
+%R	826	103391	4635		0		
+%R	826	103392	4635		0		
+%R	826	103393	4635		0		
+%R	826	103394	4635		0		
+%R	826	103395	4635		0		
+%R	826	103396	4635		0		
+%R	826	103397	4635		0		
+%E
